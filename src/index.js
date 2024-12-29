@@ -5,7 +5,7 @@ import "./images/apps.png";
 import "./images/hashtag.png";
 import "./images/orange.png";
 import "./images/plus-thick.png";
-import "./images/search.png";
+
 
 
 
