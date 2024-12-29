@@ -1,6 +1,6 @@
 
 const plus = document.createElement("img");
-plus.src = "src/images/plus-thick.png"
+plus.src = "../images/plus-thick.png"
 export const header = document.createElement("h1");
 header.textContent = "Home"+ "&";
 

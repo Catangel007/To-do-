@@ -1,0 +1,1 @@
+export  const searchPage = document.createElement("div");
