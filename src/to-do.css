@@ -109,3 +109,8 @@ p,h1,h2,h3,h4,h5,h6{
   input{
     width: 80em;
   }
+  
+  #continue-btn{
+    width: 80em;
+    background-color: orange;
+  }

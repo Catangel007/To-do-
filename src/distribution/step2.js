@@ -11,10 +11,21 @@ const step1Page = document.querySelector("body");
     <h2>How do you plan to use OrangeTodo?</h2>
     <p>Choose all that apply.</p>
    <form action="" method="post">
-        <input type="checkbox" id="choices" name="choices" value="Personal">
-        <input type="checkbox" id="choices" name="choices" value="Work">
-        <input type="checkbox" id="choices" name="choices" value="Education">
-       
+      <div>
+        <label for="choices">Personal</label>
+        <input type="radio" id="choices" name="choices" value="Personal">
+      </div>
+
+      <div>
+        <label for="choices">Work</label>
+        <input type="radio" id="choices" name="choices" value="Work">
+      </div>
+
+      <di>
+        <label for="choices">Education</label>
+        <input type="radio" id="choices" name="choices" value="Education">
+      </div>
+      
         <button type= "button" >Launch OrangeTodo</button>
 
 

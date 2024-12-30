@@ -18,7 +18,7 @@
         <input type="text" id="first-name" placeholder="Your Name /n E.g Jane zest" name="first-name"></input>
         <p id="word-count">0/255</p>
         <input type="radio" id="question" placeholder="I want to use OrangeTodo with my Team" name="question"></input>
-        <button type= "submit" >Continue</button>
+        <button id="continue-btn" type= "submit" >Continue</button>
 
 
    </form>
