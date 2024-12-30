@@ -1,8 +1,35 @@
 /* styles.css */
+
+/* Presets from Josh Comeau */
+*,*::before,*::after{
+box-sizing: border-box;
+}
+*{
+  margin:0;
+}
+
  body {
-    background-color: rebeccapurple;
+  line-height: 1.5;
+    display :flex;
   }
   
+img,picture,video,canvas,svg{
+  display:block;
+  max-width: 100%;
+
+}
+
+input,button,textarea,select{
+  font:inherit;
+}
+
+p,h1,h2,h3,h4,h5,h6{
+  overflow-wrap: break-word;
+}
+
+#root, #--next{
+  isolation:isolate;
+}
 
   img{
     height: 50px;
@@ -13,4 +40,72 @@
     background-color: rgb(237, 232, 228);
     height: 100rem;
    width: 20rem;
+   
+  }
+
+  ul{
+    list-style: none;
+  }
+
+  ul>li{
+    height: 2rem;
+  }
+
+  .navigation:hover{
+    [src="./images/plus-thick.png"]:modal{
+      height: 2rem;
+    }
+    [src="./images/apps.png"]:modal{
+      height: 2rem;
+    }
+    [src="./images/bell.png"]:modal{
+      height: 2rem;
+    }
+    [src="./images/hashtag.png"]:modal{
+      height: 2rem;
+    }
+    [src="./images/search.png"]:modal{
+      height: 2rem;
+    }
+   
+    [src="./images/orange.png"]:modal{
+      height: 2rem;
+    }
+    [src="./images/plus-thick.png"]:modal{
+      height: 2rem;
+    }
+    [src="./images/plus-thick.png"]:modal{
+      height: 2rem;
+    }
+    [src="./images/plus-thick.png"]:modal{
+      height: 2rem;
+    }
+  }
+
+
+  .formDiv{
+  
+    background-color: white;
+  }
+
+  .display{
+    background-color: rgb(248, 230, 207);
+    display:block;
+    align-items: center;
+  }
+
+  .display img{
+    height: calc(50rem + 10vh);
+    width:calc(50rem + 10vw);
+  }
+
+  .display#page-count{
+    height: calc(0.80rem + 1.5vh);
+    width: calc(0.80rem + 1.5vh);;
+    position: relative;
+    left :20em;
+  }
+
+  input{
+    width: 80em;
   }
