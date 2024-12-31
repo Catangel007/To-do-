@@ -1,5 +1,5 @@
 
-  const step1Page = document.querySelector("body");
+   export const step1Page = document.querySelector("body");
 
   const formDiv = document.createElement("div");
   const display = document.createElement("div")

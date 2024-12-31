@@ -1,10 +1,11 @@
-const step1Page = document.querySelector("body");
+ 
+ export const step2Page = document.querySelector("body");
 
   const formDiv = document.createElement("div");
   const display = document.createElement("div")
 
-  step1Page.appendChild(formDiv);
-  step1Page.appendChild(display);
+  step2Page.appendChild(formDiv);
+  step2Page.appendChild(display);
 
   formDiv.innerHTML=`
     <h1 id="title">OrangeTodo</h1>
@@ -25,7 +26,7 @@ const step1Page = document.querySelector("body");
         <label for="choices">Education</label>
         <input type="radio" id="choices" name="choices" value="Education">
       </div>
-      
+
         <button type= "button" >Launch OrangeTodo</button>
 
 

@@ -1,5 +1,5 @@
 
-const homePage = document. querySelector("body");
+const homePage = document.querySelector("body");
 
 const navBox = document.createElement("div");
 const homeBox = document.createElement("div");
@@ -10,19 +10,19 @@ homePage.appendChild(homeBox)
 navBox.innerHTML=`
 
  <div class="navigation">
-        <h3>Name placeholder <img src="./images/bell.png" alt=""></h3>
+        <h3>Name placeholder <img src="./images/bell.png" alt="notifications icon"></h3>
         <ul>
-            <li><img src="./images/plus-thick.png" alt="">Add Task</li>
-            <li><img src="./images/search.png" alt="">Search              </li>
-            <li><img src="./images/orange.png" alt="">inbox              </li>
-            <li><img src="./images/orange.png" alt="">Today               </li>
-            <li><img src="./images/orange.png" alt="">Upcoming                </li>
-            <li><img src="./images/apps.png" alt="">Filters & Labels              </li>
+            <li><img src="./images/plus-thick.png" alt="add task icon">Add Task</li>
+            <li><img src="./images/search.png" alt="search icon">Search              </li>
+            <li><img src="./images/inbox.png" alt="inbox icon">inbox              </li>
+            <li><img src="./images/calendar_today.png" alt="add task today icon">Today               </li>
+            <li><img src="./images/calendar.png" alt="upcoming task icon">Upcoming                </li>
+            <li><img src="./images/apps.png" alt="filters and labels icon">Filters & Labels              </li>
         </ul>
         <ul> My Projects
             <li><img src="./images/hashtag.png" alt="">Home</li>
-            <li>Add a Team</li>
-            <li>Browse Templates</li>
+            <li><img src="./images/plus-thick.png" alt="add team icon">Add a Team</li>
+            <li><img src="./images/playing_cards.png" alt="template icon"> Browse Templates</li>
         </ul>
     </div>
 
@@ -31,7 +31,10 @@ navBox.innerHTML=`
 homeBox.innerHTML=`
  
    <div class="box">
-        <header><input><p>icon</p></header>
+        <header>
+           <input type="text" >
+           <p>icon</p>
+        </header>
             <h1>Today</h1>
             <radio id="taskCounter"></radio>
             <div id="newTodo">

@@ -17,4 +17,7 @@ import search from "./images/search.png";
 
 import "./to-do.css";
  import {list} from "./distribution/list.js";
+ import {step1Page }  from "./distribution/step1.js";
+ import {step2Page} from "./distribution/step2.js";
+ import {homePage} from "./distribution/home.js"
  console.log(list);
