@@ -18,13 +18,13 @@ import backdrop from "./images/Coming your way.png";
 import dots from "./images/dots.png";
 import writeIcon from "./images/edit.png";
 import event from "./images/event.png";
-import inbox from "src/images/inbox.png";
-import lightMode from "src/images/light_mode.png";
-import lightbulb from "src/images/lightbulb.png";
-import notifications from "src/images/notifications.png";
-import person from "src/images/person.png";
-import playingCards from "src/images/playing_cards.png";
-import toggleOff from "src/images/toggle_off.png";
+import inbox from "./images/inbox.png";
+import lightMode from "./images/light_mode.png";
+import lightbulb from "./images/lightbulb.png";
+import notifications from "./images/notifications.png";
+import person from "./images/person.png";
+import playingCards from "./images/playing_cards.png";
+import toggleOff from "./images/toggle_off.png";
 import toggleOn from "./images/toggle_on.png";
 
 

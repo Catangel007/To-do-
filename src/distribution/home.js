@@ -33,7 +33,7 @@ homeBox.innerHTML=`
    <div class="box">
         <header>
         <img  id="mode" src="./images/bedtime.png" alt="dark mode">
-           <p><img src="./images/event.png" alt="calendar icon">Calendar events | <img src="./images/close.png alt="close icon"></p>
+           <p><img src="./images/event.png" alt="calendar icon">Calendar events | <img src="./images/close.png" alt="close icon"></p>
            <p>icon View</p>
         </header>
             <h1>Today</h1>
