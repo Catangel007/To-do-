@@ -1,6 +1,8 @@
-import orange from "./images/orange.png";
 
-import {step2Page} from "./distribution/step2.js";
+
+import orange from "../images/orange.png";
+
+import {step2Page} from "./step2.js";
  
 
    export const step1Page = document.querySelector("body");

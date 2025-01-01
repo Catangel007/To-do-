@@ -1,8 +1,9 @@
  
- import orange from "./images/orange.png";
+ 
+ import orange from "../images/orange.png";
 
 
-    import {homePage} from "./distribution/home.js";
+    import {homePage} from "./home.js";
  
 
  export const step2Page = document.querySelector("body");
