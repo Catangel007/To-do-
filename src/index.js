@@ -36,13 +36,9 @@ import toggleOn from "./images/toggle_on.png";
 import "./to-do.css";
  import {list} from "./distribution/list.js";
  import {step1Page }  from "./distribution/step1.js";
- import {step2Page} from "./distribution/step2.js";
- import {homePage} from "./distribution/home.js";
- import {inboxPage} from "./distribution/inbox.js"
- import {searchPage} from "./distribution/search.js"
- import {todayPage} from "./distribution/today.js"
- import {upcomingPage} from "./distribution/upcoming.js"
- import {animationPage} from "./distribution/animation.js"
- import {filtersPage} from "./distribution/filters.js"
+
 
  console.log(list);
+
+
+ 

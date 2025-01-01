@@ -1,3 +1,7 @@
+import orange from "./images/orange.png";
+
+import {step2Page} from "./distribution/step2.js";
+ 
 
    export const step1Page = document.querySelector("body");
 
@@ -29,3 +33,9 @@
    <div id="page-count">Step 1 of 2</div>
    <img src="./images/Coming your way.png" alt="backdrop image">
    `
+
+
+   const continueBtn = document.querySelector("#continue-btn");
+   continueBtn.addEventListener("click", ()=>{
+     document.textContent = step2Page;
+   })

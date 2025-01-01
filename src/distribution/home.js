@@ -1,4 +1,12 @@
 
+
+  // import {inboxPage} from "./distribution/inbox.js";
+ //  import {searchPage} from "./distribution/search.js";
+ //  import {todayPage} from "./distribution/today.js";
+ //  import {upcomingPage} from "./distribution/upcoming.js";
+ //  import {animationPage} from "./distribution/animation.js";
+ //  import {filtersPage} from "./distribution/filters.js";
+
 const homePage = document.querySelector("body");
 
 const navBox = document.createElement("div");
