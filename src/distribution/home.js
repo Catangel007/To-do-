@@ -1,4 +1,33 @@
 
+// import Images and Icons
+import bell from "../images/bell.png";
+import apps from "../images/apps.png";
+import hashtag from "../images/hashtag.png";
+import orange from "../images/orange.png";
+import plus from "../images/plus-thick.png";
+import search from "../images/search.png";
+
+import envelope from "../images/envelope.png";
+import bedtime from "../images/bedtime.png";
+import calendar_today from "../images/calendar_today.png";
+import chatBubble from "../images/chat_bubble.png";
+import calendar from "../images/calendar.png";
+import close from "../images/close.png";
+import deleteIcon from "../images/delete.png";
+
+import dots from "../images/dots.png";
+import writeIcon from "../images/edit.png";
+import events from "../images/event.png";
+import inbox from "../images/inbox.png";
+import lightMode from "../images/light_mode.png";
+
+import notifications from "../images/notifications.png";
+
+import playingCards from "../images/playing_cards.png";
+import toggleOff from "../images/toggle_off.png";
+import toggleOn from "../images/toggle_on.png";
+
+
 
   // import {inboxPage} from "./distribution/inbox.js";
  //  import {searchPage} from "./distribution/search.js";
@@ -7,30 +36,31 @@
  //  import {animationPage} from "./distribution/animation.js";
  //  import {filtersPage} from "./distribution/filters.js";
 
-const homePage = document.querySelector("body");
+ export function homePage(){
+    const content = document.querySelector("body");
 
 const navBox = document.createElement("div");
 const homeBox = document.createElement("div");
 
-homePage.appendChild(navBox)
-homePage.appendChild(homeBox)
+content.appendChild(navBox);
+content.appendChild(homeBox);
 
 navBox.innerHTML=`
 
  <div class="navigation">
-        <h3>Name placeholder <img src="./images/bell.png" alt="notifications icon"></h3>
+        <h3>Name placeholder <img src="${notifications}" alt="notifications icon"></h3>
         <ul>
-            <li><img src="./images/plus-thick.png" alt="add task icon">Add Task</li>
-            <li><img src="./images/search.png" alt="search icon">Search              </li>
-            <li><img src="./images/inbox.png" alt="inbox icon">inbox              </li>
-            <li><img src="./images/calendar_today.png" alt="add task today icon">Today               </li>
-            <li><img src="./images/calendar.png" alt="upcoming task icon">Upcoming                </li>
-            <li><img src="./images/apps.png" alt="filters and labels icon">Filters & Labels              </li>
+            <li><img src="${plus}" alt="add task icon">Add Task</li>
+            <li><img src="${search}" alt="search icon">Search              </li>
+            <li><img src="${inbox}" alt="inbox icon">inbox              </li>
+            <li><img src="${calendar_today}" alt="add task today icon">Today               </li>
+            <li><img src="${calendar}" alt="upcoming task icon">Upcoming                </li>
+            <li><img src="${apps}" alt="filters and labels icon">Filters & Labels              </li>
         </ul>
         <ul> My Projects
-            <li><img src="./images/hashtag.png" alt="">Home</li>
-            <li><img src="./images/plus-thick.png" alt="add team icon">Add a Team</li>
-            <li><img src="./images/playing_cards.png" alt="template icon"> Browse Templates</li>
+            <li><img src="${hashtag}" alt="">Home</li>
+            <li><img src="${plus}" alt="add team icon">Add a Team</li>
+            <li><img src="${playingCards}" alt="template icon"> Browse Templates</li>
         </ul>
     </div>
 
@@ -40,8 +70,8 @@ homeBox.innerHTML=`
  
    <div class="box">
         <header>
-        <img  id="mode" src="./images/bedtime.png" alt="dark mode">
-           <p><img src="./images/event.png" alt="calendar icon">Calendar events | <img src="./images/close.png" alt="close icon"></p>
+        <img  id="mode" src="${bedtime}" alt="dark mode">
+           <p><img src="${events}" alt="calendar icon">Calendar events | <img src="./images/close.png" alt="close icon"></p>
            <p>icon View</p>
         </header>
             <h1>Today</h1>
@@ -51,7 +81,7 @@ homeBox.innerHTML=`
                <p>inbox</p>
             </div>
            
-            <p><img src="./images/plus-thick.png" alt="">Add Task</p>
+            <p><img src="${plus}" alt="">Add Task</p>
         
     </div>
 
@@ -85,3 +115,4 @@ class Theme {
 }
 
 const routines = new Theme("Routines","Do a weekly review of my tasks and goals","Add more personal routines");
+ }
