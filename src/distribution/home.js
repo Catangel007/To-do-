@@ -51,11 +51,11 @@ navBox.innerHTML=`
         <h3>Name placeholder <img src="${notifications}" alt="notifications icon"></h3>
         <ul>
             <li><img src="${plus}" alt="add task icon">Add Task</li>
-            <li><img src="${search}" alt="search icon">Search              </li>
-            <li><img src="${inbox}" alt="inbox icon">inbox              </li>
-            <li><img src="${calendar_today}" alt="add task today icon">Today               </li>
-            <li><img src="${calendar}" alt="upcoming task icon">Upcoming                </li>
-            <li><img src="${apps}" alt="filters and labels icon">Filters & Labels              </li>
+            <li><img src="${search}" alt="search icon">Search</li>
+            <li><img src="${inbox}" alt="inbox icon">inbox</li>
+            <li><img src="${calendar_today}" alt="add task today icon">Today</li>
+            <li><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
+            <li><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
         <ul> My Projects
             <li><img src="${hashtag}" alt="">Home</li>
