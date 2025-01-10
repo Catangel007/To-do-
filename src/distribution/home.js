@@ -13,7 +13,7 @@ import hidden from "../images/more_horiz.svg";
 import flag from "../images/sports_score.svg";
 import thumbnail from "../images/thumbnail.svg";
 import today from "../images/today.svg";
-
+import checkCircle from "../images/check_circle.svg";
 import envelope from "../images/mail.svg";
 import bedtime from "../images/dark_mode.svg";
 import calendar_today from "../images/calendar_today.svg";

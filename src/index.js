@@ -13,7 +13,9 @@ import { homePage } from "./distribution/home.js";
  console.log(list);
 
 
-  function page(){
-    homePage();
-   //step1Page();
- }page()
+  function pages(){
+  // if (document.textContent=""){
+    step1Page();
+  // }
+ 
+ }pages()

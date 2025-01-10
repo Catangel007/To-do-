@@ -17,8 +17,8 @@
   content.appendChild(formDiv);
   content.appendChild(display);
 
-  formDiv.setAttribute("class","formDiv");
-  display.setAttribute("class","display");
+  formDiv.setAttribute("class","formDiv2");
+  display.setAttribute("class","display2");
 
   formDiv.innerHTML=`
     <h1 id="title"><img src="${orange}" alt="">OrangeTodo</h1>

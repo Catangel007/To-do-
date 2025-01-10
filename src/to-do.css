@@ -75,6 +75,34 @@ img,picture,video,canvas,svg{
   width: 50vw;
   height: 100vh;
     background-color: white;
+  
+   
+  }
+  .formDiv p{
+    width: 80%;
+    color: gray;
+    text-align: end;
+   
+  }
+  .formDiv h1{
+   
+    width: 80%;
+    text-align: left;
+    margin-top:1.5em;
+    margin-bottom:1em;
+
+  }
+  .formDiv h1 img{
+    margin-right: 3px;
+  }
+
+  .formDiv h2{
+    
+   
+    text-align: left;
+    margin-top: 5em;
+    margin-bottom: 1em;
+   
    
   }
 
@@ -82,46 +110,78 @@ img,picture,video,canvas,svg{
     width: 50vw;
     height: 100vh;
     background-color: rgb(248, 230, 207);
+    display: grid;
+    justify-content: center;
+
   }
 
   .display img{
-    height: calc(10em + 10vh);
-    width:calc(10em + 10vw);
+    height: calc(20em + 10vh);
+    width:calc(20em + 10vw);
     justify-content: center;
   } 
 
   .display #page-count{
     height: calc(0.80rem + 1.5vh);
     width: calc(90px + 1.5vh);
-    /* position: relative;
-    left :20em; */
-    background-color: rgb(229, 204, 147);
-    border-radius: 2px;
+     position: relative;
+    left:90%;
+    background-color: rgb(231, 211, 165);
+    border-radius: 5px;
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 5px;
   }
 
   input{
-    width: 80%;
-    height: 2em;
+   
+    height: 3em;
     margin-top:0.5em;
     margin-bottom: 0.5em;
     border-radius: 10px;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    border: 1px solid rgb(64, 64, 64);
+  
   }
   
   #continue-btn{
     height: 3.5em;
-    width: 80%;
+   
     background-color: orange;
     color: white;
     border: none;
     border-radius: 10px;
+    margin-top: 1.5em;
+    
+  }
+  
+  #continue-btn:hover{
+    background-color: rgb(245, 187, 80);
   }
 
-  .container{
-    display: grid;
-    justify-content: center;
+  #question{
+    
+    height: 3em;
+    border: 1px solid rgb(64, 64, 64);
+    display: flex;
+    justify-content:space-between;
     align-items: center;
-    height: 100vh;
-    width: 50vw;
+    border-radius: 10px;
+    text-align: start;
+   
+  
   }
+  #toggle{
+    height: 40px;
+    width: 40px;
+    fill: orange;
+  }
+
+.formDiv h1,.formDiv h2,.formDiv p, input,#question, #continue-btn{
+  margin-left: 40px;
+  width: 70%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
