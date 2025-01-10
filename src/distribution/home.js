@@ -1,31 +1,38 @@
 
 // import Images and Icons
-import bell from "../images/bell.png";
-import apps from "../images/apps.png";
+import bell from "../images/notifications.svg";
+import apps from "../images/grid3.svg";
 import hashtag from "../images/hashtag.png";
 import orange from "../images/orange.png";
-import plus from "../images/plus-thick.png";
-import search from "../images/search.png";
+import add_circle from "../images/add_circle.svg";
+import add from "../images/add.svg";
+import search from "../images/search.svg";
+import arrowDown from "../images/arrow-down.svg";
+import grig2 from "../images/grig2.svg";
+import hidden from "../images/more_horiz.svg";
+import flag from "../images/sports_score.svg";
+import thumbnail from "../images/thumbnail.svg";
+import today from "../images/today.svg";
 
-import envelope from "../images/envelope.png";
-import bedtime from "../images/bedtime.png";
-import calendar_today from "../images/calendar_today.png";
-import chatBubble from "../images/chat_bubble.png";
-import calendar from "../images/calendar.png";
-import close from "../images/close.png";
-import deleteIcon from "../images/delete.png";
+import envelope from "../images/mail.svg";
+import bedtime from "../images/dark_mode.svg";
+import calendar_today from "../images/calendar_today.svg";
+import chatBubble from "../images/chat.svg";
+import calendar from "../images/calendar_month.svg";
+import close from "../images/close.svg";
+import deleteIcon from "../images/delete.svg";
 
-import dots from "../images/dots.png";
-import writeIcon from "../images/edit.png";
-import events from "../images/event.png";
-import inbox from "../images/inbox.png";
-import lightMode from "../images/light_mode.png";
+import dots from "../images/grip1.svg";
+import writeIcon from "../images/write.svg";
+import events from "../images/calendar_add.svg";
+import inbox from "../images/inbox.svg";
+import lightMode from "../images/light_mode.svg";
 
-import notifications from "../images/notifications.png";
+import view from "../images/tune.svg";
 
-import playingCards from "../images/playing_cards.png";
-import toggleOff from "../images/toggle_off.png";
-import toggleOn from "../images/toggle_on.png";
+import playingCards from "../images/playing_cards.svg";
+import toggleOff from "../images/toggle_off.svg";
+import toggleOn from "../images/toggle_on.svg";
 
 
 

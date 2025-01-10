@@ -1,10 +1,10 @@
  
  
  import orange from "../images/orange.png";
- import person from "../images/person.png";
- import business from "../images/business.png";
- import lightbulb from "../images/lightbulb.png";
- import backdrop from "../images/Coming your way.png";
+ import person from "../images/person.svg";
+ import business from "../images/briefcase.svg";
+ import lightbulb from "../images/lightbulb.svg";
+ import backdrop from "../images/57380.jpg";
 
     import {homePage} from "./home.js";
  
