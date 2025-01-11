@@ -12,7 +12,6 @@
   }
   
 img,picture,video,canvas,svg{
- 
   max-width: 100%;
 }
 
@@ -71,7 +70,7 @@ img,picture,video,canvas,svg{
   }
 
 
-  .formDiv{
+  .formDiv,.formDiv2{
   width: 50vw;
   height: 100vh;
     background-color: white;
@@ -84,7 +83,13 @@ img,picture,video,canvas,svg{
     text-align: end;
    
   }
-  .formDiv h1{
+
+  .formDiv2 p{
+    width: 80%;
+    color: gray;
+    text-align: center;
+  }
+  .formDiv h1,.formDiv2 h1{
    
     width: 80%;
     text-align: left;
@@ -92,21 +97,22 @@ img,picture,video,canvas,svg{
     margin-bottom:1em;
 
   }
-  .formDiv h1 img{
+  .formDiv h1 img,.formDiv2 h1 img{
     margin-right: 3px;
   }
 
   .formDiv h2{
-    
-   
     text-align: left;
     margin-top: 5em;
     margin-bottom: 1em;
-   
-   
   }
 
-  .display{
+  .formDiv2 h2{
+    text-align: center;
+    margin-top: 5em;
+    margin-bottom: 1em;
+  }
+  .display,.display2{
     width: 50vw;
     height: 100vh;
     background-color: rgb(248, 230, 207);
@@ -115,13 +121,13 @@ img,picture,video,canvas,svg{
 
   }
 
-  .display img{
+  .display img,.display2 img{
     height: calc(20em + 10vh);
     width:calc(20em + 10vw);
     justify-content: center;
   } 
 
-  .display #page-count{
+  .display #page-count,.display2 #page-count{
     height: calc(0.80rem + 1.5vh);
     width: calc(90px + 1.5vh);
      position: relative;
@@ -147,7 +153,6 @@ img,picture,video,canvas,svg{
   
   #continue-btn{
     height: 3.5em;
-   
     background-color: orange;
     color: white;
     border: none;
@@ -156,7 +161,7 @@ img,picture,video,canvas,svg{
     
   }
   
-  #continue-btn:hover{
+  #continue-btn:hover,#launch-btn:hover{
     background-color: rgb(245, 187, 80);
   }
 
@@ -185,3 +190,49 @@ img,picture,video,canvas,svg{
   padding-right: 5px;
 }
 
+.formDiv2 div{
+  display: flex;
+  align-items: center;
+  border: 1px solid rgb(210, 207, 207);
+  border-radius: 10px;
+  justify-content: space-between;
+  font-size: 15px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  height: 3em;
+  margin-top:0.5em;
+  margin-bottom: 0.5em;
+  padding: 0;
+}
+
+.formDiv2 div:hover{
+  border: 1px solid rgb(29, 28, 28);
+}
+.formDiv2 h1,.formDiv2 h2,.formDiv2 p,#launch-btn,.formDiv2 div{
+  margin-left: 40px;
+  width: 70%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#launch-btn{
+  color:white;
+  background-color: orange;
+  border: none;
+  height: 3em;
+  border-radius: 5px;
+  margin-top: 1.5em;
+  width: 10em;
+  margin-left: 2.5em;
+}
+
+#choices{
+  height: 20px;
+  text-align: end;
+ 
+}
+
+.formDiv2 div img{
+  
+  margin-right:0.5em;
+  height: 20px;
+}
