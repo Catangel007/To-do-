@@ -55,9 +55,9 @@ content.appendChild(homeBox);
 navBox.innerHTML=`
 
  <div class="navigation">
-        <h3>Name placeholder <img src="${notifications}" alt="notifications icon"></h3>
+        <h3>Name placeholder <img src="${bell}" alt="notifications icon"></h3>
         <ul>
-            <li><img src="${plus}" alt="add task icon">Add Task</li>
+            <li><img src="${add_circle}" alt="add task icon">Add Task</li>
             <li><img src="${search}" alt="search icon">Search</li>
             <li><img src="${inbox}" alt="inbox icon">inbox</li>
             <li><img src="${calendar_today}" alt="add task today icon">Today</li>
@@ -66,7 +66,7 @@ navBox.innerHTML=`
         </ul>
         <ul> My Projects
             <li><img src="${hashtag}" alt="">Home</li>
-            <li><img src="${plus}" alt="add team icon">Add a Team</li>
+            <li><img src="${add}" alt="add team icon">Add a Team</li>
             <li><img src="${playingCards}" alt="template icon"> Browse Templates</li>
         </ul>
     </div>
@@ -82,13 +82,13 @@ homeBox.innerHTML=`
            <p>icon View</p>
         </header>
             <h1>Today</h1>
-            <radio id="taskCounter"></radio>
+            <div id="taskCounter"></div>
             <div id="newTodo">
-                <radio class="task" placeholder="Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets."></radio>
+                <div class="task">Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.</div>
                <p>inbox</p>
             </div>
            
-            <p><img src="${plus}" alt="">Add Task</p>
+            <p><img src="${add_circle}" alt="">Add Task</p>
         
     </div>
 
@@ -103,8 +103,8 @@ let list = document.createElement("li");
 
  function addTaskBtn (){
     const addTaskBtn = document.createElement("button");
-    addTaskBtn.textContent= plus + " Add Task";
-    list.appendChild(addTaskBtn);
+    addTaskBtn.innerHTML=`<img src="${add_circle}">Add Task`;
+  return addTaskBtn;
     
   }
 

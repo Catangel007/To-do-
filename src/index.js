@@ -17,5 +17,5 @@ import { homePage } from "./distribution/home.js";
   // if (document.textContent=""){
     step1Page();
   // }
- 
+  
  }pages()

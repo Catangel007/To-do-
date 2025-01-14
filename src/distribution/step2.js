@@ -6,7 +6,8 @@
  import lightbulb from "../images/lightbulb.svg";
  import backdrop from "../images/57380.jpg";
 
-    import {homePage} from "./home.js";
+ import { homePage } from "./home.js";
+
  
     export function step2Page(){
       const content = document.querySelector("body");
@@ -56,9 +57,8 @@
    `
 
    const launchBtn = document.querySelector("#launch-btn");
-   continueBtn.addEventListener("click", (e)=>{
-    e.preventDefault();
-    content.innerHTML="";
+   launchBtn.addEventListener("click", ()=>{
+     content.innerHTML="";
      homePage();
    })
   }
