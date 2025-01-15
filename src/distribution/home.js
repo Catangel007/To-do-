@@ -52,6 +52,9 @@ const homeBox = document.createElement("div");
 content.appendChild(navBox);
 content.appendChild(homeBox);
 
+navBox.setAttribute("class","navBox");
+homeBox.setAttribute("class","homeBox");
+
 navBox.innerHTML=`
 
  <div class="navigation">
@@ -81,15 +84,17 @@ homeBox.innerHTML=`
            <p><img src="${events}" alt="calendar icon">Calendar events | <img src="./images/close.png" alt="close icon"></p>
            <p>icon View</p>
         </header>
+        <div id="container>
             <h1>Today</h1>
-            <div id="taskCounter"></div>
+            <p id="taskCounter"></p>
             <div id="newTodo">
                 <div class="task">Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.</div>
                <p>inbox</p>
+
             </div>
-           
+        </div> <hr>
             <p><img src="${add_circle}" alt="">Add Task</p>
-        
+          
     </div>
 
 

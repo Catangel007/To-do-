@@ -232,7 +232,41 @@ img,picture,video,canvas,svg{
 }
 
 .formDiv2 div img{
-  
+
   margin-right:0.5em;
   height: 20px;
 }
+
+
+
+.navBox{
+background-color: rgb(240, 52, 52);
+width: 20vw;
+height: 100vh;
+display: grid;
+align-items: center;
+
+}
+.navigation{
+  list-style: none;
+}
+
+.homeBox{
+background-color: white;
+width: 80vw;
+height: 100vh;
+
+
+}
+
+.navBox .navigation li:hover{
+  background-color: rgb(246, 233, 223);
+  width: 90%;
+  padding: 5px;
+}
+
+.homeBox header{
+  display: flex;
+  justify-content: end;
+}
+
