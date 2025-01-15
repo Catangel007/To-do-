@@ -36,12 +36,12 @@ import toggleOn from "../images/toggle_on.svg";
 
 
 
-  // import {inboxPage} from "./distribution/inbox.js";
- //  import {searchPage} from "./distribution/search.js";
- //  import {todayPage} from "./distribution/today.js";
- //  import {upcomingPage} from "./distribution/upcoming.js";
- //  import {animationPage} from "./distribution/animation.js";
- //  import {filtersPage} from "./distribution/filters.js";
+   import {inboxPage} from "./inbox.js";
+   import {searchPage} from "./search.js";
+   import {todayPage} from "./today.js";
+   import {upcomingPage} from "./upcoming.js";
+   import {animationPage} from "./animation.js";
+   import {filtersPage} from "./filters.js";
 
  export function homePage(){
     const content = document.querySelector("body");
@@ -57,8 +57,8 @@ homeBox.setAttribute("class","homeBox");
 
 navBox.innerHTML=`
 
- <div class="navigation">
-        <h3>Name placeholder <img src="${bell}" alt="notifications icon"></h3>
+ <div class="nav">
+        <h3>Name placeholder <img src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
         <ul>
             <li><img src="${add_circle}" alt="add task icon">Add Task</li>
             <li><img src="${search}" alt="search icon">Search</li>
@@ -81,8 +81,8 @@ homeBox.innerHTML=`
    <div class="box">
         <header>
         <img  id="mode" src="${bedtime}" alt="dark mode">
-           <p><img src="${events}" alt="calendar icon">Calendar events | <img src="./images/close.png" alt="close icon"></p>
-           <p>icon View</p>
+           <p><img src="${events}" alt="calendar icon">Calendar events | <img src="${close}" alt="close icon"></p>
+           <p><img src="${view}">View</p>
         </header>
         <div id="container>
             <h1>Today</h1>
@@ -91,8 +91,8 @@ homeBox.innerHTML=`
                 <div class="task">Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.</div>
                <p>inbox</p>
 
-            </div>
-        </div> <hr>
+            </div><hr>
+        </div> 
             <p><img src="${add_circle}" alt="">Add Task</p>
           
     </div>
