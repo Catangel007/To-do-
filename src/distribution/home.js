@@ -58,7 +58,7 @@ homeBox.setAttribute("class","homeBox");
 navBox.innerHTML=`
 
  <div class="nav">
-        <h3>Name placeholder <img src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
+        <h3>Name  <img src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
         <ul>
             <li><img src="${add_circle}" alt="add task icon">Add Task</li>
             <li><img src="${search}" alt="search icon">Search</li>
@@ -84,16 +84,23 @@ homeBox.innerHTML=`
            <p><img src="${events}" alt="calendar icon">Calendar events | <img src="${close}" alt="close icon"></p>
            <p><img src="${view}">View</p>
         </header>
-        <div id="container>
+        <div id="container">
             <h1>Today</h1>
             <p id="taskCounter"></p>
             <div id="newTodo">
-                <div class="task">Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.</div>
-               <p>inbox</p>
+              <img src="${grig2}">  <div class="task">Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.</div>
+               <p><img src="${inbox}"></p>
+               <ul>
+            <li><img src="${writeIcon}" ></li>
+            <li><img src="${today}" ></li>
+            <li><img src="${chatBubble}" ></Li>
+            <li><img src="${hidden}" ></Li>
+               </ul>
 
             </div><hr>
+            <p><img src="${add}" alt="">Add Task</p>
         </div> 
-            <p><img src="${add_circle}" alt="">Add Task</p>
+            
           
     </div>
 
