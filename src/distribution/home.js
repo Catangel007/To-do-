@@ -1,6 +1,6 @@
 
 // import Images and Icons
-import bell from "../images/notifications.svg";
+import bell from "../images/bell.png";
 import apps from "../images/grid3.svg";
 import hashtag from "../images/hashtag.png";
 import orange from "../images/orange.png";
@@ -134,7 +134,7 @@ const routines = new Theme("Routines","Do a weekly review of my tasks and goals"
 // takes care of hidden icons
  
 const hiddenIcons = document .querySelector(".task");
-hiddenIcons.addEventListener("mouse-up", ()=>{
+hiddenIcons.addEventListener("mouseover", (e)=>{
   const icons = document.createElement("ul");
   // <ul id="task-icons">
   // <li><img src="${writeIcon}" ></li>
@@ -142,7 +142,7 @@ hiddenIcons.addEventListener("mouse-up", ()=>{
   // <li><img src="${chatBubble}" ></Li>
   // <li><img src="${hidden}" ></Li>
   //    </ul>
-
+ hiddenIcons.appendChild("icons");
   const l1 = document.createElement("li"); 
       let image1 = document.createElement("img")
       image1.src = writeIcon;
@@ -159,7 +159,7 @@ hiddenIcons.addEventListener("mouse-up", ()=>{
   let image4 = document.createElement("img")
       image4.src = hidden;
       l4.appendChild(image4)
-      image4.addEventListener("click",()=>{
+      image4.addEventListener("mouseover",()=>{
         const moreHidden = document.createElement("ul");
                 const l1 = document.createElement("li"); 
               let image1 = document.createElement("img")
@@ -169,10 +169,7 @@ hiddenIcons.addEventListener("mouse-up", ()=>{
               let image2 = document.createElement("img")
               image2.src = deleteIcon;
               l2.appendChild(image2)
-              const l3 = document.createElement("li");
-              let image3 = document.createElement("img")
-              image3.src = chatBubble;
-              l3.appendChild(image3)
+              
       })
       
 
