@@ -238,36 +238,54 @@ background-color: rgba(255, 243, 237, 0.895);
 width: 20vw;
 height: 100vh;
 display: grid;
-align-items: center;
+justify-content: center;
+border: 1px solid pink;
 
 }
 .nav{
   list-style: none;
+  width: 90%;
+  border: 1px solid rgb(185, 71, 90);
+  
+  
+
 }
 
 .homeBox{
 background-color: white;
 width: 80vw;
 height: 100vh;
-
+display: grid;
+justify-content: center;
 
 }
 
-.navBox .nav li:hover{
-  background-color: rgb(246, 233, 223);
-  width: 90%;
+.navBox .nav li{
+  width: 100%;
   padding: 5px;
+  border: 1px solid pink;
+}
+.navBox .nav li:hover{
+  background-color: rgb(249, 226, 209);
+  
 }
 
 .homeBox header{
   display: flex;
   justify-content: end;
+  align-items: center;
   height: 10vh;
 }
 
 #container{
-  width: 80%;
+  width: 100%;
   height: 80%;
   border: 4px solid salmon;
 }
 
+
+#task-icons{
+  display: flex;
+  padding: 2px;
+
+}
