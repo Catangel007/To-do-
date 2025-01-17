@@ -85,15 +85,20 @@ homeBox.innerHTML=`
         </header>
         <div id="container">
             <h1>Today</h1>
-            <p id="taskCounter"><img src="${checkCircle}">task</p>
+            <p id="taskCounter">
+            <img src="${checkCircle}">task
+            </p>
             <div id="newTodo">
-              <div class="task"><img src="${grig2}"><input type="radio" id="radio" font-size="20px">Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.</div>
+              <div class="task">
+              <img src="${grig2}">
+              <input type="radio" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
+              </div>
             <ul class="hidden-icons"></ul>
-               <p>inbox<img src="${inbox}"></p>
+               <p id="inbox">inbox<img src="${inbox}"></p>
                
 
             </div><hr>
-            <p><img src="${add}" alt="">Add Task</p>
+            <button><img src="${add}" alt="">Add Task</button>
         </div> 
             
           

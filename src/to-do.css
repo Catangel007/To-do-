@@ -252,7 +252,7 @@ justify-content: center;
 
 .navBox .nav li{
   width: 250px;
-  padding: 2px;
+  padding: 5px;
   margin: 0;
   position: relative;
   right: 20px;
@@ -350,10 +350,37 @@ justify-content: center;
   justify-content: space-between;
   align-items: center;
 }
-
-#container #newTodo div>input{
-  font-size: 20px;
+/* .box header #view img,.box header #events img ,.box header img{
+  position:relative;
+  bottom: 5px;
+} */
+ #newTodo #radio-btn{
+  height: 20px;
+  width: 20px;
   margin: 0;
   padding: 0;
+  margin-right: 5px;
+  position: relative;
+  top: 4px;
 }
+
+.box #container p{
+  font-size: 15px;
+  padding: 2px;
+}
+
+.box #container #inbox{
+  text-align: end;
+}
+.box #container:last-child img{
+  height: 15px;
+  width:15px;
+  margin-left: 3px;
+}
+
+.box button{
+  border: 0;
+  background-color: white;
+}
+
 
