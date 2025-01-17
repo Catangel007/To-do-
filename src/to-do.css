@@ -93,6 +93,8 @@ img,picture,video,canvas,svg{
   }
   .formDiv h1 img,.formDiv2 h1 img{
     margin-right: 3px;
+    height:40px;
+    width:40px;
   }
 
   .formDiv h2{
@@ -269,9 +271,10 @@ justify-content: center;
  
 
 }
-.nav li img{
+.nav li img,.box img{
   position: relative;
-  top: 5px;
+  top: 3px;
+  right: 3px;
   color: rgb(134, 135, 136);
 }
 .navBox .nav li:hover{
@@ -279,7 +282,10 @@ justify-content: center;
  
   
 }
-
+.nav h3 {
+  display: flex;
+  justify-content:space-between ;
+}
 .homeBox header{
   display: flex;
   justify-content: end;
@@ -299,3 +305,4 @@ justify-content: center;
   padding: 2px;
 
 }
+
