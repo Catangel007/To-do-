@@ -57,7 +57,7 @@ homeBox.setAttribute("class","homeBox");
 navBox.innerHTML=`
 
  <div class="nav">
-        <h3>Name  <img src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
+        <h3>Name  <img id="bell" src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
         <ul>
             <li><img src="${add_circle}" alt="add task icon">Add Task</li>
             <li><img src="${search}" alt="search icon">Search</li>
@@ -66,10 +66,10 @@ navBox.innerHTML=`
             <li><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
             <li><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
-        <ul> My Projects
-            <li><img src="${hashtag}" alt="">Home</li>
-            <li><img src="${add}" alt="add team icon">Add a Team</li>
-            <li><img src="${playingCards}" alt="template icon"> Browse Templates</li>
+        <ul id="projects"> My Projects
+            <li class="margin"><img src="${hashtag}" alt="">Home</li>
+            <li ><img src="${add}" alt="add team icon">Add a Team</li>
+            <li ><img src="${playingCards}" alt="template icon"> Browse Templates</li>
         </ul>
     </div>
 
@@ -80,15 +80,15 @@ homeBox.innerHTML=`
    <div class="box">
         <header>
         <img  id="mode" src="${bedtime}" alt="dark mode">
-           <p><img src="${events}" alt="calendar icon">Calendar events | <img src="${close}" alt="close icon"></p>
-           <p><img src="${view}">View</p>
+           <p id="events"><img src="${events}" alt="calendar icon">Calendar events | <img src="${close}" alt="close icon"></p>
+           <p id="view"><img src="${view}">View</p>
         </header>
         <div id="container">
             <h1>Today</h1>
-            <p id="taskCounter"></p>
+            <p id="taskCounter"><img src="${checkCircle}">task</p>
             <div id="newTodo">
-              <div class="task"><img src="${grig2}">Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.</div>
-             <ul></ul>
+              <div class="task"><img src="${grig2}"><input type="radio" id="radio" font-size="20px">Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.</div>
+            <ul class="hidden-icons"></ul>
                <p>inbox<img src="${inbox}"></p>
                
 
@@ -117,10 +117,10 @@ let list = document.createElement("li");
 
 class Theme {
 
-  constructor(name,list,list1,){
+  constructor(name,list){
   this.name = name;
-  this.list = list;
-  this.list1 = list1;
+  this.list = [];
+  
   }
  callTaskBtn(){
     addTaskBtn();
@@ -135,7 +135,7 @@ const routines = new Theme("Routines","Do a weekly review of my tasks and goals"
  
 const hiddenIcons = document .querySelector(".task");
 hiddenIcons.addEventListener("mouseover", (e)=>{
-  const icons = document.createElement("ul");
+  const icons = document.querySelector(".hidden-icons");
   // <ul id="task-icons">
   // <li><img src="${writeIcon}" ></li>
   // <li><img src="${today}" ></li>
