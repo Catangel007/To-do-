@@ -127,7 +127,7 @@ img,picture,video,canvas,svg{
     height: calc(0.80rem + 1.5vh);
     width: calc(90px + 1.5vh);
      position: relative;
-    left:90%;
+    left:70%;
     background-color: rgb(231, 211, 165);
     border-radius: 5px;
     text-align: center;
@@ -326,6 +326,7 @@ justify-content: center;
 .box header #mode,.box header p{
    position: relative;
    left: 10%;
+  
 
 }
 
@@ -384,3 +385,6 @@ justify-content: center;
 }
 
 
+.box header #mode img,.box header #events img, .box header #view img{
+  bottom: 5px;
+}

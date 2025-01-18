@@ -7,10 +7,10 @@ import orange from "../images/orange.png";
 import add_circle from "../images/add_circle.svg";
 import add from "../images/add.svg";
 import search from "../images/search.svg";
-import arrowDown from "../images/arrow-down.svg";
+
 import grig2 from "../images/grig2.svg";
 import hidden from "../images/more_horiz.svg";
-import flag from "../images/sports_score.svg";
+
 import thumbnail from "../images/thumbnail.svg";
 import today from "../images/today.svg";
 import checkCircle from "../images/check_circle.svg";
@@ -41,6 +41,7 @@ import playingCards from "../images/playing_cards.svg";
    import {upcomingPage} from "./upcoming.js";
    import {animationPage} from "./animation.js";
    import {filtersPage} from "./filters.js";
+   import { addTaskPage }  from "./addtask.js";
 
  export function homePage(){
     const content = document.querySelector("body");
@@ -80,7 +81,7 @@ homeBox.innerHTML=`
    <div class="box">
         <header>
         <img  id="mode" src="${bedtime}" alt="dark mode">
-           <p id="events"><img src="${events}" alt="calendar icon">Calendar events | <img src="${close}" alt="close icon"></p>
+           <p id="events"><img src="${events}" alt="calendar icon">Calendar events  | <img src="${close}" alt="close icon"></p>
            <p id="view"><img src="${view}">View</p>
         </header>
         <div id="container">
@@ -186,6 +187,11 @@ hiddenIcons.addEventListener("mouseover", (e)=>{
 
 
 })
+
+   const addBtn = document. querySelector("#container button");
+
+   addBtn.addEventListener("click",()=>addTaskPage())
+
 
 
  }
