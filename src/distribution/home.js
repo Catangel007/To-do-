@@ -92,7 +92,7 @@ homeBox.innerHTML=`
             <div id="newTodo">
               <div class="task">
               <img src="${grig2}">
-              <input type="radio" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
+              <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
               </div>
             <ul class="hidden-icons"></ul>
                <p id="inbox">inbox<img src="${inbox}"></p>
@@ -114,12 +114,12 @@ homeBox.innerHTML=`
 let list = document.createElement("li");
 
 
- function addTaskBtn (){
-    const addTaskBtn = document.createElement("button");
-    addTaskBtn.innerHTML=`<img src="${add_circle}">Add Task`;
-  return addTaskBtn;
+//  function addTaskBtn (){
+//     const addTaskBtn = document.createElement("button");
+//     addTaskBtn.innerHTML=`<img src="${add_circle}">Add Task`;
+//   return addTaskBtn;
     
-  }
+//   }
 
 class Theme {
 
@@ -188,7 +188,7 @@ hiddenIcons.addEventListener("mouseover", (e)=>{
 
 })
 
-   const addBtn = document. querySelector("#container button");
+   const addBtn = document. querySelector(".box button");
 
    addBtn.addEventListener("click",()=>addTaskPage())
 

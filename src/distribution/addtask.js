@@ -12,7 +12,8 @@ export function addTaskPage(){
 
 
   const taskBox = document.createElement("div");
- taskBox.add.classlist("task-box")
+ taskBox.setAttribute("class","task-box");
+
 taskBox.innerHTML =`
 <form>
 <input type="text" name="chores" id="chores" placeholder="Send Homework by Thursday at 6pm">

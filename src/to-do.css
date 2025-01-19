@@ -363,6 +363,7 @@ justify-content: center;
   margin-right: 5px;
   position: relative;
   top: 4px;
+  border-radius: 10px;
 }
 
 .box #container p{
@@ -382,9 +383,4 @@ justify-content: center;
 .box button{
   border: 0;
   background-color: white;
-}
-
-
-.box header #mode img,.box header #events img, .box header #view img{
-  bottom: 5px;
 }
