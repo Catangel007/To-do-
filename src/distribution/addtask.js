@@ -9,10 +9,10 @@ import alarm from "../images/alarm.svg";
 
 export function addTaskPage(){
 
- const content = document.querySelector(".box");
+ const content = document.querySelector("body");
 
 
-  const taskBox = document.createElement("div");
+  const taskBox = document.querySelector("#container");
  taskBox.setAttribute("class","task-box");
 
 taskBox.innerHTML =`

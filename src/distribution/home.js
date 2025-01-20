@@ -151,6 +151,7 @@ hiddenIcons.addEventListener("mouseenter", (e)=>{
   // <li><img src="${hidden}" ></Li>
   //    </ul>
  hiddenIcons.appendChild(icons);
+
   const l1 = document.createElement("li"); 
       let image1 = document.createElement("img")
       image1.src = writeIcon;
@@ -178,7 +179,7 @@ hiddenIcons.addEventListener("mouseenter", (e)=>{
               image2.src = deleteIcon;
               l2.appendChild(image2)
               
-      })
+      },{once:true})
       
 
   icons.appendChild(l1);
@@ -186,15 +187,15 @@ hiddenIcons.addEventListener("mouseenter", (e)=>{
   icons.appendChild(l3);
   icons.appendChild(l4);
 
-
+ return icons;
 
 })
 
 
 hiddenIcons.addEventListener("mouseleave", (e)=>{
-icons.textContent="";
-  hiddenIcons.removeChild(icons)
-})
+  icons.textContent="";
+    hiddenIcons.removeChild(icons)
+  },{once:true})
 
    const addBtn = document. querySelector(".box button");
    
@@ -204,6 +205,12 @@ icons.textContent="";
 
     addTaskPage()})
 
+ const pages = [inboxPage,searchPage,todayPage,upcomingPage,filtersPage];
 
 
+
+// function to play orange animation.
+ function playAnimation(){
+  animationPage()
+ }
  }
