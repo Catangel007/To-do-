@@ -9,27 +9,27 @@ import alarm from "../images/alarm.svg";
 
 export function addTaskPage(){
 
- const content = document.querySelector("body");
+ const content = document.querySelector("#container");
 
 
-  const taskBox = document.querySelector("#container");
+  const taskBox = document.createElement("div");
  taskBox.setAttribute("class","task-box");
-
+//  content.showPopover(taskBox);
 taskBox.innerHTML =`
 <form>
 <input type="text" name="chores" id="chores" placeholder="Send Homework by Thursday at 6pm">
 <input type="text" name="description" id="description" placeholder="Description">
-<p>
+<p id="section">
 <button><img src="${today}"> Today <img src="${close}"></button>
 <button><img src="${flag}"> Priority </button>
 <button><img src="${alarm}"> Reminders </button>
 <button><img src="${hidden}"></button>
 </p><hr>
-<p>
+<p id="close-section">
 <button><img src="${inbox}"> inbox <img src="${arrowDown}"></button>
 <p>
-<button type="reset">Cancel</button>
-<button type="button">Add Task</button>
+<button id="cancel-btn "type="reset">Cancel</button>
+<button id"add-btn" type="button">Add Task</button>
 </p>
 </p>
 
@@ -38,6 +38,7 @@ taskBox.innerHTML =`
 
 
 `
+content.appendChild(taskBox);
 
 
 }

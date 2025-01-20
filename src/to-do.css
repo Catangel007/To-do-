@@ -384,3 +384,45 @@ justify-content: center;
   border: 0;
   background-color: white;
 }
+
+.task-box{
+  border: 1px solid black;
+  border-radius: 20px;
+  height: 12rem;
+  width: 60vw;
+}
+
+
+.task-box input{
+  border: none;
+ font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+ font-size: 20px;
+ padding: 0%;
+}
+
+.task-box p#section button{
+border: 1px solid rgb(178, 176, 176);
+border-radius: 5px;
+}
+
+.task-box p#section:first-child{
+  color: green;
+}
+
+.task-box p#close-section{
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-box p #cancel-btn{
+  border: none;
+  background-color: rgb(223, 221, 221);
+  border-radius: 5px;
+}
+
+.task-box p #add-btn{
+  border: none;
+  background-color: rgb(170, 106, 106);
+  border-radius: 5px;
+  color: white;
+}

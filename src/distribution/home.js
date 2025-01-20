@@ -205,10 +205,12 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
     addTaskPage()})
 
- const pages = [inboxPage,searchPage,todayPage,upcomingPage,filtersPage];
 
+    let pageContainer ={
+  pages : [inboxPage,searchPage,todayPage,upcomingPage,filtersPage],
 
-
+  
+}
 // function to play orange animation.
  function playAnimation(){
   animationPage()
