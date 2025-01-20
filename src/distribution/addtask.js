@@ -5,6 +5,7 @@ import close from "../images/close.svg";
 import today from "../images/today.svg";
 import hidden from "../images/more_horiz.svg";
 import inbox from "../images/inbox.svg";
+import alarm from "../images/alarm.svg";
 
 export function addTaskPage(){
 

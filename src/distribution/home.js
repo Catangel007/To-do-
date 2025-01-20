@@ -43,6 +43,8 @@ import playingCards from "../images/playing_cards.svg";
    import {filtersPage} from "./filters.js";
    import { addTaskPage }  from "./addtask.js";
 
+
+
  export function homePage(){
     const content = document.querySelector("body");
 
@@ -140,7 +142,7 @@ const routines = new Theme("Routines","Do a weekly review of my tasks and goals"
 // takes care of hidden icons
  
 const hiddenIcons = document .querySelector(".task");
-hiddenIcons.addEventListener("mouseover", (e)=>{
+hiddenIcons.addEventListener("mouseenter", (e)=>{
   const icons = document.querySelector(".hidden-icons");
   // <ul id="task-icons">
   // <li><img src="${writeIcon}" ></li>
@@ -148,7 +150,7 @@ hiddenIcons.addEventListener("mouseover", (e)=>{
   // <li><img src="${chatBubble}" ></Li>
   // <li><img src="${hidden}" ></Li>
   //    </ul>
- hiddenIcons.appendChild("icons");
+ hiddenIcons.appendChild(icons);
   const l1 = document.createElement("li"); 
       let image1 = document.createElement("img")
       image1.src = writeIcon;
@@ -165,7 +167,7 @@ hiddenIcons.addEventListener("mouseover", (e)=>{
   let image4 = document.createElement("img")
       image4.src = hidden;
       l4.appendChild(image4)
-      image4.addEventListener("mouseover",()=>{
+      image4.addEventListener("mouseenter",()=>{
         const moreHidden = document.createElement("ul");
                 const l1 = document.createElement("li"); 
               let image1 = document.createElement("img")
@@ -188,9 +190,19 @@ hiddenIcons.addEventListener("mouseover", (e)=>{
 
 })
 
-   const addBtn = document. querySelector(".box button");
 
-   addBtn.addEventListener("click",()=>addTaskPage())
+hiddenIcons.addEventListener("mouseleave", (e)=>{
+icons.textContent="";
+  hiddenIcons.removeChild(icons)
+})
+
+   const addBtn = document. querySelector(".box button");
+   
+
+   addBtn.addEventListener("click",()=>{
+    console.log("please not touch me dammit!!");
+
+    addTaskPage()})
 
 
 
