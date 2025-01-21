@@ -20,16 +20,16 @@ taskBox.innerHTML =`
 <input type="text" name="chores" id="chores" placeholder="Send Homework by Thursday at 6pm">
 <input type="text" name="description" id="description" placeholder="Description">
 <p id="section">
-<button><img src="${today}"> Today <img src="${close}"></button>
-<button><img src="${flag}"> Priority </button>
-<button><img src="${alarm}"> Reminders </button>
-<button><img src="${hidden}"></button>
+<button><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
+<button><img src="${flag}" alt="flag icon"> Priority </button>
+<button><img src="${alarm}" alt"alarm icon"> Reminders </button>
+<button><img src="${hidden}" alt="hidden icon"></button>
 </p><hr>
 <p id="close-section">
-<button><img src="${inbox}"> inbox <img src="${arrowDown}"></button>
+<button><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
 <p>
-<button id="cancel-btn "type="reset">Cancel</button>
-<button id"add-btn" type="button">Add Task</button>
+<button class="cancel-btn "type="reset">Cancel</button>
+<button class"add-btn" type="button">Add Task</button>
 </p>
 </p>
 
