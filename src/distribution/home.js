@@ -142,8 +142,9 @@ const routines = new Theme("Routines","Do a weekly review of my tasks and goals"
 // takes care of hidden icons
  
 const hiddenIcons = document .querySelector(".task");
-hiddenIcons.addEventListener("mouseenter", (e)=>{
-  const icons = document.querySelector(".hidden-icons");
+const icons = document.querySelector(".hidden-icons");
+hiddenIcons.addEventListener("mouseenter", ()=>{
+ 
   // <ul id="task-icons">
   // <li><img src="${writeIcon}" ></li>
   // <li><img src="${today}" ></li>

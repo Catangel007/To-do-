@@ -17,21 +17,21 @@ export function addTaskPage(){
 //  content.showPopover(taskBox);
 taskBox.innerHTML =`
 <form>
-<input type="text" name="chores" id="chores" placeholder="Send Homework by Thursday at 6pm">
-<input type="text" name="description" id="description" placeholder="Description">
+<input type="text" name="chores" id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
+<input type="text" name="description" id="description" placeholder="Description"></input>
 <p id="section">
 <button><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
 <button><img src="${flag}" alt="flag icon"> Priority </button>
-<button><img src="${alarm}" alt"alarm icon"> Reminders </button>
+<button><img src="${alarm}" alt="alarm icon"> Reminders </button>
 <button><img src="${hidden}" alt="hidden icon"></button>
 </p><hr>
-<p id="close-section">
+<div class="close-section">
 <button><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
-<p>
+<div>
 <button class="cancel-btn "type="reset">Cancel</button>
-<button class"add-btn" type="button">Add Task</button>
-</p>
-</p>
+<button class="add-btn" type="submit">Add Task</button>
+</div>
+</div>
 
 </form>
 
