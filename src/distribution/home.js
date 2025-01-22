@@ -62,17 +62,17 @@ navBox.innerHTML=`
  <div class="nav">
         <h3>Name  <img id="bell" src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
         <ul>
-            <li><img src="${add_circle}" alt="add task icon">Add Task</li>
-            <li><img src="${search}" alt="search icon">Search</li>
-            <li><img src="${inbox}" alt="inbox icon">inbox</li>
-            <li><img src="${calendar_today}" alt="add task today icon">Today</li>
-            <li><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
-            <li><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
+            <li id="nav1"><img src="${add_circle}" alt="add task icon">Add Task</li>
+            <li id="nav2"><img src="${search}" alt="search icon">Search</li>
+            <li id="nav3"><img src="${inbox}" alt="inbox icon">inbox</li>
+            <li id="nav4"><img src="${calendar_today}" alt="add task today icon">Today</li>
+            <li id="nav5"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
+            <li id="nav6"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
         <ul id="projects"> My Projects
-            <li class="margin"><img src="${hashtag}" alt="">Home</li>
-            <li ><img src="${add}" alt="add team icon">Add a Team</li>
-            <li ><img src="${playingCards}" alt="template icon"> Browse Templates</li>
+            <li id="nav7" class="margin"><img src="${hashtag}" alt="">Home</li>
+            <li id="nav8"><img src="${add}" alt="add team icon">Add a Team</li>
+            <li id="nav9"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
         </ul>
     </div>
 
@@ -206,12 +206,17 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
     addTaskPage()})
 
-
-    let pageContainer ={
-  pages : [inboxPage,searchPage,todayPage,upcomingPage,filtersPage],
-
-  
-}
+    function addNavListener(){
+      const navList= document.querySelectorAll(".nav li");
+      
+      navList.addEventListener("click",(e)=>{
+         console.log("i am a nav page baby!");
+          let list = EventTarget.id;
+       return list;
+      })
+     return list;
+    }addNavListener();
+   
 // function to play orange animation.
  function playAnimation(){
   animationPage()
