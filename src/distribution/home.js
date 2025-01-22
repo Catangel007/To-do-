@@ -208,7 +208,7 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
     function addNavListener(){
       const navList= document.querySelectorAll(".nav li");
-      
+      typeof(navList);
       navList.addEventListener("click",(e)=>{
          console.log("i am a nav page baby!");
           let list = EventTarget.id;
