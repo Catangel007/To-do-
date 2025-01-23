@@ -42,6 +42,8 @@ import playingCards from "../images/playing_cards.svg";
    import {animationPage} from "./animation.js";
    import {filtersPage} from "./filters.js";
    import { addTaskPage }  from "./addtask.js";
+   import { teamPage }  from "./team.js";
+   import { templatePage }  from "./template.js";
 
 
 
@@ -62,17 +64,17 @@ navBox.innerHTML=`
  <div class="nav">
         <h3>Name  <img id="bell" src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
         <ul>
-            <li id="nav1"><img src="${add_circle}" alt="add task icon">Add Task</li>
-            <li id="nav2"><img src="${search}" alt="search icon">Search</li>
-            <li id="nav3"><img src="${inbox}" alt="inbox icon">inbox</li>
-            <li id="nav4"><img src="${calendar_today}" alt="add task today icon">Today</li>
-            <li id="nav5"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
-            <li id="nav6"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
+            <li id="1"><img src="${add_circle}" alt="add task icon">Add Task</li>
+            <li id="2"><img src="${search}" alt="search icon">Search</li>
+            <li id="3"><img src="${inbox}" alt="inbox icon">inbox</li>
+            <li id="4"><img src="${calendar_today}" alt="add task today icon">Today</li>
+            <li id="5"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
+            <li id="6"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
         <ul id="projects"> My Projects
-            <li id="nav7" class="margin"><img src="${hashtag}" alt="">Home</li>
-            <li id="nav8"><img src="${add}" alt="add team icon">Add a Team</li>
-            <li id="nav9"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
+            <li id="7" class="margin"><img src="${hashtag}" alt="">Home</li>
+            <li id="8"><img src="${add}" alt="add team icon">Add a Team</li>
+            <li id="9"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
         </ul>
     </div>
 
@@ -201,22 +203,39 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
    const addBtn = document. querySelector(".box button");
    
 
-   addBtn.addEventListener("click",()=>{
-    console.log("please not touch me dammit!!");
 
-    addTaskPage()})
 
-    function addNavListener(){
-      const navList= document.querySelectorAll(".nav li");
-      typeof(navList);
-      navList.addEventListener("click",(e)=>{
-         console.log("i am a nav page baby!");
-          let list = EventTarget.id;
-       return list;
-      })
-     return list;
-    }addNavListener();
+
+// adds eventListeners to page and displays them
+   function addNavListener() {
+    const navList = document.querySelectorAll("li");
+    
+    navList.forEach((nav) => {
+      nav.addEventListener("click", () => {
+        alert(nav.id);
+        displayPage(nav.id);
+      });
+    });
+  }
+  
+  function displayPage(list) {
+    const pages = [
+      addTaskPage, searchPage, inboxPage, 
+      todayPage, upcomingPage, filtersPage, 
+      homePage, teamPage, templatePage
+    ];
+    
+    // Assuming list is a string that can be converted to an index
+    const pageIndex = Number(list);
+    if (pageIndex >= 0 && pageIndex < pages.length) {
+      pages[pageIndex]();
+    }
+  }
+  
+  addNavListener();
    
+
+    
 // function to play orange animation.
  function playAnimation(){
   animationPage()
