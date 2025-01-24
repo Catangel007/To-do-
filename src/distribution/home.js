@@ -64,17 +64,17 @@ navBox.innerHTML=`
  <div class="nav">
         <h3>Name  <img id="bell" src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
         <ul>
-            <li id="1"><img src="${add_circle}" alt="add task icon">Add Task</li>
-            <li id="2"><img src="${search}" alt="search icon">Search</li>
-            <li id="3"><img src="${inbox}" alt="inbox icon">inbox</li>
-            <li id="4"><img src="${calendar_today}" alt="add task today icon">Today</li>
-            <li id="5"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
-            <li id="6"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
+            <li id="0"><img src="${add_circle}" alt="add task icon">Add Task</li>
+            <li id="1"><img src="${search}" alt="search icon">Search</li>
+            <li id="2"><img src="${inbox}" alt="inbox icon">inbox</li>
+            <li id="3"><img src="${calendar_today}" alt="add task today icon">Today</li>
+            <li id="4"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
+            <li id="5"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
         <ul id="projects"> My Projects
-            <li id="7" class="margin"><img src="${hashtag}" alt="">Home</li>
-            <li id="8"><img src="${add}" alt="add team icon">Add a Team</li>
-            <li id="9"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
+            <li id="6" class="margin"><img src="${hashtag}" alt="">Home</li>
+            <li id="7"><img src="${add}" alt="add team icon">Add a Team</li>
+            <li id="8"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
         </ul>
     </div>
 
@@ -182,7 +182,7 @@ hiddenIcons.addEventListener("mouseenter", ()=>{
               image2.src = deleteIcon;
               l2.appendChild(image2)
               
-      },{once:true})
+      })
       
 
   icons.appendChild(l1);
@@ -198,7 +198,7 @@ hiddenIcons.addEventListener("mouseenter", ()=>{
 hiddenIcons.addEventListener("mouseleave", (e)=>{
   icons.textContent="";
     hiddenIcons.removeChild(icons)
-  },{once:true})
+  })
 
    const addBtn = document. querySelector(".box button");
    
@@ -212,7 +212,6 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
     
     navList.forEach((nav) => {
       nav.addEventListener("click", () => {
-        alert(nav.id);
         displayPage(nav.id);
       });
     });

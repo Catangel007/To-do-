@@ -234,8 +234,15 @@ img,picture,video,canvas,svg{
   height: 20px;
 }
 
+.hidden-icons{
+  display: flex;
+font-size: 20px;
+  justify-content: end;
+}
 
-
+.hidden-icons img{
+  padding: 2px;
+}
 .navBox{
 background-color: rgb(246, 244, 242);
 width: 20rem;
