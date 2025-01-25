@@ -1,5 +1,10 @@
-
-
+import bedtime from "../images/dark_mode.svg";
+import close from "../images/close.svg";
+import events from "../images/calendar_add.svg";
+import view from "../images/tune.svg";
+import inbox from "../images/inbox.svg";
+import add from "../images/add.svg";
+import grig2 from "../images/grig2.svg";
 
 export  function inboxPage (){
 
@@ -9,6 +14,7 @@ export  function inboxPage (){
 
   const inBox = document.querySelector("#container");
 
+  inBox.innerHTML = "";
   inBox.innerHTML =`
    <div class="box">
          <header>
@@ -17,17 +23,37 @@ export  function inboxPage (){
             <p id="view"><img src="${view}">View</p>
          </header>
          <div id="container">
-             <h1>Today</h1>
-             <p id="taskCounter">
-             <img src="${checkCircle}">task
-             </p>
+             <h1>Inbox</h1>
+             
              <div id="newTodo">
                <div class="task">
                <img src="${grig2}">
                <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
                </div>
-             <ul class="hidden-icons"></ul>
-                <p id="inbox">inbox<img src="${inbox}"></p>
+             
+                <p id="today-inbox"><img src="${inbox}">Today</p>
+               
+
+             </div><hr>
+
+              <div id="newTodo">
+               <div class="task">
+               <img src="${grig2}">
+               <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
+               </div>
+             
+                <p id="tomorrow-inbox"><img src="${inbox}">Tomorrow</p>
+               
+
+             </div><hr>
+
+              <div id="newTodo">
+               <div class="task">
+               <img src="${grig2}">
+               <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
+               </div>
+             
+                <p id="days-inbox"><img src="${inbox}">Wednesday</p>
                
 
              </div><hr>

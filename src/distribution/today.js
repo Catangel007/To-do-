@@ -1,6 +1,12 @@
 
 
-
+import flag from "../images/sports_score.svg";
+import arrowDown from "../images/arrow-down.svg";
+import close from "../images/close.svg";
+import today from "../images/today.svg";
+import hidden from "../images/more_horiz.svg";
+import inbox from "../images/inbox.svg";
+import alarm from "../images/alarm.svg";
 
 export  function todayPage (){
 
@@ -16,7 +22,7 @@ export  function todayPage (){
              <p id="events"><img src="${events}" alt="calendar icon">Calendar events  | <img src="${close}" alt="close icon"></p>
              <p id="view"><img src="${view}">View</p>
           </header>
-          <div id="container">
+          <dialog open id="container">
               <h1>Today</h1>
               <p id="taskCounter">
               <img src="${checkCircle}">task
@@ -32,7 +38,7 @@ export  function todayPage (){
   
               </div><hr>
               <button><img src="${add}" alt="">Add Task</button>
-          </div> 
+          </dialog> 
              
            
       </div>
