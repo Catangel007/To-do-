@@ -15,17 +15,8 @@ export  function searchPage () {
 
    
     searchBox.innerHTML =`
-    <dialog open class="box">
-    
-         
-            
-             <input type="text" name="search" id="search" img="${search}"placeholder="Search Items">
-            
-
-
-         
-             
-           
+    <dialog open class="modal"> 
+             <input type="text" name="search" id="search" img="${search}"placeholder="Search Items">  
       </dialog>
       `
 }

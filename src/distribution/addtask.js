@@ -40,5 +40,13 @@ taskBox.innerHTML =`
 `
 content.appendChild(taskBox);
 
+const cancelBtn =document.querySelector(".cancel-btn");
+cancelBtn.addEventListener("click",()=>{
+    content.removeChild(taskBox);
+})
 
+const addBtn = document.querySelector(".add-btn");
+addBtn.addEventListener("click",()=>{
+    let list = taskBox.value;
+})
 }

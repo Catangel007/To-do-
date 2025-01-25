@@ -15,34 +15,29 @@ export  function todayPage (){
 
     const todayBox = document.querySelector("#container");
 
-    upcomingBox.innerHTML =`
-    <div class="box">
-          <header>
-          <img  id="mode" src="${bedtime}" alt="dark mode">
-             <p id="events"><img src="${events}" alt="calendar icon">Calendar events  | <img src="${close}" alt="close icon"></p>
-             <p id="view"><img src="${view}">View</p>
-          </header>
-          <dialog open id="container">
-              <h1>Today</h1>
-              <p id="taskCounter">
-              <img src="${checkCircle}">task
-              </p>
-              <div id="newTodo">
-                <div class="task">
-                <img src="${grig2}">
-                <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
-                </div>
-              <ul class="hidden-icons"></ul>
-                 <p id="inbox">inbox<img src="${inbox}"></p>
-                
-  
-              </div><hr>
-              <button><img src="${add}" alt="">Add Task</button>
-          </dialog> 
-             
-           
-      </div>
-      `
-    //     </div>
-
+   todayBox.innerHTML =`
+   <dialog open class="modal">
+   <form>
+   <input type="text" name="chores" id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
+   <input type="text" name="description" id="description" placeholder="Description"></input>
+   <p id="section">
+   <button><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
+   <button><img src="${flag}" alt="flag icon"> Priority </button>
+   <button><img src="${alarm}" alt="alarm icon"> Reminders </button>
+   <button><img src="${hidden}" alt="hidden icon"></button>
+   </p><hr>
+   <div class="close-section">
+   <button><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
+   <div>
+   <button class="cancel-btn "type="reset">Cancel</button>
+   <button class="add-btn" type="submit">Add Task</button>
+   </div>
+   </div>
+   
+   </form>
+   
+   </dialog>
+   
+   `
+content.appendChild(todayBox);
 }

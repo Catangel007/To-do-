@@ -59,6 +59,7 @@ content.appendChild(homeBox);
 navBox.setAttribute("class","navBox");
 homeBox.setAttribute("class","homeBox");
 
+navBox.innerHTML="";
 navBox.innerHTML=`
 
  <div class="nav">
@@ -117,13 +118,6 @@ homeBox.innerHTML=`
  const body = document.createElement("ul");
 let list = document.createElement("li");
 
-
-//  function addTaskBtn (){
-//     const addTaskBtn = document.createElement("button");
-//     addTaskBtn.innerHTML=`<img src="${add_circle}">Add Task`;
-//   return addTaskBtn;
-    
-//   }
 
 class Theme {
 

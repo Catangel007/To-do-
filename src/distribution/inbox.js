@@ -17,11 +17,6 @@ export  function inboxPage (){
   inBox.innerHTML = "";
   inBox.innerHTML =`
    <div class="box">
-         <header>
-         <img  id="mode" src="${bedtime}" alt="dark mode">
-            <p id="events"><img src="${events}" alt="calendar icon">Calendar events  | <img src="${close}" alt="close icon"></p>
-            <p id="view"><img src="${view}">View</p>
-         </header>
          <div id="container">
              <h1>Inbox</h1>
              
