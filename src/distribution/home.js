@@ -119,12 +119,15 @@ homeBox.innerHTML=`
 let list = document.createElement("li");
 
 
-class Theme {
+class TodoGen {
 
-  constructor(name,list){
-  this.name = name;
-  this.list = [];
-  
+  constructor(title,description,dueDate,priority,notes,checklist){
+  this.title = title,
+  this.description = description,
+  this.dueDate = dueDate,
+  this.priority= priority,
+  this.notes = notes,
+  this.checklist = checklist
   }
  callTaskBtn(){
     addTaskBtn();
@@ -132,8 +135,14 @@ class Theme {
   
 }
 
-const routines = new Theme("Routines","Do a weekly review of my tasks and goals","Add more personal routines");
+const routines = new TodoGen("Routines","Do a weekly review of my tasks and goals","Add more personal routines");
 
+
+const projects = [today,tomorrow,monday,tuesday,wednesday,thursday,friday,saturday,sunday,custom];
+
+// create new todos
+// setting todos ad complete
+// changing todo priority
 
 // takes care of hidden icons
  
