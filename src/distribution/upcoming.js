@@ -34,4 +34,6 @@ export  function upcomingPage (){
          
     </div>
     `
+
+    content.appendChild(upcomingBox);
 }

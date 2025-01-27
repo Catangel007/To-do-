@@ -44,14 +44,13 @@ import playingCards from "../images/playing_cards.svg";
    import { addTaskPage }  from "./addtask.js";
    import { teamPage }  from "./team.js";
    import { templatePage }  from "./template.js";
-
-
+   import { calendar } from "./calendar.js";
+   import {getDay} from "./date-fns";
 
  export function homePage(){
     const content = document.querySelector("body");
-
-const navBox = document.createElement("div");
-const homeBox = document.createElement("div");
+    const navBox = document.createElement("div");
+    const homeBox = document.createElement("div");
 
 content.appendChild(navBox);
 content.appendChild(homeBox);
@@ -115,10 +114,8 @@ homeBox.innerHTML=`
 
 
 
- const body = document.createElement("ul");
-let list = document.createElement("li");
 
-
+// create new todos
 class TodoGen {
 
   constructor(title,description,dueDate,priority,notes,checklist){
@@ -138,24 +135,20 @@ class TodoGen {
 const routines = new TodoGen("Routines","Do a weekly review of my tasks and goals","Add more personal routines");
 
 
-const projects = [today,tomorrow,monday,tuesday,wednesday,thursday,friday,saturday,sunday,custom];
+let projects = ["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
 
-// create new todos
+
+
 // setting todos ad complete
 // changing todo priority
 
+
+
 // takes care of hidden icons
- 
 const hiddenIcons = document .querySelector(".task");
 const icons = document.querySelector(".hidden-icons");
 hiddenIcons.addEventListener("mouseenter", ()=>{
  
-  // <ul id="task-icons">
-  // <li><img src="${writeIcon}" ></li>
-  // <li><img src="${today}" ></li>
-  // <li><img src="${chatBubble}" ></Li>
-  // <li><img src="${hidden}" ></Li>
-  //    </ul>
  hiddenIcons.appendChild(icons);
 
   const l1 = document.createElement("li"); 
