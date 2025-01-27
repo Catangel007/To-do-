@@ -34,7 +34,6 @@ import playingCards from "../images/playing_cards.svg";
 
 
 
-
    import {inboxPage} from "./inbox.js";
    import {searchPage} from "./search.js";
    import {todayPage} from "./today.js";
@@ -44,8 +43,8 @@ import playingCards from "../images/playing_cards.svg";
    import { addTaskPage }  from "./addtask.js";
    import { teamPage }  from "./team.js";
    import { templatePage }  from "./template.js";
-   import { calendar } from "./calendar.js";
-   import {getDay} from "./date-fns";
+   import { calendarPage } from "./calendar.js";
+   
 
  export function homePage(){
     const content = document.querySelector("body");
@@ -132,10 +131,10 @@ class TodoGen {
   
 }
 
-const routines = new TodoGen("Routines","Do a weekly review of my tasks and goals","Add more personal routines");
+// let routines = new TodoGen("Routines","Do a weekly review of my tasks and goals","Add more personal routines");
 
 
-let projects = ["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
+// let projects = ["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
 
 
 
@@ -154,10 +153,22 @@ hiddenIcons.addEventListener("mouseenter", ()=>{
   const l1 = document.createElement("li"); 
       let image1 = document.createElement("img")
       image1.src = writeIcon;
+      writeIcon.addEventListener("click",()=>{ 
+        const note = document.createElement("textarea");
+        notes = note.value;
+
+       })
       l1.appendChild(image1)
   const l2 = document.createElement("li");
   let image2 = document.createElement("img")
       image2.src = today;
+      today.addEventListener("click",()=>{ 
+
+        const box = document.createElement("div");
+          box.calendarPage();
+        dueDate = box.value;
+
+       })
       l2.appendChild(image2)
   const l3 = document.createElement("li");
   let image3 = document.createElement("img")

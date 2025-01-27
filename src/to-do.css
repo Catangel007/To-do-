@@ -501,6 +501,8 @@ h1 {
 h3 {
   font-weight: 600;
 } */
+
+
 .calendar {
   margin: 0 auto;
   width: clamp(320px, 400px, 90%);

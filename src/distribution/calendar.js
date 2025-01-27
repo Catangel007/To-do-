@@ -2,7 +2,7 @@
 
 
 
-export function calendar(){
+export function calendarPage(){
 
     const content = document.querySelector("body");
     const box = document.querySelector("#container");
