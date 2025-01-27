@@ -40,7 +40,7 @@ import playingCards from "../images/playing_cards.svg";
    import {upcomingPage} from "./upcoming.js";
    import {animationPage} from "./animation.js";
    import {filtersPage} from "./filters.js";
-   import { addTaskPage }  from "./addtask.js";
+   import { addTaskPage }  from "./addTask.js";
    import { teamPage }  from "./team.js";
    import { templatePage }  from "./template.js";
    import { calendarPage } from "./calendar.js";
@@ -111,7 +111,8 @@ homeBox.innerHTML=`
 
 `
 
-
+ const plusBtn = document.querySelector("button");
+ plusBtn.addEventListener("click",addTaskPage);
 
 
 // create new todos

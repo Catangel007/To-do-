@@ -20,10 +20,10 @@ taskBox.innerHTML =`
 <input type="text" name="chores" id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
 <input type="text" name="description" id="description" placeholder="Description"></input>
 <p id="section">
-<button><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
-<button><img src="${flag}" alt="flag icon"> Priority </button>
-<button><img src="${alarm}" alt="alarm icon"> Reminders </button>
-<button><img src="${hidden}" alt="hidden icon"></button>
+<button class="today-btn" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
+<button class="priority-btn"><img src="${flag}" alt="flag icon"> Priority </button>
+<button class="remind-btn"><img src="${alarm}" alt="alarm icon"> Reminders </button>
+<button class="more-btn"><img src="${hidden}" alt="hidden icon"></button>
 </p><hr>
 <div class="close-section">
 <button><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
@@ -49,4 +49,48 @@ const addBtn = document.querySelector(".add-btn");
 addBtn.addEventListener("click",()=>{
     let list = taskBox.value;
 })
+
+
+function todayBtnFunc(){
+const todayBtn = document.querySelector(".today-btn");
+
+todayBtn.addEventListener("click",()=>{})
+
+
+
+
+
+
+
+
+
+}todayBtnFunc()
+
+
+function priorityBtnFunc(){
+const priorityBtn = document.querySelector(".priority-btn");
+todayBtn.addEventListener("click",()=>{})
+
+
+
+}priorityBtnFunc()
+
+
+function remindBtnFunc(){
+const remindBtn = document.querySelector(".remind-btn");
+todayBtn.addEventListener("click",()=>{});
+
+
+
+
+}remindBtnFunc()
+
+
+function moreBtnFunc(){
+const moreBtn = document.querySelector(".more-btn");
+todayBtn.addEventListener("click",()=>{});
+
+
+
+}moreBtnFunc()
 }
