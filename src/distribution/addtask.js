@@ -26,7 +26,7 @@ taskBox.innerHTML =`
 <button class="more-btn"><img src="${hidden}" alt="hidden icon"></button>
 </p><hr>
 <div class="close-section">
-<button><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
+<button class="inbox-btn"><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
 <div>
 <button class="cancel-btn "type="reset">Cancel</button>
 <button class="add-btn" type="submit">Add Task</button>
@@ -80,7 +80,7 @@ todayBtn.addEventListener("click",()=>{
 
 function priorityBtnFunc(){
 const priorityBtn = document.querySelector(".priority-btn");
-todayBtn.addEventListener("click",()=>{
+priorityBtn.addEventListener("click",()=>{
 
     const priorityBox = document.createElement("div");
     priorityBox.setAttribute("class","priority-box");
@@ -90,7 +90,7 @@ todayBtn.addEventListener("click",()=>{
       <ul>
       <li>Priority 1</li>
       <li>Priority 2</li>
-      <li>Priority 3/li>
+      <li>Priority 3</li>
       <li>Priority 4</li>
      </ul>
       
@@ -105,7 +105,7 @@ todayBtn.addEventListener("click",()=>{
 
 function remindBtnFunc(){
 const remindBtn = document.querySelector(".remind-btn");
-todayBtn.addEventListener("click",()=>{
+remindBtn.addEventListener("click",()=>{
 
     const remindBox = document.createElement("div");
     remindBox.setAttribute("class","remind-box");
@@ -127,7 +127,7 @@ todayBtn.addEventListener("click",()=>{
 
 function moreBtnFunc(){
 const moreBtn = document.querySelector(".more-btn");
-todayBtn.addEventListener("click",()=>{
+moreBtn.addEventListener("click",()=>{
 
     const moreBox = document.createElement("div");
     moreBox.setAttribute("class","more-box");
@@ -137,7 +137,7 @@ todayBtn.addEventListener("click",()=>{
       <ul>
       <li>Priority 1</li>
       <li>Priority 2</li><hr>
-      <li>Priority 3/li><hr>
+      <li>Priority 3</li><hr>
       <li>Priority 4</li>
      </ul>
       
@@ -145,4 +145,29 @@ todayBtn.addEventListener("click",()=>{
  
 });
 }moreBtnFunc()
+
+
+
+function inboxBtnFunc(){
+    const inboxBtn = document.querySelector(".inbox-btn");
+    inboxBtn.addEventListener("click",()=>{
+    
+        const inboxBox = document.createElement("div");
+        inboxBox.setAttribute("class","inbox-box");
+        inboxBox.innerHTML = `
+        
+          <p><input name="search-project" id="search-project" placeholder="Type a project name"></p>
+          <ul>
+          <li>Inbox</li>
+          <li>My Projects
+          <li>Routines</li>
+          <li>Inspiration</li>
+          </li>
+          
+         </ul>
+          
+        `;
+     
+    });
+    }inboxBtnFunc()
 }

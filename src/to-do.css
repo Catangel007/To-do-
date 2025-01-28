@@ -25,7 +25,9 @@ img,picture,video,canvas,svg{
     color:black;
   }
 
-
+hr{
+  color: #ccc;
+}
   ul{
     list-style: none;
   }
@@ -396,9 +398,9 @@ justify-content: center;
 }
 
 .task-box{
-  border: 1px solid black;
+  border: 1px solid #ccc;
   border-radius: 20px;
-  height: 12rem;
+  height: 10rem;
   width: 60vw;
   position: relative;
   bottom:20px;
@@ -408,7 +410,7 @@ justify-content: center;
 }
 
 
-.task-box input{
+.task-box p{
  font-family: serif;
  font-size: 15px;
  height: 30px;
@@ -419,14 +421,14 @@ justify-content: center;
 
  
 }
-.task-box input#chores{
+.task-box p#chores{
   font-size: 18px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: gray;
 }
 
 .task-box p#section button{
-border: 1px solid rgb(178, 176, 176);
+border: 1px solid #ccc;
 border-radius: 5px;
 height: 2em;
 width: auto;
@@ -453,7 +455,7 @@ width: auto;
  }
 
  .task-box div button.add-btn{
-  background-color: rgb(206, 100, 100);
+  background-color: rgb(222, 164, 164);
   border-radius: 5px;
   height: 2.5em;
   width: 80px;
@@ -473,9 +475,9 @@ width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 50vh;
-  width: 50vw;
-  background-color: orange;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgb(196, 195, 192);
   opacity: 0.75;
  }
 
