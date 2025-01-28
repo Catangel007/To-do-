@@ -1,7 +1,7 @@
 
 
 import orange from "../images/orange.png";
-import backdrop from "../images/desk-supplies.jpg";
+import backdrop from "../images/undraw_stars_e9bi.svg";
 import toggleOff from "../images/toggle_off.svg";
 import toggleOn from "../images/toggle_on.svg";
 import check from "../images/check.svg";

@@ -26,7 +26,8 @@ img,picture,video,canvas,svg{
   }
 
 hr{
-  color: #ccc;
+  
+  border:1px solid #ccc;
 }
   ul{
     list-style: none;
@@ -125,6 +126,9 @@ hr{
     height: calc(20em + 10vh);
     width:calc(20em + 10vw);
     justify-content: center;
+   
+    position: relative;
+    bottom: 60px;
   } 
 
   .display #page-count,.display2 #page-count{
@@ -410,19 +414,19 @@ justify-content: center;
 }
 
 
-.task-box p{
+.task-box input{
  font-family: serif;
  font-size: 15px;
  height: 30px;
  border: none;
  margin: 0;
- position: relative;
- bottom: 20px;
-
- 
+ appearance: none;
+ width:95%;
+ -webkit-appearance: none;
+ -moz-appearance: none;
 }
-.task-box p#chores{
-  font-size: 18px;
+.task-box input#chores{
+  font-size: 15px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: gray;
 }
@@ -468,6 +472,7 @@ width: auto;
   height: 2.5em;
   width: auto;
   margin-left: 8px;
+  background-color: aquamarine;
  }
 
 

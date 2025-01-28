@@ -17,8 +17,8 @@ export function addTaskPage(){
 //  content.showPopover(taskBox);
 taskBox.innerHTML =`
 <form>
-<p id="chores" placeholder="Send Homework by Thursday at 6pm"></p>
-<p id="description" placeholder="Description"></p>
+<input id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
+<input id="description" placeholder="Description"></input>
 <p id="section">
 <button class="today-btn" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
 <button class="priority-btn"><img src="${flag}" alt="flag icon"> Priority </button>
@@ -56,6 +56,7 @@ const todayBtn = document.querySelector(".today-btn");
 
 todayBtn.addEventListener("click",()=>{
    const todayBox = document.createElement("div");
+   
    todayBox.setAttribute("class","today-box");
    todayBox.innerHTML = `
    
@@ -75,6 +76,7 @@ todayBtn.addEventListener("click",()=>{
 
 
 })
+content.appendChild(todayBtn);
 }todayBtnFunc()
 
 
@@ -100,6 +102,7 @@ priorityBtn.addEventListener("click",()=>{
 
 
 })
+content.appendChild(priorityBtn);
 }priorityBtnFunc()
 
 
@@ -122,6 +125,7 @@ remindBtn.addEventListener("click",()=>{
     `;
  
 });
+content.appendChild(remindBtn);
 }remindBtnFunc()
 
 
@@ -144,6 +148,7 @@ moreBtn.addEventListener("click",()=>{
     `;
  
 });
+content.appendChild(moreBtn);
 }moreBtnFunc()
 
 
@@ -169,5 +174,6 @@ function inboxBtnFunc(){
         `;
      
     });
+    content.appendChild(inboxBtn );
     }inboxBtnFunc()
 }

@@ -4,7 +4,7 @@
  import person from "../images/person.svg";
  import business from "../images/briefcase.svg";
  import lightbulb from "../images/lightbulb.svg";
- import backdrop from "../images/57380.jpg";
+ import backdrop from "../images/undraw_before-dawn_8wuh.svg";
 
  import { homePage } from "./home.js";
 
