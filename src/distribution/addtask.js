@@ -17,8 +17,8 @@ export function addTaskPage(){
 //  content.showPopover(taskBox);
 taskBox.innerHTML =`
 <form>
-<input type="text" name="chores" id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
-<input type="text" name="description" id="description" placeholder="Description"></input>
+<p id="chores" placeholder="Send Homework by Thursday at 6pm"></p>
+<p id="description" placeholder="Description"></p>
 <p id="section">
 <button class="today-btn" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
 <button class="priority-btn"><img src="${flag}" alt="flag icon"> Priority </button>
@@ -54,43 +54,95 @@ addBtn.addEventListener("click",()=>{
 function todayBtnFunc(){
 const todayBtn = document.querySelector(".today-btn");
 
-todayBtn.addEventListener("click",()=>{})
+todayBtn.addEventListener("click",()=>{
+   const todayBox = document.createElement("div");
+   todayBox.setAttribute("class","today-box");
+   todayBox.innerHTML = `
+   
+     <p id="date-display"></p><hr>
+     <ul>
+     <li>Tomorrow</li>
+     <li>Later this week</li>
+     <li>This weekend</li>
+     <li>Next week</li>
+     <li>No Date</li><hr>
+     </ul>
+      <div id=""calendar-div></div>
+      <button> Time</button>
+   `;
 
 
 
 
-
-
-
-
-
+})
 }todayBtnFunc()
 
 
 function priorityBtnFunc(){
 const priorityBtn = document.querySelector(".priority-btn");
-todayBtn.addEventListener("click",()=>{})
+todayBtn.addEventListener("click",()=>{
+
+    const priorityBox = document.createElement("div");
+    priorityBox.setAttribute("class","priority-box");
+    priorityBox.innerHTML = `
+    
+      
+      <ul>
+      <li>Priority 1</li>
+      <li>Priority 2</li>
+      <li>Priority 3/li>
+      <li>Priority 4</li>
+     </ul>
+      
+    `;
+ 
+ 
 
 
-
+})
 }priorityBtnFunc()
 
 
 function remindBtnFunc(){
 const remindBtn = document.querySelector(".remind-btn");
-todayBtn.addEventListener("click",()=>{});
+todayBtn.addEventListener("click",()=>{
 
-
-
-
+    const remindBox = document.createElement("div");
+    remindBox.setAttribute("class","remind-box");
+    remindBox.innerHTML = `
+    <h6>Reminders</h6> 
+    <div>
+    <button>Date & time</button>
+    <button>Before task</button>
+    </div>
+    <p>Add a time to the task first</p>
+    <p>
+     <button>Add reminder</button>
+    </p>
+    `;
+ 
+});
 }remindBtnFunc()
 
 
 function moreBtnFunc(){
 const moreBtn = document.querySelector(".more-btn");
-todayBtn.addEventListener("click",()=>{});
+todayBtn.addEventListener("click",()=>{
 
-
-
+    const moreBox = document.createElement("div");
+    moreBox.setAttribute("class","more-box");
+    moreBox.innerHTML = `
+    
+      
+      <ul>
+      <li>Priority 1</li>
+      <li>Priority 2</li><hr>
+      <li>Priority 3/li><hr>
+      <li>Priority 4</li>
+     </ul>
+      
+    `;
+ 
+});
 }moreBtnFunc()
 }
