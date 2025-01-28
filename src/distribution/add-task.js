@@ -16,14 +16,14 @@ export function addTaskPage(){
  taskBox.setAttribute("class","task-box");
 //  content.showPopover(taskBox);
 taskBox.innerHTML =`
-<form>
+<form action=""> 
 <input id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
 <input id="description" placeholder="Description"></input>
-<p id="section">
-<button class="today-btn" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
-<button class="priority-btn"><img src="${flag}" alt="flag icon"> Priority </button>
-<button class="remind-btn"><img src="${alarm}" alt="alarm icon"> Reminders </button>
-<button class="more-btn"><img src="${hidden}" alt="hidden icon"></button>
+<p class="section">
+<button id="today-btn" type="button" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
+<button class="priority-btn" type="button"><img src="${flag}" alt="flag icon"> Priority </button>
+<button class="remind-btn" type="button"><img src="${alarm}" alt="alarm icon"> Reminders </button>
+<button class="more-btn" type="button"><img src="${hidden}" alt="hidden icon"></button>
 </p><hr>
 <div class="close-section">
 <button class="inbox-btn"><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
@@ -50,9 +50,13 @@ addBtn.addEventListener("click",()=>{
     let list = taskBox.value;
 })
 
-
-function todayBtnFunc(){
-const todayBtn = document.querySelector(".today-btn");
+ todayBtnFunc()
+ priorityBtnFunc()
+ remindBtnFunc()
+  inboxBtnFunc()
+ 
+ function todayBtnFunc(){
+const todayBtn = document.querySelector("#today-btn");
 
 todayBtn.addEventListener("click",()=>{
    const todayBox = document.createElement("div");
@@ -74,10 +78,10 @@ todayBtn.addEventListener("click",()=>{
 
 
 
-
+   content.appendChild(todayBox);
 })
-content.appendChild(todayBtn);
-}todayBtnFunc()
+
+ }
 
 
 function priorityBtnFunc(){
@@ -100,10 +104,10 @@ priorityBtn.addEventListener("click",()=>{
  
  
 
-
+    content.appendChild(priorityBox);
 })
-content.appendChild(priorityBtn);
-}priorityBtnFunc()
+
+}
 
 
 function remindBtnFunc(){
@@ -123,10 +127,10 @@ remindBtn.addEventListener("click",()=>{
      <button>Add reminder</button>
     </p>
     `;
- 
+    content.appendChild(remindBox);
 });
-content.appendChild(remindBtn);
-}remindBtnFunc()
+
+}
 
 
 function moreBtnFunc(){
@@ -146,10 +150,10 @@ moreBtn.addEventListener("click",()=>{
      </ul>
       
     `;
- 
+    content.appendChild(moreBox);
 });
-content.appendChild(moreBtn);
-}moreBtnFunc()
+
+}// moreBtnFunc()
 
 
 
@@ -172,8 +176,8 @@ function inboxBtnFunc(){
          </ul>
           
         `;
-     
+        content.appendChild(inboxBox );
     });
-    content.appendChild(inboxBtn );
-    }inboxBtnFunc()
+   
+ } 
 }

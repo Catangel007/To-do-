@@ -40,7 +40,7 @@ import playingCards from "../images/playing_cards.svg";
    import {upcomingPage} from "./upcoming.js";
    import {animationPage} from "./animation.js";
    import {filtersPage} from "./filters.js";
-   import { addTaskPage }  from "./addTask.js";
+   import { addTaskPage }  from "./add-task.js";
    import { teamPage }  from "./team.js";
    import { templatePage }  from "./template.js";
    import { calendarPage } from "./calendar.js";
@@ -70,7 +70,7 @@ navBox.innerHTML=`
             <li id="4"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
             <li id="5"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
-        <ul id="projects"> My Projects
+        <ul id="projects"> My Projects <img src="${add}" alt="add project icon">
             <li id="6" class="margin"><img src="${hashtag}" alt="">Home</li>
             <li id="7"><img src="${add}" alt="add team icon">Add a Team</li>
             <li id="8"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
@@ -96,6 +96,7 @@ homeBox.innerHTML=`
               <div class="task">
               <img src="${grig2}">
               <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
+              
               </div>
             <ul class="hidden-icons"></ul>
                <p id="inbox">inbox<img src="${inbox}"></p>
@@ -154,22 +155,12 @@ hiddenIcons.addEventListener("mouseenter", ()=>{
   const l1 = document.createElement("li"); 
       let image1 = document.createElement("img")
       image1.src = writeIcon;
-      writeIcon.addEventListener("click",()=>{ 
-        const note = document.createElement("textarea");
-        notes = note.value;
 
-       })
       l1.appendChild(image1)
   const l2 = document.createElement("li");
   let image2 = document.createElement("img")
       image2.src = today;
-      today.addEventListener("click",()=>{ 
-
-        const box = document.createElement("div");
-          box.calendarPage();
-        dueDate = box.value;
-
-       })
+     
       l2.appendChild(image2)
   const l3 = document.createElement("li");
   let image3 = document.createElement("img")

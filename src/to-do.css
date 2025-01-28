@@ -19,15 +19,9 @@ img,picture,video,canvas,svg{
 
 
 
-  img{
-    height: 20px;
-    width: 20px;
-    color:black;
-  }
-
 hr{
   
-  border:1px solid #ccc;
+  border:.5px solid #ccc;
 }
   ul{
     list-style: none;
@@ -244,16 +238,17 @@ hr{
 
 .hidden-icons{
   display: flex;
-font-size: 20px;
+font-size: 40px;
   justify-content: end;
   cursor: pointer;
+ 
 }
 
 .hidden-icons img{
-  padding: 2px;
+  padding: 5px 0;
 }
 .navBox{
-background-color: rgb(246, 244, 242);
+background-color: rgb(251, 246, 240);
 width: 20rem;
 height: 100vh;
 display: grid;
@@ -262,6 +257,7 @@ justify-content: center;
 .nav{
   list-style: none;
   width: 90%;
+ 
 }
 
 
@@ -280,11 +276,19 @@ justify-content: center;
   top: 3px;
   right: 3px;
   color: rgb(134, 135, 136);
+ 
+}
+.nav img{
+  height: 20px;
+  width: 20px;
 }
 .navBox .nav li:hover{
+  background-color: rgb(254, 252, 250);
+  border-radius: 5px;
+}
+.navBox .nav li:active{
   background-color: rgb(249, 226, 209);
- 
-  
+  border-radius: 5px;
 }
 .nav h3 {
   display: flex;
@@ -425,6 +429,7 @@ justify-content: center;
  -webkit-appearance: none;
  -moz-appearance: none;
 }
+
 .task-box input#chores{
   font-size: 15px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -439,11 +444,13 @@ width: auto;
 
 }
 
-.task-box p#section{
+/* .task-box p.section{
   height:2em;
-}
+  background-color: aquamarine;
+  display: flex;
+} */
 
-.task-box div{
+.task-box div.close-section{
   display: flex;
   justify-content: space-between;
   padding-top: .5rem;
@@ -459,7 +466,7 @@ width: auto;
  }
 
  .task-box div button.add-btn{
-  background-color: rgb(222, 164, 164);
+  background-color: rgb(222, 154, 154);
   border-radius: 5px;
   height: 2.5em;
   width: 80px;
@@ -477,13 +484,11 @@ width: auto;
 
 
  .modal{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-color: rgb(196, 195, 192);
+  background-color: rgb(240, 240, 237);
   opacity: 0.75;
+  border: none;
  }
 
 
