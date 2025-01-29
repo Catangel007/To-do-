@@ -599,3 +599,34 @@ h3 {
 .dates li.inactive {
   color: #ccc;
 }
+
+
+.today-box{
+  background-color: white;
+  width:15em;
+  height: 30em;
+  border-radius: 10px;
+  box-shadow:3;
+  border:1px solid #ccc;
+  display: grid;
+  align-items: end;
+  position: relative;
+  left: 6rem;
+  bottom:13rem;
+
+}
+
+.today-box img{
+  height: 20px;
+  width: 20px;
+  margin-left: 5px;
+}
+
+.today-box button{
+  width: auto;
+  height: 3em;
+  text-align: center;
+  border:1px solid #ccc;
+  border-radius: 5px;
+  margin: 3px;
+}

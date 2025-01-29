@@ -6,6 +6,16 @@ import today from "../images/today.svg";
 import hidden from "../images/more_horiz.svg";
 import inbox from "../images/inbox.svg";
 import alarm from "../images/alarm.svg";
+import tomorrow from "../images/tomorrow.png";
+import weekend from "../images/weekend.png";
+import nextWeek from "../images/next-week.png";
+import noDate from "../images/no-task.png";
+import clock from "../images/clock.png";
+import later from "../images/pay-later.png";
+
+
+
+import { calendarPage } from "./calendar";
 
 export function addTaskPage(){
 
@@ -64,16 +74,16 @@ todayBtn.addEventListener("click",()=>{
    todayBox.setAttribute("class","today-box");
    todayBox.innerHTML = `
    
-     <p id="date-display"></p><hr>
+     <h3 id="date-display">29 Jan</h3><hr>
      <ul>
-     <li>Tomorrow</li>
-     <li>Later this week</li>
-     <li>This weekend</li>
-     <li>Next week</li>
-     <li>No Date</li><hr>
+     <li><img src="${tomorrow}" alt="tomorrow icon">Tomorrow</li>
+     <li><img src="${later}" alt="later icon">Later this week</li>
+     <li><img src="${weekend}" alt="weekend icon">This weekend</li>
+     <li><img src="${nextWeek}" alt="nextWeek icon">Next week</li>
+     <li><img src="${noDate}" alt="noDate icon">No Date</li><hr>
      </ul>
       <div id=""calendar-div></div>
-      <button> Time</button>
+      <button><img src="${clock}" alt="clock icon"> Time</button>
    `;
 
 
@@ -180,4 +190,8 @@ function inboxBtnFunc(){
     });
    
  } 
+
+
+   const calendarDiv = document.querySelector("#calendar-div");
+   calendarDiv.textContent = calendarPage;
 }
