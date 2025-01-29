@@ -517,11 +517,10 @@ h3 {
 
 .calendar {
   margin: 0 auto;
-  width: clamp(320px, 400px, 90%);
-  padding: 1rem;
-  background: #fff;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width:auto;
+  padding: 1px;
+  height: 246px;
+
 }
 .calendar header {
   display: flex;
@@ -537,15 +536,19 @@ h3 {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+
 }
 .calendar ul li {
-  width: calc(100% / 7);
+  
   position: relative;
   z-index: 2;
-  aspect-ratio: 1;
+  aspect-ratio: 1; 
+  width: 10px;
+  height: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0;
 }
 #prev,
 #next {
@@ -579,15 +582,23 @@ h3 {
   border-color: #000;
 }
 .days {
-  font-weight: 600;
+  font-weight: 500;
+ width: 15em;
+ height: 10px;
+  background-color: antiquewhite;
+}
+.days li{
+  width: 10px;
+  height: 10px;
+  background-color: bisque;
 }
 .dates li.today {
   color: #fff;
 }
 .dates li.today::before {
   content: "";
-  width: 2rem;
-  height: 2rem;
+  width: 15px;
+  height: 15px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -606,10 +617,10 @@ h3 {
   width:15em;
   height: 30em;
   border-radius: 10px;
-  box-shadow:3;
+  box-shadow:0 0 5px #ccc;
   border:1px solid #ccc;
   display: grid;
-  align-items: end;
+  align-items:flex-start;
   position: relative;
   left: 6rem;
   bottom:13rem;
@@ -617,16 +628,41 @@ h3 {
 }
 
 .today-box img{
-  height: 20px;
-  width: 20px;
-  margin-left: 5px;
+  height: 25px;
+  width: 25px;
+  margin-left: 10px;
 }
 
 .today-box button{
   width: auto;
-  height: 3em;
+  height: 2em;
   text-align: center;
   border:1px solid #ccc;
   border-radius: 5px;
-  margin: 3px;
+  margin: 7px;
+}
+.today-box ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.today-box ul li:hover{
+background-color: #fafafa;
+}
+.today-box ul li{
+  margin-left: 1em;
+  margin-right: 1em;
+  font-family:serif;
+  padding: 1px;
+  width: auto;
+  
+}
+.today-box h3{
+  margin-left: 1em;
+  
+}
+
+.today-box div{
+  height: 246px;
+  width: 100%;
 }

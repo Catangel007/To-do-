@@ -50,6 +50,10 @@ taskBox.innerHTML =`
 `
 content.appendChild(taskBox);
 
+
+
+  
+
 const cancelBtn =document.querySelector(".cancel-btn");
 cancelBtn.addEventListener("click",()=>{
     content.removeChild(taskBox);
@@ -82,13 +86,14 @@ todayBtn.addEventListener("click",()=>{
      <li><img src="${nextWeek}" alt="nextWeek icon">Next week</li>
      <li><img src="${noDate}" alt="noDate icon">No Date</li><hr>
      </ul>
-      <div id=""calendar-div></div>
+      <div id="calendar-div"></div>
       <button><img src="${clock}" alt="clock icon"> Time</button>
    `;
-
-
-
    content.appendChild(todayBox);
+   calendarPage();
+   todayBox.addEventListener("mouseleave", (e)=>{
+      content.removeChild(todayBox)
+    })
 })
 
  }
@@ -111,10 +116,11 @@ priorityBtn.addEventListener("click",()=>{
      </ul>
       
     `;
- 
- 
-
     content.appendChild(priorityBox);
+
+    priorityBox.addEventListener("mouseleave", (e)=>{
+        content.removeChild(priorityBox)
+      })
 })
 
 }
@@ -138,6 +144,10 @@ remindBtn.addEventListener("click",()=>{
     </p>
     `;
     content.appendChild(remindBox);
+
+    remindBox.addEventListener("mouseleave", (e)=>{
+        content.removeChild(remindBox)
+      })
 });
 
 }
@@ -161,6 +171,10 @@ moreBtn.addEventListener("click",()=>{
       
     `;
     content.appendChild(moreBox);
+
+    moreBox.addEventListener("mouseleave", (e)=>{
+        content.removeChild(moreBox)
+      })
 });
 
 }// moreBtnFunc()
@@ -187,11 +201,14 @@ function inboxBtnFunc(){
           
         `;
         content.appendChild(inboxBox );
+
+        inboxBox.addEventListener("mouseleave", (e)=>{
+            content.removeChild(inboxBox)
+          })
     });
    
  } 
 
 
-   const calendarDiv = document.querySelector("#calendar-div");
-   calendarDiv.textContent = calendarPage;
+   
 }

@@ -5,14 +5,13 @@
 export function calendarPage(){
 
     const content = document.querySelector("body");
-    const box = document.querySelector("#container");
+    const box = document.querySelector("#calendar-div");
 
     box.innerHTML= `
     
-     <h1>Calendar</h1>
     <div class="calendar">
       <header>
-        <h3></h3>
+        <h4></h4>
         <nav>
           <button id="prev"></button>
           <button id="next"></button>
@@ -20,13 +19,13 @@ export function calendarPage(){
       </header>
       <section>
         <ul class="days">
-          <li>Sun</li>
-          <li>Mon</li>
-          <li>Tue</li>
-          <li>Wed</li>
-          <li>Thu</li>
-          <li>Fri</li>
-          <li>Sat</li>
+          <li>S</li>
+          <li>M</li>
+          <li>T</li>
+          <li>W</li>
+          <li>T</li>
+          <li>F</li>
+          <li>S</li>
         </ul>
         <ul class="dates"></ul>
       </section>
@@ -34,7 +33,7 @@ export function calendarPage(){
     
   `
 
-  const header = document.querySelector(".calendar h3");
+  const header = document.querySelector(".calendar h4");
   const dates = document.querySelector(".dates");
   const navs = document.querySelectorAll("#prev, #next");
   
