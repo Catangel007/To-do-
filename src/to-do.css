@@ -519,35 +519,40 @@ h3 {
   margin: 0 auto;
   width:auto;
   padding: 1px;
-  height: 246px;
-
+  height: 240px;
+ 
 }
 .calendar header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 30px;
+  margin-bottom: 1em;
+}
+.calendar header h4{
+  margin-left: 1em;
 }
 .calendar nav {
   display: flex;
   align-items: center;
+  
 }
 .calendar ul {
   list-style: none;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template:20px/ 20px 20px 20px 20px 20px 20px 20px ;
   text-align: center;
+  gap:14px;
+ 
 
 }
 .calendar ul li {
   
-  position: relative;
+   position: relative;
   z-index: 2;
-  aspect-ratio: 1; 
+  aspect-ratio: 1;  
   width: 10px;
   height: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
 }
 #prev,
@@ -584,23 +589,22 @@ h3 {
 .days {
   font-weight: 500;
  width: 15em;
- height: 10px;
-  background-color: antiquewhite;
+ height: 20px;
 }
 .days li{
   width: 10px;
   height: 10px;
-  background-color: bisque;
+  margin: 0;
 }
 .dates li.today {
   color: #fff;
 }
 .dates li.today::before {
   content: "";
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
   position: absolute;
-  top: 50%;
+  top:80%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #000;
@@ -658,11 +662,12 @@ background-color: #fafafa;
   
 }
 .today-box h3{
-  margin-left: 1em;
+  margin: 0.2em 1em;
   
 }
 
 .today-box div{
-  height: 246px;
+  height: 240px;
   width: 100%;
+ 
 }
