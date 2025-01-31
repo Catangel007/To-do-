@@ -147,7 +147,10 @@ class TodoGen {
 
 // takes care of hidden icons
 const hiddenIcons = document .querySelector(".task");
+
 const icons = document.querySelector(".hidden-icons");
+icons.style.color="#ccc";
+icons.style.size="40px";
 hiddenIcons.addEventListener("mouseenter", ()=>{
  
  hiddenIcons.appendChild(icons);
@@ -199,7 +202,7 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
     hiddenIcons.removeChild(icons)
   })
 
-   const addBtn = document. querySelector(".box button");
+   const addBtn = document.querySelector(".box button");
    
 
 

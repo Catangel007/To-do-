@@ -107,11 +107,16 @@ export function calendarPage(){
       date = new Date(year, month, new Date().getDate());
       year = date.getFullYear();
       month = date.getMonth();
-  
+  console.log(date,"hi i am date inside nav");
       renderCalendar();
+
+      return date;
+
     });
+    return date;
+    console.log(date,"hi i am date inside navs");
   });
-  
+  console.log(date,"hi i am date outside navs");
   renderCalendar();
 
 
@@ -122,6 +127,6 @@ export function calendarPage(){
 
 
 
-
+  return date;
 
 }

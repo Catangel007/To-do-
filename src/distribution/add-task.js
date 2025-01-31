@@ -36,7 +36,7 @@ taskBox.innerHTML =`
 <button class="more-btn" type="button"><img src="${hidden}" alt="hidden icon"></button>
 </p><hr>
 <div class="close-section">
-<button class="inbox-btn"><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
+<button class="project-btn" type="button"><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
 <div>
 <button class="cancel-btn "type="reset">Cancel</button>
 <button class="add-btn" type="submit">Add Task</button>
@@ -63,11 +63,12 @@ const addBtn = document.querySelector(".add-btn");
 addBtn.addEventListener("click",()=>{
     let list = taskBox.value;
 })
-
+projectBtnFunc()
  todayBtnFunc()
  priorityBtnFunc()
  remindBtnFunc()
-  inboxBtnFunc()
+ moreBtnFunc()
+
  
  function todayBtnFunc(){
 const todayBtn = document.querySelector("#today-btn");
@@ -80,11 +81,11 @@ todayBtn.addEventListener("click",()=>{
    
      <h3 id="date-display">29 Jan</h3><hr>
      <ul>
-     <li><img src="${tomorrow}" alt="tomorrow icon">Tomorrow</li>
-     <li><img src="${later}" alt="later icon">Later this week</li>
-     <li><img src="${weekend}" alt="weekend icon">This weekend</li>
-     <li><img src="${nextWeek}" alt="nextWeek icon">Next week</li>
-     <li><img src="${noDate}" alt="noDate icon">No Date</li><hr>
+     <li id="tomorrow"><img src="${tomorrow}" alt="tomorrow icon">Tomorrow</li>
+     <li id="later"><img src="${later}" alt="later icon">Later this week</li>
+     <li id="weekend"><img src="${weekend}" alt="weekend icon">This weekend</li>
+     <li id="next-week"><img src="${nextWeek}" alt="nextWeek icon">Next week</li>
+     <li id="no-date"><img src="${noDate}" alt="noDate icon">No Date</li><hr>
      </ul>
       <div id="calendar-div"></div>
       <button><img src="${clock}" alt="clock icon"> Time</button>
@@ -96,6 +97,21 @@ todayBtn.addEventListener("click",()=>{
     })
 })
 
+  let todayOpt= document.querySelectorAll("li");
+  
+   todayOpt.forEach((list) => {
+    list.addEventListener("click", () => {
+      todayBtn.value = list.id;
+      return todayBtn.value;
+    });
+  });
+
+
+  let tomorrowInput = document.querySelector("#tomorrow");
+  let laterInput = document.querySelector("#later");
+  let weekendInput = document.querySelector("#weekend");
+  let nextWeekInput = document.querySelector("#next-week");
+  let noDateInput = document.querySelector("#no-date");
  }
 
 
@@ -109,10 +125,10 @@ priorityBtn.addEventListener("click",()=>{
     
       
       <ul>
-      <li>Priority 1</li>
-      <li>Priority 2</li>
-      <li>Priority 3</li>
-      <li>Priority 4</li>
+      <li><img src="${flag}" alt="flag icon" color="red">Priority 1</li>
+      <li><img src="${flag}" alt="flag icon" color="yellow">Priority 2</li>
+      <li><img src="${flag}" alt="flag icon"color="blue">Priority 3</li>
+      <li><img src="${flag}" alt="flag icon">Priority 4</li>
      </ul>
       
     `;
@@ -177,37 +193,37 @@ moreBtn.addEventListener("click",()=>{
       })
 });
 
-}// moreBtnFunc()
+}
 
 
-
-function inboxBtnFunc(){
-    const inboxBtn = document.querySelector(".inbox-btn");
-    inboxBtn.addEventListener("click",()=>{
-    
-        const inboxBox = document.createElement("div");
-        inboxBox.setAttribute("class","inbox-box");
-        inboxBox.innerHTML = `
+function projectBtnFunc(){
+  const projectBtn = document.querySelector(".project-btn");
+  projectBtn.addEventListener("click",()=>{
+  
+      const projectBox = document.createElement("div");
+      projectBox.setAttribute("class","project-box");
+      projectBox.innerHTML = `
+      
         
-          <p><input name="search-project" id="search-project" placeholder="Type a project name"></p>
-          <ul>
-          <li>Inbox</li>
-          <li>My Projects
-          <li>Routines</li>
-          <li>Inspiration</li>
-          </li>
-          
-         </ul>
-          
-        `;
-        content.appendChild(inboxBox );
+        <ul>
+        <li>Priority 1</li>
+        <li>Priority 2</li><hr>
+        <li>Priority 3</li><hr>
+        <li>Priority 4</li>
+       </ul>
+        
+      `;
+      content.appendChild(projectBox);
+  
+      projectBox.addEventListener("mouseleave", (e)=>{
+          content.removeChild(projectBox)
+        })
+  });
 
-        inboxBox.addEventListener("mouseleave", (e)=>{
-            content.removeChild(inboxBox)
-          })
-    });
+}
+
    
- } 
+ 
 
 
    

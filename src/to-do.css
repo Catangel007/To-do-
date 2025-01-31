@@ -424,12 +424,17 @@ justify-content: center;
  height: 30px;
  border: none;
  margin: 0;
+ margin-left: 10px;
  appearance: none;
  width:95%;
  -webkit-appearance: none;
  -moz-appearance: none;
 }
-
+.task-box input:active{
+  -webkit-appearance: none;
+ -moz-appearance: none;
+ appearance: none;
+}
 .task-box input#chores{
   font-size: 15px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -458,13 +463,15 @@ width: auto;
  
 }
 .task-box div button.cancel-btn{
-  background-color: rgb(236, 230, 230);
+  background-color: rgb(213, 210, 210);
   border-radius: 5px;
   height: 2.5em;
   width: 80px;
   margin-right: 8px;
  }
-
+ .task-box div button.cancel-btn:hover{
+  background-color: rgb(226, 223, 223);
+ }
  .task-box div button.add-btn{
   background-color: rgb(222, 154, 154);
   border-radius: 5px;
@@ -474,14 +481,18 @@ width: auto;
   color: white;
   font-weight:bold ;
  }
-
+ .task-box div button.add-btn:hover{
+  background-color: rgb(241, 167, 167);
+ }
  .task-box div>button{
   height: 2.5em;
   width: auto;
   margin-left: 8px;
-  background-color: aquamarine;
+  border-radius: 5px;
  }
-
+ .task-box div>button:hover{
+background-color:rgb(247, 247, 247) ;
+ }
 
  .modal{
   height: 100vh;
@@ -617,12 +628,8 @@ h3 {
 
 
 .today-box{
-  background-color: white;
   width:15em;
   height: 30em;
-  border-radius: 10px;
-  box-shadow:0 0 5px #ccc;
-  border:1px solid #ccc;
   display: grid;
   align-items:flex-start;
   position: relative;
@@ -670,4 +677,36 @@ background-color: #fafafa;
   height: 240px;
   width: 100%;
  
+}
+
+.priority-box{
+  width:10rem ;
+  height: 10rem;
+  position: absolute;
+   left: 40%;
+   bottom:50%;
+}
+
+.priority-box li{
+padding: auto;
+}
+
+.priority-box li:hover{
+  background-color: #ccc;
+}
+
+.today-box,.priority-box,.remind-box,.more-box,.in-box{
+  border-radius: 10px;
+  box-shadow:0 0 5px #ccc;
+  border:1px solid #ccc;
+  background-color: white;
+}
+
+.remind-box{
+  width:20rem ;
+  height: 20rem;
+  position: absolute;
+   left: 60%;
+   bottom:50%;
+   padding: 20px;
 }
