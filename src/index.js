@@ -11,7 +11,7 @@
 
 
   console.log(list);
-console.log(date);
+
 
   function pages(){
   // if (document.textContent=""){

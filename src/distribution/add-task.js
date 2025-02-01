@@ -69,7 +69,7 @@ projectBtnFunc()
  remindBtnFunc()
  moreBtnFunc()
 
- 
+ console.log(date,"hi i am date outside navs","inside add task how cool am I.");
  function todayBtnFunc(){
 const todayBtn = document.querySelector("#today-btn");
 
@@ -100,8 +100,33 @@ todayBtn.addEventListener("click",()=>{
   let todayOpt= document.querySelectorAll("li");
   
    todayOpt.forEach((list) => {
-    list.addEventListener("click", () => {
-      todayBtn.value = list.id;
+    list.addEventListener("click", (e) => {
+      let calendarTime = e.target.id;
+      let date = new Date();
+         if(calendarTime === "tomorrow"){
+          let nextDay = date.getDay() + 1;
+           console.log(nextDay)
+         }
+     
+         if(calendarTime === "later"){
+          let twoDay = date.getDay() + 2;
+           console.log(twoDay)
+         }
+
+         if(calendarTime === "weekend"){
+          let weekEndDay = date.getDay();
+           console.log(weekEndDay)
+         }
+
+         if(calendarTime === "next-week"){
+          let nextWeekDay = date.getDay();
+           console.log(nextWeekDay)
+         }
+
+         if(calendarTime === "no-date"){
+          let noDay = null;
+           console.log(noDay)
+         }
       return todayBtn.value;
     });
   });
