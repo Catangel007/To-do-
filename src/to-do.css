@@ -688,7 +688,11 @@ background-color: #fafafa;
 }
 
 .priority-box li{
-padding: auto;
+display:flex;
+justify-content: space-around;
+height: 2.5rem;
+width: 100%;
+text-align: center;
 }
 
 .priority-box li:hover{
@@ -704,9 +708,44 @@ padding: auto;
 
 .remind-box{
   width:20rem ;
-  height: 20rem;
+  height: 10rem;
   position: absolute;
-   left: 60%;
-   bottom:50%;
-   padding: 20px;
+   left: 40%;
+   bottom:20%;
+   padding:10px;
+
+}
+
+.remind-box div{
+  background-color: rgb(197, 195, 195);
+  height: 2.5em;
+  width: 100%;
+  border-radius: 20px;
+  padding: 2px;
+}
+
+
+.remind-box p button{
+  background-color: rgb(251, 167, 167);
+  border-radius:5px;
+  height: 2em;
+  border: none;
+  color:white;
+}
+
+.remind-box #second,.remind-box #first:active{
+  height: auto;
+  width: 50%;
+  background-color: white;
+  border-radius: 10px;
+  border: 0;
+  text-align: center;
+
+}
+
+.remind-box #first{
+  border: none;
+  background-color: rgb(197, 195, 195);
+  height:auto ;
+  text-align: center;
 }

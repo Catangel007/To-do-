@@ -69,7 +69,7 @@ projectBtnFunc()
  remindBtnFunc()
  moreBtnFunc()
 
- console.log(date,"hi i am date outside navs","inside add task how cool am I.");
+ 
  function todayBtnFunc(){
 const todayBtn = document.querySelector("#today-btn");
 
@@ -174,13 +174,13 @@ remindBtn.addEventListener("click",()=>{
     const remindBox = document.createElement("div");
     remindBox.setAttribute("class","remind-box");
     remindBox.innerHTML = `
-    <h6>Reminders</h6> 
+    <h3>Reminders</h3> 
     <div>
-    <button>Date & time</button>
-    <button>Before task</button>
+    <button id="first">Date & time</button>
+    <button id="second">Before task</button>
     </div>
-    <p>Add a time to the task first</p>
-    <p>
+    <p>(i)  Add a time to the task first</p>
+    <p>(?)
      <button>Add reminder</button>
     </p>
     `;
