@@ -12,8 +12,9 @@ import nextWeek from "../images/next-week.png";
 import noDate from "../images/no-task.png";
 import clock from "../images/clock.png";
 import later from "../images/pay-later.png";
-
-
+import envelope from "../images/envelope.png"
+import balloon from "../images/airballoon.svg"
+import add from "../images/add.svg";
 
 import { calendarPage } from "./calendar";
 
@@ -175,14 +176,15 @@ remindBtn.addEventListener("click",()=>{
     remindBox.setAttribute("class","remind-box");
     remindBox.innerHTML = `
     <h3>Reminders</h3> 
-    <div>
+    <div class="btn">
     <button id="first">Date & time</button>
     <button id="second">Before task</button>
     </div>
     <p>(i)  Add a time to the task first</p>
-    <p>(?)
-     <button>Add reminder</button>
-    </p>
+    
+   <div class="p">
+      <p>(?)</p><button>Add reminder</button>
+    </div>
     `;
     content.appendChild(remindBox);
 
@@ -204,10 +206,11 @@ moreBtn.addEventListener("click",()=>{
     
       
       <ul>
-      <li>Priority 1</li>
-      <li>Priority 2</li><hr>
-      <li>Priority 3</li><hr>
-      <li>Priority 4</li>
+      <li><img src="${envelope}" alt="label icon">Labels</li>
+      <li><img src="${balloon}" alt="locations icon">Location</li>
+      <li><img src="${balloon}" alt="deadline icon">Deadline</li><hr>
+      <li><img src="${add}" alt="add extension icon">Add extension</li><hr>
+      <li>Edit task actions </li>
      </ul>
       
     `;
@@ -249,17 +252,19 @@ function projectBtnFunc(){
 
    
  // Select elements
-const remindDiv = document.querySelector(".remind-box #first");
-const remindDivSecond = document.querySelector(".remind-box #second");
+const remindDiv = document.querySelector("#first");
+const remindDivSecond = document.querySelector("#second");
 
 function toggleActive(activeElement, inactiveElement) {
   activeElement.classList.add("active");
-  activeElement.classList.remove("inactive");
-  inactiveElement.classList.add("inactive");
   inactiveElement.classList.remove("active");
+  // inactiveElement.classList.add("inactive");
+  // inactiveElement.classList.remove("active");
 }
 
 remindDiv.addEventListener("click", () => toggleActive(remindDiv, remindDivSecond));
 remindDivSecond.addEventListener("click", () => toggleActive(remindDivSecond, remindDiv));
    
+
+
 }
