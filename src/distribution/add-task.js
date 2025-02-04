@@ -232,12 +232,12 @@ function projectBtnFunc(){
       projectBox.setAttribute("class","project-box");
       projectBox.innerHTML = `
       
-        
-        <ul>
+        <input type="text" class="project-search">
+        <div> <img src="${inbox}" alt="inbox icon">inbox</div>
+        <ul>My Projects
         <li>Priority 1</li>
-        <li>Priority 2</li><hr>
-        <li>Priority 3</li><hr>
-        <li>Priority 4</li>
+        <li>Priority 2</li>
+        
        </ul>
         
       `;

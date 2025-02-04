@@ -413,7 +413,7 @@ justify-content: center;
   position: relative;
   bottom:20px;
   display: grid;
-  align-items: flex-end;
+  align-items: center;
   background-color: white;
 }
 
@@ -430,22 +430,20 @@ justify-content: center;
  -webkit-appearance: none;
  -moz-appearance: none;
 }
-.task-box input:active{
-  -webkit-appearance: none;
- -moz-appearance: none;
- appearance: none;
-}
+
 .task-box input#chores{
   font-size: 15px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   color: gray;
 }
 
-.task-box p#section button{
+.task-box p.section button{
 border: 1px solid #ccc;
 border-radius: 5px;
 height: 2em;
 width: auto;
+color: gray;
+font-size: 13px;
 
 }
 
@@ -684,7 +682,7 @@ background-color: #fafafa;
   height: 10rem;
   position: relative;
    left: 5rem;
-   bottom:4.50rem;
+   bottom:6rem;
    display: grid;
    
 }
@@ -743,7 +741,7 @@ bottom: 20px;
   height: 10rem;
   position: relative;
   left:10rem ;
-  bottom:4.50rem;
+  bottom:6rem;
    padding:15px;
 
 }
@@ -807,25 +805,23 @@ bottom: 20px;
   height: 10rem;
   position: relative;
   left:15rem ;
-  bottom:4.50rem;
-  background-color: antiquewhite;
+  bottom:6rem;
+ 
   
 }
 .more-box li:last-child{
   color: rgb(244, 130, 130);
 }
-.more-box li,.project-box li{
-width: 15rem;
-position: relative;
-right: 30px;
+.more-box li{
+width: 13rem;
 display: flex;
-justify-content: space-around;
+justify-content: space-between;
 align-items: center;
+
 }
 .project-box{
   width:20rem ;
   height: 10rem;
   position: relative;
-  bottom:3rem;
-  background-color: antiquewhite;
+  bottom:2rem;
 }
