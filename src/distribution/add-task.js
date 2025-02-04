@@ -208,8 +208,8 @@ moreBtn.addEventListener("click",()=>{
       <ul>
       <li><img src="${envelope}" alt="label icon">Labels</li>
       <li><img src="${balloon}" alt="locations icon">Location</li>
-      <li><img src="${balloon}" alt="deadline icon">Deadline</li><hr>
-      <li><img src="${add}" alt="add extension icon">Add extension</li><hr>
+      <li><img src="${balloon}" alt="deadline icon">Deadline</li>
+      <li><img src="${add}" alt="add extension icon">Add extension</li>
       <li>Edit task actions </li>
      </ul>
       
@@ -232,8 +232,8 @@ function projectBtnFunc(){
       projectBox.setAttribute("class","project-box");
       projectBox.innerHTML = `
       
-        <input type="text" class="project-search">
-        <div> <img src="${inbox}" alt="inbox icon">inbox</div>
+        <input type="text" class="project-search" placeholder="Type a project name">
+        <div><img src="${inbox}" alt="inbox icon">inbox</div>
         <ul>My Projects
         <li>Priority 1</li>
         <li>Priority 2</li>
@@ -258,8 +258,8 @@ const remindDivSecond = document.querySelector("#second");
 function toggleActive(activeElement, inactiveElement) {
   activeElement.classList.add("active");
   inactiveElement.classList.remove("active");
-  // inactiveElement.classList.add("inactive");
-  // inactiveElement.classList.remove("active");
+   inactiveElement.classList.add("inactive");
+   inactiveElement.classList.remove("active");
 }
 
 remindDiv.addEventListener("click", () => toggleActive(remindDiv, remindDivSecond));

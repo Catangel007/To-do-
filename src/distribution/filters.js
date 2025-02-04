@@ -9,6 +9,6 @@ export  function filtersPage(){
     
 
     filtersBox.innerHTML =`
-  <modal> this is the filterPage</modal>
+ <div><img src="${template}"></div>
     `
 }
