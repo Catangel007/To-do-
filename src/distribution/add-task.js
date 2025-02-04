@@ -150,10 +150,10 @@ priorityBtn.addEventListener("click",()=>{
     
       
       <ul>
-      <li><img src="${flag}" alt="flag icon" color="red">Priority 1</li>
-      <li><img src="${flag}" alt="flag icon" color="yellow">Priority 2</li>
-      <li><img src="${flag}" alt="flag icon"color="blue">Priority 3</li>
-      <li><img src="${flag}" alt="flag icon">Priority 4</li>
+      <li><img src="${flag}" id="red" alt="flag icon" color="red">Priority 1 <div></div></li>
+      <li><img src="${flag}" id="blue" alt="flag icon" color="yellow">Priority 2<div></div></li>
+      <li><img src="${flag}" id="yellow" alt="flag icon"color="blue">Priority 3<div></div></li>
+      <li><img src="${flag}" id="white" alt="flag icon">Priority 4 <div></div></li>
      </ul>
       
     `;
@@ -248,8 +248,18 @@ function projectBtnFunc(){
 }
 
    
- 
+ // Select elements
+const remindDiv = document.querySelector(".remind-box #first");
+const remindDivSecond = document.querySelector(".remind-box #second");
 
+function toggleActive(activeElement, inactiveElement) {
+  activeElement.classList.add("active");
+  activeElement.classList.remove("inactive");
+  inactiveElement.classList.add("inactive");
+  inactiveElement.classList.remove("active");
+}
 
+remindDiv.addEventListener("click", () => toggleActive(remindDiv, remindDivSecond));
+remindDivSecond.addEventListener("click", () => toggleActive(remindDivSecond, remindDiv));
    
 }

@@ -682,19 +682,51 @@ background-color: #fafafa;
 .priority-box{
   width:10rem ;
   height: 10rem;
-  position: absolute;
-   left: 40%;
+  position: relative;
+   left: 50%;
    bottom:50%;
+   display: grid;
+   
 }
 
 .priority-box li{
 display:flex;
 justify-content: space-around;
+align-items: center;
 height: 2.5rem;
-width: 100%;
+width: 10rem;
 text-align: center;
+position: relative;
+right: 25%;
+
+}
+.priority-box #red{
+  fill:red;
+  background-color: rgb(255, 83, 83);
+  
 }
 
+.priority-box #blue{
+  fill:blue;
+  background-color: rgb(117, 117, 255);
+}
+
+.priority-box #yellow{
+  fill:yellow;
+  background-color: rgb(255, 255, 115);
+}
+
+.priority-box #red,.priority-box #yellow,.priority-box #blue,.priority-box #white{
+border: 1px solid gray;
+border-radius: 3px;
+bottom: 20px;
+
+}
+.priority-box li div{
+  background-color: #ccc;
+  size: 20px;
+  margin: 3px;
+}
 .priority-box li:hover{
   background-color: #ccc;
 }
@@ -709,9 +741,9 @@ text-align: center;
 .remind-box{
   width:20rem ;
   height: 10rem;
-  position: absolute;
-   left: 40%;
-   bottom:20%;
+  position: relative;
+  left: 50%;
+  bottom:50%;
    padding:10px;
 
 }
@@ -722,6 +754,7 @@ text-align: center;
   width: 100%;
   border-radius: 20px;
   padding: 2px;
+  display: flex;
 }
 
 
@@ -729,23 +762,30 @@ text-align: center;
   background-color: rgb(251, 167, 167);
   border-radius:5px;
   height: 2em;
+  width: 2.5em;
   border: none;
   color:white;
+  margin-left: 50%;
 }
 
-.remind-box #second,.remind-box #first:active{
-  height: auto;
-  width: 50%;
-  background-color: white;
-  border-radius: 10px;
-  border: 0;
-  text-align: center;
-
+.remind-box #first,
+.remind-box #second {
+    height: 100%;
+    width: 50%;
+    border-radius: 19px;
+    border: 0;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
 
-.remind-box #first{
-  border: none;
-  background-color: rgb(197, 195, 195);
-  height:auto ;
-  text-align: center;
+.remind-box #first.active,
+.remind-box #second.active {
+    background-color: white;
 }
+
+.remind-box #first.inactive,
+.remind-box #second.inactive {
+    background-color: rgb(197, 195, 195);
+}
+
+
