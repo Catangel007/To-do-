@@ -1,4 +1,7 @@
-import template from "../images/template.svg"
+import template from "../images/template.svg";
+import close from "../images/close.svg";
+
+
 
 export function templatePage() {
     // Create the modal
@@ -8,26 +11,21 @@ export function templatePage() {
     // Set modal content
     modal.innerHTML = `
         <div>
+        <h1>Browse Templates  <img id="close-modal" src="${close}" alt="close image"></h1>
+       
             <img src="${template}" alt="template image">
         </div>
     `;
+     // Add modal to body
+     document.body.appendChild(modal);
     
-    // Add modal to body
-    document.body.appendChild(modal);
+     // Show the modal
+     modal.showModal();
     
-    // Show the modal
-    modal.showModal(); // or modal.show() for non-modal dialog
     
     // Optional: Add close functionality
-    modal.addEventListener('click', (e) => {
-        const dialogDimensions = modal.getBoundingClientRect();
-        if (
-            e.clientX < dialogDimensions.left ||
-            e.clientX > dialogDimensions.right ||
-            e.clientY < dialogDimensions.top ||
-            e.clientY > dialogDimensions.bottom
-        ) {
-            modal.close();
-        }
-    });
+    const closeModal = document.querySelector("#close-modal");
+    closeModal.addEventListener('click', modal.close());
+
+   
 }

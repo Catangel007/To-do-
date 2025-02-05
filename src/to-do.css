@@ -498,19 +498,11 @@ background-color:rgb(247, 247, 247) ;
   width: 100vw;
   border: none;
   display: flex;
+  background-color: rgba(167, 167, 167,0.75);
   align-items: center;
   justify-content: center;
  }
   
- .modal::backdrop{
-  background-color: rgba(167, 167, 167,0.75);
-  
- }
-
- .modal img{
-  max-width: 100%;
-  height: auto;
- }
 
 .modal div{
   height: 80%;
@@ -519,7 +511,11 @@ background-color:rgb(247, 247, 247) ;
   border-radius: 10px;
   border: 0;
 }
-
+.modal h1{
+  display: flex;
+  justify-content: space-between;
+  margin: 1em;
+}
 .calendar {
   margin: 0 auto;
   width:auto;
