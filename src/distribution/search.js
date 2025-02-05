@@ -14,7 +14,7 @@ export  function searchPage () {
     const searchBox = document.querySelector("#container");
 
    
-    searchBox.innerHTML =`
+    content.innerHTML =`
     <dialog open class="modal"> 
              <input type="text" name="search" id="search" img="${search}"placeholder="Search Items">  
       </dialog>

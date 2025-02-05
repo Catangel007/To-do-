@@ -106,32 +106,37 @@ todayBtn.addEventListener("click",()=>{
       let date = new Date();
          if(calendarTime === "tomorrow"){
           let nextDay = date.getDay() + 1;
-           console.log(nextDay)
+          return nextDay;
          }
      
          if(calendarTime === "later"){
           let twoDay = date.getDay() + 2;
-           console.log(twoDay)
+           return twoDay
          }
 
          if(calendarTime === "weekend"){
           let weekEndDay = date.getDay();
-           console.log(weekEndDay)
+          return weekEndDay
          }
 
          if(calendarTime === "next-week"){
           let nextWeekDay = date.getDay();
-           console.log(nextWeekDay)
+          return nextWeekDay
          }
 
          if(calendarTime === "no-date"){
           let noDay = null;
-           console.log(noDay)
+          return noDay;
          }
-      return todayBtn.value;
+      return {todayBtn,nextDay,twoDay,weekEndDay,nextWeekDay,noDay}
     });
   });
 
+ console.log(nextDay)
+ console.log(twoDay)
+  console.log(weekEndDay)
+   console.log(nextWeekDay)
+    console.log(noDay)
 
   let tomorrowInput = document.querySelector("#tomorrow");
   let laterInput = document.querySelector("#later");
@@ -163,6 +168,8 @@ priorityBtn.addEventListener("click",()=>{
     priorityBox.addEventListener("mouseleave", (e)=>{
         content.removeChild(priorityBox)
       })
+       
+     
 })
 
 }
