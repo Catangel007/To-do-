@@ -1,4 +1,4 @@
-import {template} from "../images/undraw_web-devices_i15y.svg"
+import template from "../images/template.svg"
 
 export function templatePage() {
     // Create the modal
