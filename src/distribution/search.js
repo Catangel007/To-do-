@@ -5,7 +5,7 @@ import close from "../images/close.svg";
 import events from "../images/calendar_add.svg";
 import view from "../images/tune.svg";
 
-import home from "src/images/home.svg";
+import home from "../images/home.svg";
 import inbox from "../images/inbox.svg";
 import today from "../images/calendar_today.svg";
 import upcoming from "../images/calendar_month.svg";

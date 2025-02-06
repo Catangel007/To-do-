@@ -1,4 +1,4 @@
-
+"use strict";
 // import Images and Icons
 import bell from "../images/bell.png";
 import apps from "../images/grid3.svg";
@@ -21,7 +21,7 @@ import chatBubble from "../images/chat.svg";
 import calendar from "../images/calendar_month.svg";
 import close from "../images/close.svg";
 import deleteIcon from "../images/delete.svg";
-
+import arrowDown from "../images/arrow-down.svg";
 import dots from "../images/grip1.svg";
 import writeIcon from "../images/write.svg";
 import events from "../images/calendar_add.svg";
@@ -70,7 +70,7 @@ navBox.innerHTML=`
             <li id="4"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
             <li id="5"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
-        <ul id="projects"> My Projects <img src="${add}" alt="add project icon">
+        <ul id="projects"> My Projects <img src="${add}" alt="add project icon"><img src="${arrowDown}" alt="add project icon">
             <li id="6" class="margin"><img src="${hashtag}" alt="">Home</li>
             <li id="7"><img src="${add}" alt="add team icon">Add a Team</li>
             <li id="8"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
@@ -120,12 +120,14 @@ homeBox.innerHTML=`
 class TodoGen {
 
   constructor(title,description,dueDate,priority,notes,checklist){
-  this.title = title,
-  this.description = description,
-  this.dueDate = dueDate,
-  this.priority= priority,
-  this.notes = notes,
-  this.checklist = checklist
+    
+    this.title = title,
+    this.description = description,
+    this.dueDate = dueDate,
+    this.priority= priority,
+    this.notes = notes,
+    this.checklist = false;
+    this.date=getday();
   }
  callTaskBtn(){
     addTaskBtn();
@@ -133,19 +135,27 @@ class TodoGen {
   
 }
 
-// let routines = new TodoGen("Routines","Do a weekly review of my tasks and goals","Add more personal routines");
+ 
+  function makeProject(){
+    let project=["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
+ 
+    for (let inbox of project){
+      inbox =[];
+      inbox.addEventListener("click",()=>{
+        let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
+        inbox.push(routines)
+      });
+     
+return inbox;
+    }
+return project;
+  }makeProject()
 
 
-// let projects = ["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
 
+  function editProject(){
 
-
-// setting todos ad complete
-// changing todo priority
-
-
-
-// takes care of hidden icons
+   // takes care of hidden icons
 const hiddenIcons = document .querySelector(".task");
 
 const icons = document.querySelector(".hidden-icons");
@@ -201,6 +211,30 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
   icons.textContent="";
     hiddenIcons.removeChild(icons)
   })
+  }editProject()
+// give priority a metric ranking system
+let priority = [priority1 , priority2, priority3, priority4];
+
+let priority1= {
+  importance : 10, 
+}
+let priority2={
+  importance: 8,
+}
+
+let priority3 = {
+  importance: 5,
+}
+
+let priority4 = {
+  importance :2,
+}
+// setting todos add complete
+// changing todo priority
+
+
+
+
 
    const addBtn = document.querySelector(".box button");
    
