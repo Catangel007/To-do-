@@ -335,10 +335,10 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
              <img src="${hidden}" alt="clover icon">
               </li>
               <li>Priority
-             <img id="P1" src="${flag}" alt="flag icon">
-             <img id="P2" src="${flag}" alt="flag icon">
-             <img id="P3" src="${flag}" alt="flag icon">
-             <img id="P4" src="${flag}" alt="flag icon">
+             <img id="red" src="${flag}" alt="flag icon">
+             <img id="blue" src="${flag}" alt="flag icon">
+             <img id="yellow" src="${flag}" alt="flag icon">
+             <img id="white" src="${flag}" alt="flag icon">
               </li>
               <li><img src="${clover}" alt="clover icon">Reminders</li>
               <li><img src="${clover}" alt="clover icon">Move to</li>

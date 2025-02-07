@@ -182,7 +182,7 @@ remindBtn.addEventListener("click",()=>{
     remindBox.innerHTML = `
     <h3>Reminders</h3> 
     <div class="btn">
-    <button id="first">Date & time</button>
+    <button id="first">Date & time<img src="${clover}" alt="clover icon"></button>
     <button id="second">Before task</button>
     </div>
     <p>(i)  Add a time to the task first</p>
@@ -212,9 +212,9 @@ moreBtn.addEventListener("click",()=>{
       
       <ul>
       <li><img src="${envelope}" alt="label icon">Labels</li>
-      <li><img src="${balloon}" alt="locations icon">Location</li>
-      <li><img src="${balloon}" alt="deadline icon">Deadline</li>
-      <li><img src="${add}" alt="add extension icon">Add extension</li>
+      <li><img src="${clover}" alt="clover icon">Location</li>
+      <li><img src="${clover}" alt="clover icon">Deadline</li>
+      <li><img src="${puzzle}" alt="puzzle icon">Add extension</li>
       <li>Edit task actions </li>
      </ul>
       
