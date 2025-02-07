@@ -8,6 +8,14 @@ import add_circle from "../images/add_circle.svg";
 import add from "../images/add.svg";
 import search from "../images/search.svg";
 
+
+import clover from "../images/clover.png";
+import mic from "../images/microphone.png";
+import paperPin from "../images/paper-pin.png";
+import puzzle from "../images/puzzle.png";
+import smile from "../images/smile.png";
+import unlock from "../images/unlock.png";
+
 import grig2 from "../images/grig2.svg";
 import hidden from "../images/more_horiz.svg";
 
@@ -257,23 +265,26 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
         const inBox = document.createElement("dialog");
        
         inBox.innerHTML= `
-       <div class="comment-modal"> 
+       <div class="comment-div"> 
        <div id="comment-header"><img>
-       <p></p>
-       <img><img><img><img>
+       <p>${this.projects}</p>
+       <img src="${add_circle}" alt="add task icon">
+       <img src="${add_circle}" alt="add task icon">
+       <img src="${hidden}" alt="add task icon">
+       <img src="${close}" alt="add task icon">
        </div>
        <div>
        <div>
      TAsks go here
      description goes here
-             <button>Add sub-task</button>
+             <button> <img src="${add}" alt="add icon">Add sub-task</button>
              <div class="comment-section">
              <span placeholder="Comment"><span>
              <p>
-             <img>
-             <img>
-             <img>
-             <img>
+              <img src="${paperPin}" alt="pin icon">
+              <img src="${mic}" alt="mic icon">
+              <img src="${smile}" alt="smile icon">
+              <img src="${puzzle}" alt="add task icon">
              </p>
 
              <p>
@@ -284,13 +295,13 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
        </div>
        <div id="inbox-nav">
          <ul>
-         <li>Project<li>projects go here</li></li>
-          <li>Date<li>dates go here</li></li>
-           <li>Deadline</li>
-            <li>Priority<li>priority go here</li></li>
-             <li>Labels</li>
-              <li>Reminders</li>
-               <li>Location</li>
+         <li>Project<li><img>${this.projects}projects go here<img></li></li><hr>
+          <li>Date<li>${this.date}dates go here</li></li><hr>
+           <li>Deadline<img src="${clover}" alt="clover icon"><img src="${unlock}" alt="unlock icon"></li><hr>
+            <li>Priority<li>${this.priority}priority go here</li></li><hr>
+             <li>Labels <img src="${add}" alt="add task icon"></li><hr>
+              <li>Reminders<img src="${add}" alt="add task icon"></li><hr>
+               <li>Location<img src="${clover}" alt="clover icon"><img src="${unlock}" alt="unlock icon"></li><hr>
          </ul>
        
        
@@ -312,24 +323,30 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
             const editBox = document.createElement("div");
            
             editBox.innerHTML= `
-           <form action=""> 
-           <input id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
-           <input id="description" placeholder="Description"></input>
-           <p class="section">
-           <button id="today-btn" type="button" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
-           <button class="priority-btn" type="button"><img src="${flag}" alt="flag icon"> Priority </button>
-           <button class="remind-btn" type="button"><img src="${alarm}" alt="alarm icon"> Reminders </button>
-           <button class="more-btn" type="button"><img src="${hidden}" alt="hidden icon"></button>
-           </p><hr>
-           <div class="close-section">
-           <button class="project-btn" type="button"><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
-           <div>
-           <button class="cancel-btn "type="reset">Cancel</button>
-           <button class="save-btn" type="save">Save</button>
-           </div>
-           </div>
-           
-           </form>
+          <ul>
+              <li>Edit</li>
+              <li>Go to Project</li>
+              <li>Date
+             <img src="${clover}" alt="clover icon">
+             <img src="${clover}" alt="clover icon">
+             <img src="${clover}" alt="clover icon">
+             <img src="${clover}" alt="clover icon">
+             <img src="${noDate}" alt="clover icon">
+             <img src="${hidden}" alt="clover icon">
+              </li>
+              <li>Priority
+             <img id="P1" src="${flag}" alt="flag icon">
+             <img id="P2" src="${flag}" alt="flag icon">
+             <img id="P3" src="${flag}" alt="flag icon">
+             <img id="P4" src="${flag}" alt="flag icon">
+              </li>
+              <li><img src="${clover}" alt="clover icon">Reminders</li>
+              <li><img src="${clover}" alt="clover icon">Move to</li>
+              <li><img src="${clover}" alt="clover icon">Duplicate</li>
+              <li><img src="${clover}" alt="clover icon">Copy link to task</li>
+              <li><img src="${clover}" alt="clover icon">Add extension...</li>
+              <li><img src="${clover}" alt="clover icon">Delete</li>
+          </ul>
            
             `;
             content.appendChild(editBox);
