@@ -254,11 +254,11 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
 
     l3.addEventListener("click",()=>{
-        const editBox = document.createElement("dialog");
+        const inBox = document.createElement("dialog");
        
         inBox.innerHTML= `
-       <div> 
-       <div><img>
+       <div class="comment-modal"> 
+       <div id="comment-header"><img>
        <p></p>
        <img><img><img><img>
        </div>
@@ -266,7 +266,21 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
        <div>
      TAsks go here
      description goes here
-<button>Add sub-task</button>
+             <button>Add sub-task</button>
+             <div class="comment-section">
+             <span placeholder="Comment"><span>
+             <p>
+             <img>
+             <img>
+             <img>
+             <img>
+             </p>
+
+             <p>
+             <button id="delete-comment">Cancel</button>
+              <button id="add-comment">Comment</button>
+             </p>
+             </div>
        </div>
        <div id="inbox-nav">
          <ul>
