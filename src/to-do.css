@@ -722,7 +722,7 @@ bottom: 20px;
   background-color: #ccc;
 }
 
-.today-box,.priority-box,.remind-box,.more-box,.project-box{
+.today-box,.priority-box,.remind-box,.more-box,.project-box,.search-box{
   border-radius: 10px;
   box-shadow:0 0 5px #ccc;
   border:1px solid #ccc;
@@ -832,4 +832,9 @@ position: relative;
 
 .priority-box div{
   padding-left:10px
+}
+
+.search-box{
+  height: 60vh;
+  width: 60vw;
 }

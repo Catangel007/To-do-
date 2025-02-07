@@ -14,7 +14,8 @@ import complete from "../images/check_circle.svg";
 import activity from "../images/tune.svg";
 
     export  function searchPage(){
-      const searchBtn = document.querySelector("#search-btn");
+      const content = document.querySelector("#container");
+      const searchBtn = document.querySelector("#1");
       
       searchBtn.addEventListener("click",()=>{
          const searchBox = document.createElement("div");

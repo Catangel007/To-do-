@@ -25,6 +25,8 @@ export function addTaskPage(){
 
   const taskBox = document.createElement("div");
  taskBox.setAttribute("class","task-box");
+
+
 //  content.showPopover(taskBox);
 taskBox.innerHTML =`
 <form action=""> 
@@ -47,13 +49,9 @@ taskBox.innerHTML =`
 </form>
 
 
-
 `
 content.appendChild(taskBox);
 
-
-
-  
 
 const cancelBtn =document.querySelector(".cancel-btn");
 cancelBtn.addEventListener("click",()=>{
@@ -272,6 +270,9 @@ function toggleActive(activeElement, inactiveElement) {
 remindDiv.addEventListener("click", () => toggleActive(remindDiv, remindDivSecond));
 remindDivSecond.addEventListener("click", () => toggleActive(remindDivSecond, remindDiv));
    
+
+
+
 
 
 }
