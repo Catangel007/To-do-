@@ -157,7 +157,7 @@ class TodoGen {
 return inbox;
     }
 return project;
-  }makeProject()
+  }
 
 
 
@@ -251,12 +251,12 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
 
  l2.addEventListener("click",()=>{
-    const editBox = document.createElement("div");
+    const editTodayBox = document.createElement("div");
    
-    editBox.innerHTML= `${todayBox};
+    editTodayBox.innerHTML= `${todayBox};
    
     `;
-    content.appendChild(editBox);
+    content.appendChild(editTodayBox);
     })
 
 
