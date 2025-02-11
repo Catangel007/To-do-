@@ -221,7 +221,7 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
   });
 
 // add html to hidden icons
- l1.addEventListener("click",()=>{
+ image1.addEventListener("click",()=>{
  const editBox = document.createElement("div");
 
  editBox.innerHTML= `
@@ -250,7 +250,7 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
   
 
 
- l2.addEventListener("click",()=>{
+ image2.addEventListener("click",()=>{
     const editTodayBox = document.createElement("div");
    
     editTodayBox.innerHTML= `${todayBox};
@@ -261,7 +261,7 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
 
 
-    l3.addEventListener("click",()=>{
+    image3.addEventListener("click",()=>{
         const inBox = document.createElement("dialog");
        
         inBox.innerHTML= `
@@ -314,12 +314,12 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
        
        </div>
         `;
-        content.appendChild(editBox);
+        content.appendChild(inBox);
         })
 
 
 
-      l4.addEventListener("click",()=>{
+      image4.addEventListener("click",()=>{
             const editBox = document.createElement("div");
            
             editBox.innerHTML= `
@@ -352,6 +352,8 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
             content.appendChild(editBox);
             })
   }editProject()
+
+
 // give priority a metric ranking system
 let priority = [priority1 , priority2, priority3, priority4];
 
