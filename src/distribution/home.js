@@ -1,4 +1,4 @@
-"use strict";
+
 // import Images and Icons
 import bell from "../images/bell.png";
 import apps from "../images/grid3.svg";
@@ -55,33 +55,34 @@ import playingCards from "../images/playing_cards.svg";
    
 
  export function homePage(){
+
     const content = document.querySelector("body");
     const navBox = document.createElement("div");
     const homeBox = document.createElement("div");
 
-content.appendChild(navBox);
-content.appendChild(homeBox);
+    content.appendChild(navBox);
+    content.appendChild(homeBox);
 
-navBox.setAttribute("class","navBox");
-homeBox.setAttribute("class","homeBox");
+    navBox.setAttribute("class","navBox");
+    homeBox.setAttribute("class","homeBox");
 
-navBox.innerHTML="";
-navBox.innerHTML=`
+    navBox.innerHTML="";
+    navBox.innerHTML=`
 
  <div class="nav">
         <h3>Name  <img id="bell" src="${bell}" alt="notifications icon"><img src="${thumbnail}"></h3>
         <ul>
-            <li id="0"><img src="${add_circle}" alt="add task icon">Add Task</li>
-            <li id="1"><img src="${search}" alt="search icon">Search</li>
-            <li id="2"><img src="${inbox}" alt="inbox icon">inbox</li>
-            <li id="3"><img src="${calendar_today}" alt="add task today icon">Today</li>
-            <li id="4"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
-            <li id="5"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
+            <li class="nav-li" id="0"><img src="${add_circle}" alt="add task icon">Add Task</li>
+            <li class="nav-li" id="1"><img src="${search}" alt="search icon">Search</li>
+            <li class="nav-li" id="2"><img src="${inbox}" alt="inbox icon">inbox</li>
+            <li class="nav-li" id="3"><img src="${calendar_today}" alt="add task today icon">Today</li>
+            <li class="nav-li" id="4"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
+            <li class="nav-li" id="5"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
         <ul id="projects"> My Projects <img src="${add}" alt="add project icon"><img src="${arrowDown}" alt="add project icon">
-            <li id="6" class="margin"><img src="${hashtag}" alt="">Home</li>
-            <li id="7"><img src="${add}" alt="add team icon">Add a Team</li>
-            <li id="8"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
+            <li class="nav-li" id="6" class="margin"><img src="${hashtag}" alt="">Home</li>
+            <li class="nav-li" id="7"><img src="${add}" alt="add team icon">Add a Team</li>
+            <li class="nav-li" id="8"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
         </ul>
     </div>
 
@@ -96,23 +97,6 @@ homeBox.innerHTML=`
            <p id="view"><img src="${view}">View</p>
         </header>
         <div id="container">
-
-
-         <div class="task-header ${todo.completed ? 'completed' : ''}">
-              <img src="${grig2}">
-              <input type="checkbox" ${todo.completed ? 'checked' : ''}>
-              <span class="todo-title">${todo.title}</span>
-              <span class="priority-badge priority-${todo.priority}">${todo.priority}</span>
-          </div>
-          ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
-          <div class="todo-footer">
-              <span class="due-date">${todo.dueDate}</span>
-              <div class="todo-actions"></div>
-          </div>
-
-
-
-
             <h1>Today</h1>
             <p id="taskCounter">
             <img src="${checkCircle}">task
@@ -152,28 +136,28 @@ homeBox.innerHTML=`
      this.priority= priority,
      this.notes = notes,
      this.checklist = false;
-     this.date=getday();
+     this.date= new Date();
    }
   callTaskBtn(){
      addTaskBtn();
   }
-  
+   
  }
 
  
    function makeProject(){
-     let project=["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
+     let projects=["Inbox","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"];
  
-     for (let inbox of project){
-       inbox =[];
-       inbox.addEventListener("click",()=>{
+     for (let project of projects){
+       project =[];
+       project.addEventListener("click",()=>{
          let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
-         inbox.push(routines)
+         project.push(routines)
        });
      
- return inbox;
-     }
  return project;
+     }
+ return projects;
    }
 
 class TodoManager {
@@ -182,7 +166,7 @@ class TodoManager {
   constructor() {
       this.todos = [];
       this.projects = new Map();
-      this.projects.set(["inbox","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday"]);
+      this.projects.set(["Inbox","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"]);
       this.filters = {
           priority: null,
           dueDate: null,
@@ -247,27 +231,37 @@ class TodoManager {
       });
   }
 
-  createTodoElement(todo) {
-      const div = document.createElement('div');
-      div.className = 'task';
-      div.innerHTML = `
-          <div class="task-header ${todo.completed ? 'completed' : ''}">
-              <img src="${grig2}">
-              <input type="checkbox" ${todo.completed ? 'checked' : ''}>
-              <span class="todo-title">${todo.title}</span>
-              <span class="priority-badge priority-${todo.priority}">${todo.priority}</span>
-          </div>
-          ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
-          <div class="todo-footer">
-              <span class="due-date">${todo.dueDate}</span>
-              <div class="todo-actions"></div>
-          </div>
-      `;
-
+   createTodoElement(todo) {
+  //     const div = document.createElement('div');
+  //     div.className = 'task';
+  //     div.innerHTML = `
+  //         <div class="task-header ${todo.completed ? 'completed' : ''}">
+  //             <img src="${grig2}">
+  //             <input type="checkbox" ${todo.completed ? 'checked' : ''}>
+  //             <span class="todo-title">${todo.title}</span>
+  //             <span class="priority-badge priority-${todo.priority}">${todo.priority}</span>
+  //         </div>
+  //         ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
+  //         <div class="todo-footer">
+  //             <span class="due-date">${todo.dueDate}</span>
+  //             <div class="todo-actions"></div>
+  //         </div>
+  //     `;
+    makeProject();
       // Add event listeners
       const checkbox = div.querySelector('input[type="checkbox"]');
       checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
 
+
+      for (let project of this.projects){
+        project =[];
+        project.addEventListener("click",()=>{
+          let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
+          project.push(routines)
+        });
+      
+  return project;
+      }
       return div;
   }
 
@@ -537,7 +531,7 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
 // adds eventListeners to page and displays them
    function addNavListener() {
-    const navList = document.querySelectorAll("li");
+    const navList = document.querySelectorAll(".nav-li");
     
     navList.forEach((nav) => {
       nav.addEventListener("click", () => {
