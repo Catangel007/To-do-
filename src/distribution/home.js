@@ -96,6 +96,23 @@ homeBox.innerHTML=`
            <p id="view"><img src="${view}">View</p>
         </header>
         <div id="container">
+
+
+         <div class="task-header ${todo.completed ? 'completed' : ''}">
+              <img src="${grig2}">
+              <input type="checkbox" ${todo.completed ? 'checked' : ''}>
+              <span class="todo-title">${todo.title}</span>
+              <span class="priority-badge priority-${todo.priority}">${todo.priority}</span>
+          </div>
+          ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
+          <div class="todo-footer">
+              <span class="due-date">${todo.dueDate}</span>
+              <div class="todo-actions"></div>
+          </div>
+
+
+
+          
             <h1>Today</h1>
             <p id="taskCounter">
             <img src="${checkCircle}">task
@@ -124,40 +141,191 @@ homeBox.innerHTML=`
  plusBtn.addEventListener("click",addTaskPage);
 
 
-// create new todos
-class TodoGen {
+// // create new todos
+// class TodoGen {
 
-  constructor(title,description,dueDate,priority,notes,checklist){
+//   constructor(title,description,dueDate,priority,notes,checklist){
     
-    this.title = title,
-    this.description = description,
-    this.dueDate = dueDate,
-    this.priority= priority,
-    this.notes = notes,
-    this.checklist = false;
-    this.date=getday();
-  }
- callTaskBtn(){
-    addTaskBtn();
- }
+//     this.title = title,
+//     this.description = description,
+//     this.dueDate = dueDate,
+//     this.priority= priority,
+//     this.notes = notes,
+//     this.checklist = false;
+//     this.date=getday();
+//   }
+//  callTaskBtn(){
+//     addTaskBtn();
+//  }
   
+// }
+
+ 
+//   function makeProject(){
+//     let project=["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
+ 
+//     for (let inbox of project){
+//       inbox =[];
+//       inbox.addEventListener("click",()=>{
+//         let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
+//         inbox.push(routines)
+//       });
+     
+// return inbox;
+//     }
+// return project;
+//   }
+
+class TodoManager {
+
+
+  constructor() {
+      this.todos = [];
+      this.projects = new Map();
+      this.projects.set(["tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday"]);
+      this.filters = {
+          priority: null,
+          dueDate: null,
+          completed: null
+      };
+  }
+
+  addTodo(todo) {
+      this.todos.push(todo);
+      this.saveTodos();
+      this.renderTodos();
+  }
+
+  deleteTodo(id) {
+      this.todos = this.todos.filter(todo => todo.id !== id);
+      this.saveTodos();
+      this.renderTodos();
+  }
+
+  toggleTodoComplete(id) {
+      const todo = this.todos.find(t => t.id === id);
+      if (todo) {
+          todo.completed = !todo.completed;
+          this.saveTodos();
+          this.renderTodos();
+      }
+  }
+
+  saveTodos() {
+      localStorage.setItem('todos', JSON.stringify(this.todos));
+  }
+
+  loadTodos() {
+      const saved = localStorage.getItem('todos');
+      this.todos = saved ? JSON.parse(saved) : [];
+      this.renderTodos();
+  }
+
+  renderTodos() {
+      const container = document.getElementById('newTodo');
+      container.innerHTML = '';
+
+      const filteredTodos = this.getFilteredTodos();
+      
+      filteredTodos.forEach(todo => {
+          const todoElement = this.createTodoElement(todo);
+          container.appendChild(todoElement);
+      });
+
+      this.updateTaskCounter();
+  }
+
+  getFilteredTodos() {
+      return this.todos.filter(todo => {
+          if (this.filters.priority && todo.priority !== this.filters.priority) return false;
+          if (this.filters.completed !== null && todo.completed !== this.filters.completed) return false;
+          if (this.filters.dueDate) {
+              const today = new Date().toISOString().split('T')[0];
+              if (this.filters.dueDate === 'today' && todo.dueDate !== today) return false;
+          }
+          return true;
+      });
+  }
+
+  createTodoElement(todo) {
+      const div = document.createElement('div');
+      div.className = 'task';
+      div.innerHTML = `
+          <div class="task-header ${todo.completed ? 'completed' : ''}">
+              <img src="${grig2}">
+              <input type="checkbox" ${todo.completed ? 'checked' : ''}>
+              <span class="todo-title">${todo.title}</span>
+              <span class="priority-badge priority-${todo.priority}">${todo.priority}</span>
+          </div>
+          ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
+          <div class="todo-footer">
+              <span class="due-date">${todo.dueDate}</span>
+              <div class="todo-actions"></div>
+          </div>
+      `;
+
+      // Add event listeners
+      const checkbox = div.querySelector('input[type="checkbox"]');
+      checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
+
+      return div;
+  }
+
+  updateTaskCounter() {
+      const counter = document.getElementById('taskCounter');
+      const completed = this.todos.filter(todo => todo.completed).length;
+      counter.innerHTML = `
+          <img src="${checkCircle}">
+          ${completed}/${this.todos.length} tasks completed
+      `;
+  }
 }
 
- 
-  function makeProject(){
-    let project=["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
- 
-    for (let inbox of project){
-      inbox =[];
-      inbox.addEventListener("click",()=>{
-        let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
-        inbox.push(routines)
-      });
-     
-return inbox;
-    }
-return project;
-  }
+
+
+// Initialize TodoManager
+const todoManager = new TodoManager();
+todoManager.loadTodos();
+
+
+// Add drag and drop functionality
+function enableDragAndDrop() {
+  const tasks = document.querySelectorAll('.task');
+  tasks.forEach(task => {
+      task.setAttribute('draggable', true);
+      task.addEventListener('dragstart', handleDragStart);
+      task.addEventListener('dragover', handleDragOver);
+      task.addEventListener('drop', handleDrop);
+  });
+}
+
+function handleDragStart(e) {
+  e.dataTransfer.setData('text/plain', e.target.id);
+  e.target.classList.add('dragging');
+}
+
+function handleDragOver(e) {
+  e.preventDefault();
+}
+
+function handleDrop(e) {
+  e.preventDefault();
+  const draggedId = e.dataTransfer.getData('text/plain');
+  const droppedOn = e.target.closest('.task');
+  if (droppedOn && draggedId !== droppedOn.id) {
+      // Reorder logic here
+       todoManager.reorderTasks(draggedId, droppedOn.id);
+   }
+}
+
+// Add keyboard shortcuts
+document.addEventListener('keydown', (e) => {
+   if (e.ctrlKey && e.key === 'n') {
+       e.preventDefault();
+       addTaskPage();
+   }
+});
+
 
 
 
@@ -167,8 +335,8 @@ return project;
 const hiddenIcons = document .querySelector(".task");
 
 const icons = document.querySelector(".hidden-icons");
-icons.style.color="#ccc";
-icons.style.size="40px";
+icons.style.color= "gray";
+icons.style.size= "40px";
 hiddenIcons.addEventListener("mouseenter", ()=>{
  
  hiddenIcons.appendChild(icons);
@@ -354,23 +522,6 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
   }editProject()
 
 
-// give priority a metric ranking system
-let priority = [priority1 , priority2, priority3, priority4];
-
-let priority1= {
-  importance : 10, 
-}
-let priority2={
-  importance: 8,
-}
-
-let priority3 = {
-  importance: 5,
-}
-
-let priority4 = {
-  importance :2,
-}
 // setting todos add complete
 // changing todo priority
 
@@ -417,6 +568,12 @@ let priority4 = {
  function playAnimation(){
   animationPage()
  }
+
+
+ return {
+  todoManager,
+  enableDragAndDrop
+};
  }
 
 
@@ -440,171 +597,7 @@ let priority4 = {
 
 
 
- //"use strict";
 
-// Existing imports remain the same...
 
-// export function homePage() {
-//     class TodoManager {
-//         constructor() {
-//             this.todos = [];
-//             this.projects = new Map();
-//             this.projects.set(["tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday"]);
-//             this.filters = {
-//                 priority: null,
-//                 dueDate: null,
-//                 completed: null
-//             };
-//         }
 
-//         addTodo(todo) {
-//             this.todos.push(todo);
-//             this.saveTodos();
-//             this.renderTodos();
-//         }
-
-//         deleteTodo(id) {
-//             this.todos = this.todos.filter(todo => todo.id !== id);
-//             this.saveTodos();
-//             this.renderTodos();
-//         }
-
-//         toggleTodoComplete(id) {
-//             const todo = this.todos.find(t => t.id === id);
-//             if (todo) {
-//                 todo.completed = !todo.completed;
-//                 this.saveTodos();
-//                 this.renderTodos();
-//             }
-//         }
-
-//         saveTodos() {
-//             localStorage.setItem('todos', JSON.stringify(this.todos));
-//         }
-
-//         loadTodos() {
-//             const saved = localStorage.getItem('todos');
-//             this.todos = saved ? JSON.parse(saved) : [];
-//             this.renderTodos();
-//         }
-
-//         renderTodos() {
-//             const container = document.getElementById('newTodo');
-//             container.innerHTML = '';
-
-//             const filteredTodos = this.getFilteredTodos();
-            
-//             filteredTodos.forEach(todo => {
-//                 const todoElement = this.createTodoElement(todo);
-//                 container.appendChild(todoElement);
-//             });
-
-//             this.updateTaskCounter();
-//         }
-
-//         getFilteredTodos() {
-//             return this.todos.filter(todo => {
-//                 if (this.filters.priority && todo.priority !== this.filters.priority) return false;
-//                 if (this.filters.completed !== null && todo.completed !== this.filters.completed) return false;
-//                 if (this.filters.dueDate) {
-//                     const today = new Date().toISOString().split('T')[0];
-//                     if (this.filters.dueDate === 'today' && todo.dueDate !== today) return false;
-//                 }
-//                 return true;
-//             });
-//         }
-
-//         createTodoElement(todo) {
-//             const div = document.createElement('div');
-//             div.className = 'task';
-//             div.innerHTML = `
-//                 <div class="task-header ${todo.completed ? 'completed' : ''}">
-//                     <img src="${grig2}">
-//                     <input type="checkbox" ${todo.completed ? 'checked' : ''}>
-//                     <span class="todo-title">${todo.title}</span>
-//                     <span class="priority-badge priority-${todo.priority}">${todo.priority}</span>
-//                 </div>
-//                 ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
-//                 <div class="todo-footer">
-//                     <span class="due-date">${todo.dueDate}</span>
-//                     <div class="todo-actions"></div>
-//                 </div>
-//             `;
-
-//             // Add event listeners
-//             const checkbox = div.querySelector('input[type="checkbox"]');
-//             checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
-
-//             return div;
-//         }
-
-//         updateTaskCounter() {
-//             const counter = document.getElementById('taskCounter');
-//             const completed = this.todos.filter(todo => todo.completed).length;
-//             counter.innerHTML = `
-//                 <img src="${checkCircle}">
-//                 ${completed}/${this.todos.length} tasks completed
-//             `;
-//         }
-//     }
-
-//     // Initialize the page
-//     const content = document.querySelector("body");
-//     const navBox = document.createElement("div");
-//     const homeBox = document.createElement("div");
-
-//     // ... (rest of your existing HTML setup)
-
-//     // Initialize TodoManager
-//     const todoManager = new TodoManager();
-//     todoManager.loadTodos();
-
-//     // Add event listeners
-//     const plusBtn = document.querySelector("button");
-//     plusBtn.addEventListener("click", () => {
-//         addTaskPage();
-//     });
-
-//     // Add drag and drop functionality
-//     function enableDragAndDrop() {
-//         const tasks = document.querySelectorAll('.task');
-//         tasks.forEach(task => {
-//             task.setAttribute('draggable', true);
-//             task.addEventListener('dragstart', handleDragStart);
-//             task.addEventListener('dragover', handleDragOver);
-//             task.addEventListener('drop', handleDrop);
-//         });
-//     }
-
-//     function handleDragStart(e) {
-//         e.dataTransfer.setData('text/plain', e.target.id);
-//         e.target.classList.add('dragging');
-//     }
-
-//     function handleDragOver(e) {
-//         e.preventDefault();
-//     }
-
-//     function handleDrop(e) {
-//         e.preventDefault();
-//         const draggedId = e.dataTransfer.getData('text/plain');
-//         const droppedOn = e.target.closest('.task');
-//         if (droppedOn && draggedId !== droppedOn.id) {
-//             // Reorder logic here
-//             todoManager.reorderTasks(draggedId, droppedOn.id);
-//         }
-//     }
-
-//     // Add keyboard shortcuts
-//     document.addEventListener('keydown', (e) => {
-//         if (e.ctrlKey && e.key === 'n') {
-//             e.preventDefault();
-//             addTaskPage();
-//         }
-//     });
-
-//     return {
-//         todoManager,
-//         enableDragAndDrop
-//     };
-// }
+   
