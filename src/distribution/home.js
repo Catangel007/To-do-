@@ -112,7 +112,7 @@ homeBox.innerHTML=`
 
 
 
-          
+
             <h1>Today</h1>
             <p id="taskCounter">
             <img src="${checkCircle}">task
@@ -142,39 +142,39 @@ homeBox.innerHTML=`
 
 
 // // create new todos
-// class TodoGen {
+ class Todo {
 
-//   constructor(title,description,dueDate,priority,notes,checklist){
+   constructor(title,description,dueDate,priority,notes,checklist){
     
-//     this.title = title,
-//     this.description = description,
-//     this.dueDate = dueDate,
-//     this.priority= priority,
-//     this.notes = notes,
-//     this.checklist = false;
-//     this.date=getday();
-//   }
-//  callTaskBtn(){
-//     addTaskBtn();
-//  }
+     this.title = title,
+     this.description = description,
+     this.dueDate = dueDate,
+     this.priority= priority,
+     this.notes = notes,
+     this.checklist = false;
+     this.date=getday();
+   }
+  callTaskBtn(){
+     addTaskBtn();
+  }
   
-// }
+ }
 
  
-//   function makeProject(){
-//     let project=["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
+   function makeProject(){
+     let project=["today","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday","custom"];
  
-//     for (let inbox of project){
-//       inbox =[];
-//       inbox.addEventListener("click",()=>{
-//         let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
-//         inbox.push(routines)
-//       });
+     for (let inbox of project){
+       inbox =[];
+       inbox.addEventListener("click",()=>{
+         let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
+         inbox.push(routines)
+       });
      
-// return inbox;
-//     }
-// return project;
-//   }
+ return inbox;
+     }
+ return project;
+   }
 
 class TodoManager {
 
@@ -182,7 +182,7 @@ class TodoManager {
   constructor() {
       this.todos = [];
       this.projects = new Map();
-      this.projects.set(["tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday"]);
+      this.projects.set(["inbox","tomorrow","monday","tuesday","wednesday","thursday","friday","saturday","sunday"]);
       this.filters = {
           priority: null,
           dueDate: null,
