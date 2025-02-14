@@ -1,4 +1,4 @@
-
+"use strict";
 // import Images and Icons
 import bell from "../images/bell.png";
 import apps from "../images/grid3.svg";
@@ -39,7 +39,6 @@ import lightMode from "../images/light_mode.svg";
 import view from "../images/tune.svg";
 
 import playingCards from "../images/playing_cards.svg";
-
 
 
    import {inboxPage} from "./inbox.js";
@@ -98,17 +97,15 @@ homeBox.innerHTML=`
         </header>
         <div id="container">
             <h1>Today</h1>
-            <p id="taskCounter">
-            <img src="${checkCircle}">task
-            </p>
+            <p id="taskCounter"></p>
+
             <div id="newTodo">
               <div class="task">
               <img src="${grig2}">
-              <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets.
-              
+              <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets. 
               </div>
-            <ul class="hidden-icons"></ul>
-               <p id="inbox">inbox<img src="${inbox}"></p>
+
+           
                
 
             </div><hr>
@@ -144,22 +141,9 @@ homeBox.innerHTML=`
    
  }
 
- 
-   function makeProject(){
-     let projects=["Inbox","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"];
- 
-     for (let project of projects){
-       project =[];
-       project.addEventListener("click",()=>{
-         let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
-         project.push(routines)
-       });
-     
- return project;
-     }
- return projects;
-   }
 
+ 
+// manage new todo and old ones
 class TodoManager {
 
 
@@ -232,31 +216,44 @@ class TodoManager {
   }
 
    createTodoElement(todo) {
-  //     const div = document.createElement('div');
-  //     div.className = 'task';
-  //     div.innerHTML = `
-  //         <div class="task-header ${todo.completed ? 'completed' : ''}">
-  //             <img src="${grig2}">
-  //             <input type="checkbox" ${todo.completed ? 'checked' : ''}>
-  //             <span class="todo-title">${todo.title}</span>
-  //             <span class="priority-badge priority-${todo.priority}">${todo.priority}</span>
-  //         </div>
-  //         ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
-  //         <div class="todo-footer">
-  //             <span class="due-date">${todo.dueDate}</span>
-  //             <div class="todo-actions"></div>
-  //         </div>
-  //     `;
-    makeProject();
+     const div = document.querySelector(".task");
+    
+     
+     div.innerHTML = `
+         < class="task-header ${todo.completed ? 'completed' : ''}">
+             <img src="${grig2}">
+             <input type="checkbox" ${todo.completed ? 'checked' : ''} id="radio-btn" name="radio-btn" >
+             <span class="todo-title">${todo.title}</span>
+             <span class="priority-badge priority-${todo.priority}">${todo.priority||"Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets."}</span>
+         </div>
+             <ul class="hidden-icons"></ul>
+               <p id="inbox">inbox<img src="${inbox}"></p>
+         ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
+         <div class="todo-footer">
+             <span class="due-date">${todo.dueDate}</span>
+             <div class="todo-actions"></div>
+         </div>
+     `;
+   
+
+    
+
       // Add event listeners
       const checkbox = div.querySelector('input[type="checkbox"]');
       checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
 
 
       for (let project of this.projects){
-        project =[];
+        todo.project = this.projects;
+        todo.title = title.value;
+        todo.description = description.value;
+        todo.dueDate = dueDate.value;
+        todo.priority = priority.value;
+        todo.notes = notes.value;
+
+        project = [];
         project.addEventListener("click",()=>{
-          let routines = new TodoGen(title.value,description.value,dueDate.value,priority.value,notes.value);
+          let routines = new Todo(title.value ,description.value ,dueDate.value ,priority.value ,notes.value);
           project.push(routines)
         });
       
@@ -280,7 +277,7 @@ class TodoManager {
 // Initialize TodoManager
 const todoManager = new TodoManager();
 todoManager.loadTodos();
-
+todoManager.createTodoElement();
 
 // Add drag and drop functionality
 function enableDragAndDrop() {
