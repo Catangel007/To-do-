@@ -125,14 +125,15 @@ homeBox.innerHTML=`
 // // create new todos
  class Todo {
 
-   constructor(title,description,dueDate,priority,notes,checklist){
+   constructor(title,description,dueDate,priority,notes,){
     
      this.title = title,
      this.description = description,
      this.dueDate = dueDate,
      this.priority= priority,
      this.notes = notes,
-     this.checklist = false;
+     this.checklist = [];
+     this.completed = null;
      this.date= new Date();
    }
   callTaskBtn(){
@@ -141,7 +142,7 @@ homeBox.innerHTML=`
    
  }
 
-
+const todo = new
  
 // manage new todo and old ones
 class TodoManager {
@@ -220,10 +221,10 @@ class TodoManager {
     
      
      div.innerHTML = `
-         < class="task-header ${todo.completed ? 'completed' : ''}">
+         < class="task-header">${todo.completed ? 'completed' : ''}
              <img src="${grig2}">
              <input type="checkbox" ${todo.completed ? 'checked' : ''} id="radio-btn" name="radio-btn" >
-             <span class="todo-title">${todo.title}</span>
+             <span class="todo-title">${todo.title || "hey this shit works!!!!!!!!!!!!!!!!"}</span>
              <span class="priority-badge priority-${todo.priority}">${todo.priority||"Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets."}</span>
          </div>
              <ul class="hidden-icons"></ul>
@@ -244,22 +245,17 @@ class TodoManager {
 
 
       for (let project of this.projects){
-        todo.project = this.projects;
-        todo.title = title.value;
-        todo.description = description.value;
-        todo.dueDate = dueDate.value;
-        todo.priority = priority.value;
-        todo.notes = notes.value;
-
+       
         project = [];
         project.addEventListener("click",()=>{
-          let routines = new Todo(title.value ,description.value ,dueDate.value ,priority.value ,notes.value);
+          let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
           project.push(routines)
+          return routines;
         });
       
   return project;
       }
-      return div;
+      return div, routines;
   }
 
   updateTaskCounter() {
@@ -275,9 +271,9 @@ class TodoManager {
 
 
 // Initialize TodoManager
-const todoManager = new TodoManager();
+const todoManager = new todoManager(routines);
 todoManager.loadTodos();
-todoManager.createTodoElement();
+
 
 // Add drag and drop functionality
 function enableDragAndDrop() {
@@ -320,7 +316,7 @@ document.addEventListener('keydown', (e) => {
 
 
 
-  function editProject(){
+function editProject(){
 
    // takes care of hidden icons
 const hiddenIcons = document .querySelector(".task");
@@ -378,6 +374,9 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
   icons.textContent="";
     hiddenIcons.removeChild(icons);
   });
+
+
+
 
 // add html to hidden icons
  image1.addEventListener("click",()=>{
@@ -520,12 +519,11 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
 
 
-   const addBtn = document.querySelector(".box button");
+  
+
+
+const addBtn = document.querySelector(".box button");
    
-
-
-
-
 // adds eventListeners to page and displays them
    function addNavListener() {
     const navList = document.querySelectorAll(".nav-li");

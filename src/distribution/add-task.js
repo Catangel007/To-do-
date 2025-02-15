@@ -30,6 +30,7 @@ export function addTaskPage(){
 //  content.showPopover(taskBox);
 taskBox.innerHTML =`
 <form action=""> 
+
 <input id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
 <input id="description" placeholder="Description"></input>
 <p class="section">
