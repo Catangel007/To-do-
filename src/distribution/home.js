@@ -104,10 +104,6 @@ homeBox.innerHTML=`
               <img src="${grig2}">
               <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets. 
               </div>
-
-           
-               
-
             </div><hr>
             <button><img src="${add}" alt="">Add Task</button>
         </div> 
@@ -142,7 +138,7 @@ homeBox.innerHTML=`
    
  }
 
-const todo = new
+
  
 // manage new todo and old ones
 class TodoManager {
@@ -221,7 +217,8 @@ class TodoManager {
     
      
      div.innerHTML = `
-         < class="task-header">${todo.completed ? 'completed' : ''}
+
+         ${todo.completed ? 'completed' : ''}
              <img src="${grig2}">
              <input type="checkbox" ${todo.completed ? 'checked' : ''} id="radio-btn" name="radio-btn" >
              <span class="todo-title">${todo.title || "hey this shit works!!!!!!!!!!!!!!!!"}</span>
@@ -236,27 +233,14 @@ class TodoManager {
          </div>
      `;
    
+// Add event listeners
+const checkbox = div.querySelector('input[type="checkbox"]');
+checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
 
+     
+   }
     
 
-      // Add event listeners
-      const checkbox = div.querySelector('input[type="checkbox"]');
-      checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
-
-
-      for (let project of this.projects){
-       
-        project = [];
-        project.addEventListener("click",()=>{
-          let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
-          project.push(routines)
-          return routines;
-        });
-      
-  return project;
-      }
-      return div, routines;
-  }
 
   updateTaskCounter() {
       const counter = document.getElementById('taskCounter');

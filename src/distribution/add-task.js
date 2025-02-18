@@ -19,18 +19,14 @@ import add from "../images/add.svg";
 import { calendarPage } from "./calendar";
 
 export function addTaskPage(){
+const content = document.querySelector("#container");
+const taskBox = document.createElement("div");
 
- const content = document.querySelector("#container");
-
-
-  const taskBox = document.createElement("div");
  taskBox.setAttribute("class","task-box");
-
-
 //  content.showPopover(taskBox);
 taskBox.innerHTML =`
-<form action=""> 
 
+<form action=""> 
 <input id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
 <input id="description" placeholder="Description"></input>
 <p class="section">
@@ -46,13 +42,33 @@ taskBox.innerHTML =`
 <button class="add-btn" type="submit">Add Task</button>
 </div>
 </div>
-
 </form>
-
-
 `
+
 content.appendChild(taskBox);
 
+// create new todos
+ class Todo {
+
+   constructor(title,description,dueDate,priority,notes,){
+    
+     this.title = title,
+     this.description = description,
+     this.dueDate = dueDate,
+     this.priority= priority,
+     this.notes = notes,
+     this.checklist = [];
+     this.completed = null;
+     this.date= new Date();
+   }
+  callTaskBtn(){
+     addTaskBtn();
+  }
+   
+}
+
+
+ 
 
 const cancelBtn =document.querySelector(".cancel-btn");
 cancelBtn.addEventListener("click",()=>{
@@ -61,7 +77,19 @@ cancelBtn.addEventListener("click",()=>{
 
 const addBtn = document.querySelector(".add-btn");
 addBtn.addEventListener("click",()=>{
-    let list = taskBox.value;
+   for (let project of this.projects){
+          
+           project = [];
+           project.addEventListener("click",()=>{
+             let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
+             project.push(routines)
+             return routines;
+           });
+         
+     return project;
+         }
+         return div, routines;
+     
 })
 projectBtnFunc()
  todayBtnFunc()
