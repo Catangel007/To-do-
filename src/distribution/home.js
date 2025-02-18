@@ -118,28 +118,22 @@ homeBox.innerHTML=`
  plusBtn.addEventListener("click",addTaskPage);
 
 
-// // create new todos
- class Todo {
-
-   constructor(title,description,dueDate,priority,notes,){
-    
-     this.title = title,
-     this.description = description,
-     this.dueDate = dueDate,
-     this.priority= priority,
-     this.notes = notes,
-     this.checklist = [];
-     this.completed = null;
-     this.date= new Date();
-   }
-  callTaskBtn(){
-     addTaskBtn();
-  }
-   
- }
-
-
- 
+ const btn = document.querySelector(".add-btn");
+ btn.addEventListener("click",()=>{
+    for (let project of this.projects){
+           project === this.projects.textContent;
+            project = [];
+            project.addEventListener("click",()=>{
+              let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
+              project.push(routines)
+              return routines;
+            });
+          
+      return project;
+          }
+          return div, routines;
+      
+ })
 // manage new todo and old ones
 class TodoManager {
 
