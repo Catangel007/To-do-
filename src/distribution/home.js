@@ -123,11 +123,10 @@ homeBox.innerHTML=`
     for (let project of this.projects){
            project === this.projects.textContent;
             project = [];
-            project.addEventListener("click",()=>{
-              let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
+             let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
               project.push(routines)
               return routines;
-            });
+          
           
       return project;
           }

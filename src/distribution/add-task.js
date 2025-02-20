@@ -24,8 +24,9 @@ const taskBox = document.createElement("div");
 
  taskBox.setAttribute("class","task-box");
 //  content.showPopover(taskBox);
-taskBox.innerHTML =`
 
+
+taskBox.innerHTML =`
 <form action=""> 
 <input id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
 <input id="description" placeholder="Description"></input>
@@ -39,7 +40,7 @@ taskBox.innerHTML =`
 <button class="project-btn" type="button"><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
 <div>
 <button class="cancel-btn "type="reset">Cancel</button>
-<button class="add-btn" type="submit">Add Task</button>
+<button class="add-btn" type="button">Add Task</button>
 </div>
 </div>
 </form>
@@ -47,50 +48,12 @@ taskBox.innerHTML =`
 
 content.appendChild(taskBox);
 
-// create new todos
- class Todo {
-
-   constructor(title,description,dueDate,priority,notes,){
-    
-     this.title = title,
-     this.description = description,
-     this.dueDate = dueDate,
-     this.priority= priority,
-     this.notes = notes,
-     this.checklist = [];
-     this.completed = null;
-     this.date= new Date();
-   }
-  callTaskBtn(){
-     addTaskBtn();
-  }
-   
-}
-
-
- 
-
-const cancelBtn =document.querySelector(".cancel-btn");
+const cancelBtn = document.querySelector(".cancel-btn");
 cancelBtn.addEventListener("click",()=>{
     content.removeChild(taskBox);
 })
 
-const addBtn = document.querySelector(".add-btn");
-addBtn.addEventListener("click",()=>{
-   for (let project of this.projects){
-          
-           project = [];
-           project.addEventListener("click",()=>{
-             let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
-             project.push(routines)
-             return routines;
-           });
-         
-     return project;
-         }
-         return div, routines;
-     
-})
+
 projectBtnFunc()
  todayBtnFunc()
  priorityBtnFunc()
