@@ -15,7 +15,6 @@ import paperPin from "../images/paper-pin.png";
 import puzzle from "../images/puzzle.png";
 import smile from "../images/smile.png";
 import unlock from "../images/unlock.png";
-
 import grig2 from "../images/grig2.svg";
 import hidden from "../images/more_horiz.svg";
 
@@ -87,6 +86,7 @@ import playingCards from "../images/playing_cards.svg";
 
 
 `
+
 homeBox.innerHTML=`
  
    <div class="box">
@@ -104,7 +104,9 @@ homeBox.innerHTML=`
               <img src="${grig2}">
               <input type="checkbox" id="radio-btn" name="radio-btn" >Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets. 
               </div>
-            </div><hr>
+            </div>
+            <br>
+            <hr>
             <button><img src="${add}" alt="">Add Task</button>
         </div> 
             
@@ -118,21 +120,7 @@ homeBox.innerHTML=`
  plusBtn.addEventListener("click",addTaskPage);
 
 
- const btn = document.querySelector(".add-btn");
- btn.addEventListener("click",()=>{
-    for (let project of this.projects){
-           project === this.projects.textContent;
-            project = [];
-             let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
-              project.push(routines)
-              return routines;
-          
-          
-      return project;
-          }
-          return div, routines;
-      
- })
+ 
 // manage new todo and old ones
 class TodoManager {
 
@@ -410,7 +398,7 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
        </div>
        <div>
        <div>
-     TAsks go here
+     Tasks go here
      description goes here
              <button> <img src="${add}" alt="add icon">Add sub-task</button>
              <div class="comment-section">
@@ -486,8 +474,9 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
             `;
             content.appendChild(editBox);
             })
-  }editProject()
-
+           
+          }
+          editProject()
 
 // setting todos add complete
 // changing todo priority

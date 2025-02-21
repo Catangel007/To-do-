@@ -25,7 +25,6 @@ const taskBox = document.createElement("div");
  taskBox.setAttribute("class","task-box");
 //  content.showPopover(taskBox);
 
-
 taskBox.innerHTML =`
 <form action=""> 
 <input id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
@@ -53,7 +52,27 @@ cancelBtn.addEventListener("click",()=>{
     content.removeChild(taskBox);
 })
 
+const btn = document.querySelector(".add-btn");
+ btn.addEventListener("click",()=>{
+    for (let project of this.projects){
+        
+      function ProjectConstructor(name){
+        this.name =name;
+      }
+      project= new ProjectConstructor
+            
+             let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
+              project.push(routines)
+              return routines;
+        
+      return project;
+          }
+          return routines;
+     //store data in the localStorage 
 
+
+
+ })
 projectBtnFunc()
  todayBtnFunc()
  priorityBtnFunc()
