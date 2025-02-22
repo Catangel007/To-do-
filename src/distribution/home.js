@@ -193,31 +193,28 @@ class TodoManager {
   }
 
    createTodoElement(todo) {
-     const div = document.querySelector(".task");
+     const div = document.createElement("div");
+     div.className = "task";
+     div.id = `todo-${todo.id}`;
     
      
      div.innerHTML = `
-
-         ${todo.completed ? 'completed' : ''}
              <img src="${grig2}">
              <input type="checkbox" ${todo.completed ? 'checked' : ''} id="radio-btn" name="radio-btn" >
-             <span class="todo-title">${todo.title || "hey this shit works!!!!!!!!!!!!!!!!"}</span>
-             <span class="priority-badge priority-${todo.priority}">${todo.priority||"Download OrangeTodo in all your devices and email for iphone, Android, laptops and tablets."}</span>
-         </div>
-             <ul class="hidden-icons"></ul>
-               <p id="inbox">inbox<img src="${inbox}"></p>
-         ${todo.description ? `<p class="todo-description">${todo.description}</p>` : ''}
-         <div class="todo-footer">
-             <span class="due-date">${todo.dueDate}</span>
-             <div class="todo-actions"></div>
-         </div>
+             <span class="todo-title">${todo.title}</span>
+            ${todo.description ? `<p class="todo-description">${todo.description}</p>`: ''}
+            <div class="todo-footer">
+            <span class="priority-badge priority-${todo.priority.split(" ")[1]}">${todo.priority}</span>
+            <span class="due-date"${todo.dueDate}></span>
+              
+            </div>
      `;
    
 // Add event listeners
 const checkbox = div.querySelector('input[type="checkbox"]');
 checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
 
-     
+   return div;  
    }
     
 
