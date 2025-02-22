@@ -53,25 +53,42 @@ cancelBtn.addEventListener("click",()=>{
 })
 
 const btn = document.querySelector(".add-btn");
- btn.addEventListener("click",()=>{
-    for (let project of this.projects){
-        
-      function ProjectConstructor(name){
-        this.name =name;
-      }
-      project= new ProjectConstructor
-            
-             let routines = new Todo(title.value, description.value, dueDate.value, priority.value, notes.value);
-              project.push(routines)
-              return routines;
-        
-      return project;
-          }
-          return routines;
-     //store data in the localStorage 
+ btn.addEventListener("click",(e)=>{
+  e.preventDefault();
+
+  //Get values
+  const title = document.querySelector("#chores").value;
+  const description = document.querySelector("#description").value;
 
 
+  //Basic validation
+  if (!title){
+    alert("Please enter your Project");
+    return;
+  }
 
+  //Create todo object
+  const newTodo = {
+    id: Date.now(),
+    title,
+    description,
+    dueDate: selectedDate || "No Date",
+    priority: selectedPriority || "Priority 4",
+    completed: false,
+    createdAt: new Date().toISOString()
+  };
+
+   //Save to localStorage
+   const todos = JSON.parse(localStorage.getItem("todos"))||[];
+   todos.push(newTodo);
+   localStorage.setItem("todo", JSON.stringify(todos));
+
+   //close task box
+   content.removeChild(taskBox);
+
+   //Dispatch custom event to refresh homepage
+   window.dispatchEvent(new CustomEvent("todosUpdated"));
+    
  })
 projectBtnFunc()
  todayBtnFunc()

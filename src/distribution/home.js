@@ -127,8 +127,7 @@ class TodoManager {
 
   constructor() {
       this.todos = [];
-      this.projects = new Map();
-      this.projects.set(["Inbox","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"]);
+      this.projects = ["Inbox","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"];
       this.filters = {
           priority: null,
           dueDate: null,
@@ -236,7 +235,7 @@ checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
 
 
 // Initialize TodoManager
-const todoManager = new todoManager(routines);
+const todoManager = new todoManager();
 todoManager.loadTodos();
 
 
@@ -529,6 +528,12 @@ const addBtn = document.querySelector(".box button");
   todoManager,
   enableDragAndDrop
 };
+
+
+window.addEventListener("todosUpdated", ()=> {
+  todoManager.loadTodos();
+  todoManager.renderTodos();
+});
  }
 
 
