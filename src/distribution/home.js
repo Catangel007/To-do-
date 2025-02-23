@@ -192,6 +192,17 @@ class TodoManager {
       });
   }
 
+  updateTodo(id,updateData){
+    this.todos = this.todos.map(todo => {
+      if (todo.id === id){
+        return{...todo,...updateData};
+      }
+      return todo;
+    });
+    this.saveTodos();
+    this.renderTodos();
+  }
+
    createTodoElement(todo) {
      const div = document.createElement("div");
      div.className = "task";
@@ -279,56 +290,67 @@ document.addEventListener('keydown', (e) => {
 
 function editProject(){
 
-   // takes care of hidden icons
-const hiddenIcons = document .querySelector(".task");
+  //Initialize action icons container
+  const container = document.querySelector("#container");
 
-const icons = document.querySelector(".hidden-icons");
-icons.style.color= "gray";
-icons.style.size= "40px";
-hiddenIcons.addEventListener("mouseenter", ()=>{
- 
- hiddenIcons.appendChild(icons);
+  //Event delegation for hover actions
+  container.addEventListener("mouseover", ()=>{
+    const task = e.target.closet(".task");
+    if (!task) return;
 
-  const l1 = document.createElement("li"); 
-      let image1 = document.createElement("img")
-      image1.src = writeIcon;
+    const taskId = task.id.split("-")[1];
+    const icons = task.querySelector(".hidden-icons");
 
-      l1.appendChild(image1)
-  const l2 = document.createElement("li");
-  let image2 = document.createElement("img")
-      image2.src = today;
+    icons.style.color= "gray";
+    icons.style.size= "40px";
+    //Create icons if they don't exist
+    if(!icons){
+      const iconsContainer = document.createElement("div");
+      iconsContainer.className = "hidden-icons";
+      iconsContainer.innerHTML = `
+      <img src="${writeIcon}" class="edit-icon" data-id="${taskId}">
+      <img src="${today}" class="date-icon" data-id="${taskId}">
+      <img src="${hidden}" class="more-icon" data-id="${taskId}">
+      <img src="${deleteIcon}" class="delete-icon" data-id="${taskId}">
      
-      l2.appendChild(image2)
-  const l3 = document.createElement("li");
-  let image3 = document.createElement("img")
-      image3.src = chatBubble;
-      l3.appendChild(image3)
-  const l4 = document.createElement("li");
-  let image4 = document.createElement("img")
-      image4.src = hidden;
-      l4.appendChild(image4)
-      image4.addEventListener("mouseenter",()=>{
-        const moreHidden = document.createElement("ul");
-                const l1 = document.createElement("li"); 
-              let image1 = document.createElement("img")
-              image1.src = envelope;
-              l1.appendChild(image1)
-              const l2 = document.createElement("li");
-              let image2 = document.createElement("img")
-              image2.src = deleteIcon;
-              l2.appendChild(image2)
-              
-      })
-      
+      `;
+      task.appendChild(iconsContainer);
+    }
+  });
 
-  icons.appendChild(l1);
-  icons.appendChild(l2);
-  icons.appendChild(l3);
-  icons.appendChild(l4);
+  //handle icon clicks
+  container.addEventListener("click", (e)=>{
+    const taskId = e.target.dataset.id;
 
- return icons;
+    if(e.target.classList.contains("edit-icon")){
+    openEditForm(taskId);
+    }
+    else if(e.target.classList.contains("delete-icon")){
+      todoManager.deleteTodo(Number(taskId));
+    }
+    else if(e.target.classList.contains("more-icon")){
+      openEditForm(taskId);
+      }
+      else if(e.target.classList.contains("date-icon")){
+        openEditForm(taskId);
+        }
+  })
 
-})
+
+  //Modal creation function
+  function openEditForm(taskId){
+    const todo = todoManager.todos.find(t => t.id === Number(taskId));
+
+    const modal = document.createElement("div");
+    modal.className = "edit-modal";
+    modal.innerHTML = `
+    < div class ="modal-content">
+    <h3>Edit Task</h3>
+    <input id="edit-title" value="${todo.title}">
+    <textarea id="edit-desc">${todo.description || ""}</textarea>
+    
+    `
+  }
 
 
 hiddenIcons.addEventListener("mouseleave", (e)=>{
@@ -345,8 +367,8 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
  editBox.innerHTML= `
 <form action=""> 
-<input id="chores" placeholder="Send Homework by Thursday at 6pm"></input>
-<input id="description" placeholder="Description"></input>
+<input id="chores">
+<input id="description" placeholder="Description">
 <p class="section">
 <button id="today-btn" type="button" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
 <button class="priority-btn" type="button"><img src="${flag}" alt="flag icon"> Priority </button>
@@ -365,6 +387,10 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
  `;
  content.appendChild(editBox);
+
+ function editChores(){
+  
+ }
  })
   
 
@@ -489,7 +515,7 @@ const addBtn = document.querySelector(".box button");
 // adds eventListeners to page and displays them
    function addNavListener() {
     const navList = document.querySelectorAll(".nav-li");
-    
+    console.log("you are inside navlist function");
     navList.forEach((nav) => {
       nav.addEventListener("click", () => {
         displayPage(nav.id);
