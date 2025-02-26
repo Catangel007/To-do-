@@ -15,12 +15,19 @@ import later from "../images/pay-later.png";
 import envelope from "../images/envelope.png"
 import balloon from "../images/airballoon.svg"
 import add from "../images/add.svg";
+import clover from "../images/clover.png";
+import puzzle from "../images/puzzle.png";
+
 
 import { calendarPage } from "./calendar";
 
 export function addTaskPage(){
 const content = document.querySelector("#container");
 const taskBox = document.createElement("div");
+
+// Variables to store user selections
+let selectedDate = null;
+let selectedPriority = "Priority 4";
 
  taskBox.setAttribute("class","task-box");
 //  content.showPopover(taskBox);
@@ -90,12 +97,12 @@ const btn = document.querySelector(".add-btn");
    window.dispatchEvent(new CustomEvent("todosUpdated"));
     
  })
-projectBtnFunc()
+
  todayBtnFunc()
  priorityBtnFunc()
  remindBtnFunc()
  moreBtnFunc()
-
+ projectBtnFunc()
  
  function todayBtnFunc(){
 const todayBtn = document.querySelector("#today-btn");
@@ -107,7 +114,7 @@ todayBtn.addEventListener("click",()=>{
    todayBox.innerHTML = `
    
      <h3 id="date-display">29 Jan</h3><hr>
-     <ul>
+     <ul class="date-selection">
      <li id="tomorrow"><img src="${tomorrow}" alt="tomorrow icon">Tomorrow</li>
      <li id="later"><img src="${later}" alt="later icon">Later this week</li>
      <li id="weekend"><img src="${weekend}" alt="weekend icon">This weekend</li>
@@ -119,62 +126,71 @@ todayBtn.addEventListener("click",()=>{
    `;
    content.appendChild(todayBox);
    calendarPage();
+
+
    todayBox.addEventListener("mouseleave", (e)=>{
       content.removeChild(todayBox)
     })
 })
 
-  let todayOpt= document.querySelectorAll("li");
+  let todayOpt= document.querySelectorAll(".date-selection li");
   
    todayOpt.forEach((list) => {
     list.addEventListener("click", (e) => {
       let calendarTime = e.target.id;
       let date = new Date();
+      let selectedDateText = "";
+
          if(calendarTime === "tomorrow"){
-          let nextDay = date.getDay() + 1;
-          return nextDay;
+         date.setDate(date.getDate()+ 1);
+         selectedDateText = "Tomorrow"
          }
      
-         if(calendarTime === "later"){
-          let twoDay = date.getDay() + 2;
-           return twoDay
+          else if(calendarTime === "later"){
+         date.setDate(date.getDate()+2);
+         selectedDateText = "Later this week"
          }
 
-         if(calendarTime === "weekend"){
-          let weekEndDay = date.getDay();
-          return weekEndDay
-         }
+         else if (calendarTime === "weekend") {
+          // Find next Saturday
+          const daysUntilWeekend = (6 - date.getDay()) % 7;
+          date.setDate(date.getDate() + daysUntilWeekend);
+          selectedDateText = "This weekend";
+        } 
+        
+        else if (calendarTime === "next-week") {
+          // Set to next Monday
+          const daysUntilNextWeek = (8 - date.getDay()) % 7;
+          date.setDate(date.getDate() + daysUntilNextWeek);
+          selectedDateText = "Next week";
+        }
+        
+        else if (calendarTime === "no-date") {
+          selectedDate = "No Date";
+          selectedDateText = "No Date";
 
-         if(calendarTime === "next-week"){
-          let nextWeekDay = date.getDay();
-          return nextWeekDay
-         }
+          todayBtn.innerHTML = `<img src="${today}" alt="today icon"> ${selectedDateText} <img src="${close}" alt="close icon">`;
+          content.removeChild(todayBox);
+          return;
+        }
 
-         if(calendarTime === "no-date"){
-          let noDay = null;
-          return noDay;
-         }
-      return {todayBtn,nextDay,twoDay,weekEndDay,nextWeekDay,noDay}
+      });
     });
-  });
+  };
 
- console.log(nextDay)
- console.log(twoDay)
-  console.log(weekEndDay)
-   console.log(nextWeekDay)
-    console.log(noDay)
+  
 
   let tomorrowInput = document.querySelector("#tomorrow");
   let laterInput = document.querySelector("#later");
   let weekendInput = document.querySelector("#weekend");
   let nextWeekInput = document.querySelector("#next-week");
   let noDateInput = document.querySelector("#no-date");
- }
+ 
 
 
 function priorityBtnFunc(){
-const priorityBtn = document.querySelector(".priority-btn");
-priorityBtn.addEventListener("click",()=>{
+    const priorityBtn = document.querySelector(".priority-btn");
+       priorityBtn.addEventListener("click",()=>{
 
     const priorityBox = document.createElement("div");
     priorityBox.setAttribute("class","priority-box");
@@ -182,20 +198,29 @@ priorityBtn.addEventListener("click",()=>{
     
       
       <ul>
-      <li><img src="${flag}" id="red" alt="flag icon" color="red">Priority 1 <div></div></li>
-      <li><img src="${flag}" id="blue" alt="flag icon" color="yellow">Priority 2<div></div></li>
-      <li><img src="${flag}" id="yellow" alt="flag icon"color="blue">Priority 3<div></div></li>
-      <li><img src="${flag}" id="white" alt="flag icon">Priority 4 <div></div></li>
+      <li data-priority="Priority 1"><img src="${flag}" id="red" alt="flag icon" color="red">Priority 1 <div></div></li>
+      <li data-priority="Priority 2"><img src="${flag}" id="blue" alt="flag icon" color="yellow">Priority 2<div></div></li>
+      <li data-priority="Priority 3"><img src="${flag}" id="yellow" alt="flag icon"color="blue">Priority 3<div></div></li>
+      <li data-priority="Priority 4"><img src="${flag}" id="white" alt="flag icon" color="white">Priority 4 <div></div></li>
      </ul>
       
     `;
     content.appendChild(priorityBox);
 
+    // Add event listeners to priority options
+    const priorityOptions = priorityBox.querySelectorAll('li');
+    priorityOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        selectedPriority = option.getAttribute('data-priority');
+        priorityBtn.innerHTML = `<img src="${flag}" alt="flag icon"> ${selectedPriority}`;
+        content.removeChild(priorityBox);
+      });
+    });
+
     priorityBox.addEventListener("mouseleave", (e)=>{
         content.removeChild(priorityBox)
       })
-       
-     
+         
 })
 
 }
@@ -220,6 +245,23 @@ remindBtn.addEventListener("click",()=>{
     </div>
     `;
     content.appendChild(remindBox);
+
+    // Select elements
+const remindDiv = document.querySelector("#first");
+const remindDivSecond = document.querySelector("#second");
+
+function toggleActive(activeElement, inactiveElement) {
+  activeElement.classList.add("active");
+  inactiveElement.classList.remove("active");
+   inactiveElement.classList.add("inactive");
+   inactiveElement.classList.remove("active");
+}
+
+remindDiv.addEventListener("click", () => toggleActive(remindDiv, remindDivSecond));
+remindDivSecond.addEventListener("click", () => toggleActive(remindDivSecond, remindDiv));
+   
+
+
 
     remindBox.addEventListener("mouseleave", (e)=>{
         content.removeChild(remindBox)
@@ -284,23 +326,7 @@ function projectBtnFunc(){
 }
 
    
- // Select elements
-const remindDiv = document.querySelector("#first");
-const remindDivSecond = document.querySelector("#second");
-
-function toggleActive(activeElement, inactiveElement) {
-  activeElement.classList.add("active");
-  inactiveElement.classList.remove("active");
-   inactiveElement.classList.add("inactive");
-   inactiveElement.classList.remove("active");
-}
-
-remindDiv.addEventListener("click", () => toggleActive(remindDiv, remindDivSecond));
-remindDivSecond.addEventListener("click", () => toggleActive(remindDivSecond, remindDiv));
-   
-
-
-
+ 
 
 
 }

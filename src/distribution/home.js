@@ -77,7 +77,7 @@ import playingCards from "../images/playing_cards.svg";
             <li class="nav-li" id="4"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
             <li class="nav-li" id="5"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
-        <ul id="projects"> My Projects <img src="${add}" alt="add project icon"><img src="${arrowDown}" alt="add project icon">
+        <ul id="projects"> My Projects &nbsp;&nbsp;&nbsp;&nbsp;<img src="${add}" alt="add project icon"><img src="${arrowDown}" alt="add project icon">
             <li class="nav-li" id="6" class="margin"><img src="${hashtag}" alt="">Home</li>
             <li class="nav-li" id="7"><img src="${add}" alt="add team icon">Add a Team</li>
             <li class="nav-li" id="8"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
@@ -124,10 +124,9 @@ homeBox.innerHTML=`
 // manage new todo and old ones
 class TodoManager {
 
-
   constructor() {
       this.todos = [];
-      this.projects = ["Inbox","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"];
+      this.projects = ["Home","Inbox","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"];
       this.filters = {
           priority: null,
           dueDate: null,
@@ -241,7 +240,6 @@ checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
 }
 
 
-
 // Initialize TodoManager
 const todoManager = new todoManager();
 todoManager.loadTodos();
@@ -289,7 +287,6 @@ document.addEventListener('keydown', (e) => {
 
 
 function editProject(){
-
   //Initialize action icons container
   const container = document.querySelector("#container");
 
@@ -396,10 +393,10 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
 
  image2.addEventListener("click",()=>{
+
+
     const editTodayBox = document.createElement("div");
-   
     editTodayBox.innerHTML= `${todayBox};
-   
     `;
     content.appendChild(editTodayBox);
     })
@@ -515,7 +512,7 @@ const addBtn = document.querySelector(".box button");
 // adds eventListeners to page and displays them
    function addNavListener() {
     const navList = document.querySelectorAll(".nav-li");
-    console.log("you are inside navlist function");
+    console.log("you are inside navList function");
     navList.forEach((nav) => {
       nav.addEventListener("click", () => {
         displayPage(nav.id);
@@ -537,8 +534,7 @@ const addBtn = document.querySelector(".box button");
     }
   }
   
-  addNavListener();
-   
+ 
 
     
 // function to play orange animation.
@@ -547,16 +543,19 @@ const addBtn = document.querySelector(".box button");
  }
 
 
- return {
-  todoManager,
-  enableDragAndDrop
-};
 
 
 window.addEventListener("todosUpdated", ()=> {
   todoManager.loadTodos();
   todoManager.renderTodos();
 });
+
+return {
+  todoManager,
+  enableDragAndDrop,
+  addNavListener
+};
+
  }
 
 
