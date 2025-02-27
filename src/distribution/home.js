@@ -53,11 +53,13 @@ import playingCards from "../images/playing_cards.svg";
    
 
  export function homePage(){
-
+   
     const content = document.querySelector("body");
     const navBox = document.createElement("div");
     const homeBox = document.createElement("div");
+    const addBtn = document.querySelector(".box button");
 
+    
     content.appendChild(navBox);
     content.appendChild(homeBox);
 
@@ -77,7 +79,7 @@ import playingCards from "../images/playing_cards.svg";
             <li class="nav-li" id="4"><img src="${calendar}" alt="upcoming task icon">Upcoming</li>
             <li class="nav-li" id="5"><img src="${apps}" alt="filters and labels icon">Filters & Labels</li>
         </ul>
-        <ul id="projects"> My Projects &nbsp;&nbsp;&nbsp;&nbsp;<img src="${add}" alt="add project icon"><img src="${arrowDown}" alt="add project icon">
+        <ul id="projects"> My Projects &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="${add}" alt="add project icon"><img src="${arrowDown}" alt="add project icon">
             <li class="nav-li" id="6" class="margin"><img src="${hashtag}" alt="">Home</li>
             <li class="nav-li" id="7"><img src="${add}" alt="add team icon">Add a Team</li>
             <li class="nav-li" id="8"><img src="${playingCards}" alt="template icon"> Browse Templates</li>
@@ -113,14 +115,39 @@ homeBox.innerHTML=`
           
     </div>
 
-
 `
 
  const plusBtn = document.querySelector("button");
  plusBtn.addEventListener("click",addTaskPage);
 
 
- 
+ // adds eventListeners to page and displays them
+ function addNavListener() {
+  const navList = document.querySelectorAll(".nav-li");
+  console.log("you are inside navList function");
+  navList.forEach((nav) => {
+    nav.addEventListener("click", () => {
+      displayPage(nav.id);
+    });
+  });
+}
+addNavListener();
+
+function displayPage(list) {
+  const pages = [
+    addTaskPage, searchPage, inboxPage, 
+    todayPage, upcomingPage, filtersPage, 
+    homePage, teamPage, templatePage
+  ];
+  
+  // Assuming list is a string that can be converted to an index
+  const pageIndex = Number(list);
+  if (pageIndex >= 0 && pageIndex < pages.length) {
+    pages[pageIndex]();
+  }
+}
+
+
 // manage new todo and old ones
 class TodoManager {
 
@@ -241,7 +268,7 @@ checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
 
 
 // Initialize TodoManager
-const todoManager = new todoManager();
+const todoManager = new TodoManager();
 todoManager.loadTodos();
 
 
@@ -254,7 +281,7 @@ function enableDragAndDrop() {
       task.addEventListener('dragover', handleDragOver);
       task.addEventListener('drop', handleDrop);
   });
-}
+}enableDragAndDrop();
 
 function handleDragStart(e) {
   e.dataTransfer.setData('text/plain', e.target.id);
@@ -507,33 +534,9 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
   
 
 
-const addBtn = document.querySelector(".box button");
+
    
-// adds eventListeners to page and displays them
-   function addNavListener() {
-    const navList = document.querySelectorAll(".nav-li");
-    console.log("you are inside navList function");
-    navList.forEach((nav) => {
-      nav.addEventListener("click", () => {
-        displayPage(nav.id);
-      });
-    });
-  }
-  
-  function displayPage(list) {
-    const pages = [
-      addTaskPage, searchPage, inboxPage, 
-      todayPage, upcomingPage, filtersPage, 
-      homePage, teamPage, templatePage
-    ];
-    
-    // Assuming list is a string that can be converted to an index
-    const pageIndex = Number(list);
-    if (pageIndex >= 0 && pageIndex < pages.length) {
-      pages[pageIndex]();
-    }
-  }
-  
+
  
 
     
@@ -552,8 +555,6 @@ window.addEventListener("todosUpdated", ()=> {
 
 return {
   todoManager,
-  enableDragAndDrop,
-  addNavListener
 };
 
  }

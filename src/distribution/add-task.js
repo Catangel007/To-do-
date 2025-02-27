@@ -22,6 +22,7 @@ import puzzle from "../images/puzzle.png";
 import { calendarPage } from "./calendar";
 
 export function addTaskPage(){
+
 const content = document.querySelector("#container");
 const taskBox = document.createElement("div");
 
@@ -105,9 +106,9 @@ const btn = document.querySelector(".add-btn");
  projectBtnFunc()
  
  function todayBtnFunc(){
-const todayBtn = document.querySelector("#today-btn");
+  const todayBtn = document.querySelector("#today-btn");
 
-todayBtn.addEventListener("click",()=>{
+  todayBtn.addEventListener("click",()=>{
    const todayBox = document.createElement("div");
    
    todayBox.setAttribute("class","today-box");
@@ -122,7 +123,7 @@ todayBtn.addEventListener("click",()=>{
      <li id="no-date"><img src="${noDate}" alt="noDate icon">No Date</li><hr>
      </ul>
       <div id="calendar-div"></div>
-      <button><img src="${clock}" alt="clock icon"> Time</button>
+      <button><img src="${clock}" alt="clock icon"> Time </button>
    `;
    content.appendChild(todayBox);
    calendarPage();
@@ -179,13 +180,6 @@ todayBtn.addEventListener("click",()=>{
   };
 
   
-
-  let tomorrowInput = document.querySelector("#tomorrow");
-  let laterInput = document.querySelector("#later");
-  let weekendInput = document.querySelector("#weekend");
-  let nextWeekInput = document.querySelector("#next-week");
-  let noDateInput = document.querySelector("#no-date");
- 
 
 
 function priorityBtnFunc(){

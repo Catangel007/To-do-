@@ -6,6 +6,9 @@ import inbox from "../images/inbox.svg";
 import add from "../images/add.svg";
 import grig2 from "../images/grig2.svg";
 
+
+import { addTaskPage }  from "./add-task.js";
+
 export  function inboxPage (){
 
 
@@ -59,4 +62,7 @@ export  function inboxPage (){
      </div>
 
 `
+const plusBtn = document.querySelector("button");
+ plusBtn.addEventListener("click",addTaskPage);
+
 }
