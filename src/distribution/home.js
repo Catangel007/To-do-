@@ -365,15 +365,31 @@ function editProject(){
   function openEditForm(taskId){
     const todo = todoManager.todos.find(t => t.id === Number(taskId));
 
-    const modal = document.createElement("div");
-    modal.className = "edit-modal";
-    modal.innerHTML = `
-    < div class ="modal-content">
-    <h3>Edit Task</h3>
-    <input id="edit-title" value="${todo.title}">
-    <textarea id="edit-desc">${todo.description || ""}</textarea>
-    
-    `
+    const editBox = document.createElement("div");
+   
+    editBox.innerHTML= `
+   <form action=""> 
+   <input id="chores" >
+   <input id="description" placeholder="Description">
+   <p class="section">
+   <button id="today-btn" type="button" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
+   <button class="priority-btn" type="button"><img src="${flag}" alt="flag icon"> Priority </button>
+   <button class="remind-btn" type="button"><img src="${alarm}" alt="alarm icon"> Reminders </button>
+   <button class="more-btn" type="button"><img src="${hidden}" alt="hidden icon"></button>
+   </p><hr>
+   <div class="close-section">
+   <button class="project-btn" type="button"><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
+   <div>
+   <button class="cancel-btn "type="reset">Cancel</button>
+   <button class="save-btn" type="save">Save</button>
+   </div>
+   </div>
+   
+   </form>
+   
+    `;
+    content.appendChild(editBox);
+  
   }
 
 
@@ -387,33 +403,14 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 
 // add html to hidden icons
  image1.addEventListener("click",()=>{
- const editBox = document.createElement("div");
-
- editBox.innerHTML= `
-<form action=""> 
-<input id="chores">
-<input id="description" placeholder="Description">
-<p class="section">
-<button id="today-btn" type="button" ><img src="${today}" alt="today icon"> Today <img src="${close}" alt="close icon"></button>
-<button class="priority-btn" type="button"><img src="${flag}" alt="flag icon"> Priority </button>
-<button class="remind-btn" type="button"><img src="${alarm}" alt="alarm icon"> Reminders </button>
-<button class="more-btn" type="button"><img src="${hidden}" alt="hidden icon"></button>
-</p><hr>
-<div class="close-section">
-<button class="project-btn" type="button"><img src="${inbox}" alt="inbox icon"> inbox <img src="${arrowDown}" alt="arrowDown icon"></button>
-<div>
-<button class="cancel-btn "type="reset">Cancel</button>
-<button class="save-btn" type="save">Save</button>
-</div>
-</div>
-
-</form>
-
- `;
- content.appendChild(editBox);
+ 
 
  function editChores(){
-  
+  const chores = document.querySelector("#chores");
+  let choreInput = chores.ariaValueMax;
+  choreInput.addEventListener("change",()=>{
+   todoManager.updateTodo();
+  })
  }
  })
   
