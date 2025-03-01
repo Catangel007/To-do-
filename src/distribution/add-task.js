@@ -64,6 +64,10 @@ const btn = document.querySelector(".add-btn");
  btn.addEventListener("click",(e)=>{
   e.preventDefault();
 
+  function populatePage(){
+    let file = document.querySelector("container");
+  
+  }
   //Get values
   const title = document.querySelector("#chores").value;
   const description = document.querySelector("#description").value;

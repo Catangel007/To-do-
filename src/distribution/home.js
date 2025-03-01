@@ -109,7 +109,7 @@ homeBox.innerHTML=`
             </div>
             <br>
             <hr>
-            <button><img src="${add}" alt="">Add Task</button>
+            <button class="add"><img src="${add}" alt="">Add Task</button>
         </div> 
             
           
@@ -117,7 +117,7 @@ homeBox.innerHTML=`
 
 `
 
- const plusBtn = document.querySelector("button");
+ const plusBtn = document.querySelector(".add");
  plusBtn.addEventListener("click",addTaskPage);
 
 
@@ -153,7 +153,7 @@ class TodoManager {
 
   constructor() {
       this.todos = [];
-      this.projects = ["Home","Inbox","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"];
+      this.projects = ["Home","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"];
       this.filters = {
           priority: null,
           dueDate: null,
@@ -213,6 +213,7 @@ class TodoManager {
           if (this.filters.dueDate) {
               const today = new Date().toISOString().split('T')[0];
               if (this.filters.dueDate === 'today' && todo.dueDate !== today) return false;
+
           }
           return true;
       });
@@ -318,8 +319,8 @@ function editProject(){
   const container = document.querySelector("#container");
 
   //Event delegation for hover actions
-  container.addEventListener("mouseover", ()=>{
-    const task = e.target.closet(".task");
+  container.addEventListener("mouseover", (e)=>{
+    const task = e.target.closest(".task");
     if (!task) return;
 
     const taskId = task.id.split("-")[1];
@@ -353,14 +354,42 @@ function editProject(){
       todoManager.deleteTodo(Number(taskId));
     }
     else if(e.target.classList.contains("more-icon")){
-      openEditForm(taskId);
+      moreIconFunctionality(taskId);
       }
       else if(e.target.classList.contains("date-icon")){
-        openEditForm(taskId);
+        openInputForm(taskId);
         }
   })
 
-
+function moreIconFunctionality(){
+   const div = document.createElement("div");
+   const divList = document.createElement("ul");
+   divList.className = "more-func";
+    divList.innerHTML = `
+              <li> <img src="${clover}" alt="clover icon">Edit</li>
+              <li> <img src="${clover}" alt="clover icon">Go to Project</li>
+              <li>Date
+             <img src="${clover}" alt="clover icon">
+             <img src="${clover}" alt="clover icon">
+             <img src="${clover}" alt="clover icon">
+             <img src="${clover}" alt="clover icon">
+             <img src="${noDate}" alt="clover icon">
+             <img src="${hidden}" alt="clover icon">
+              </li>
+              <li>Priority
+             <img id="red" src="${flag}" alt="flag icon">
+             <img id="blue" src="${flag}" alt="flag icon">
+             <img id="yellow" src="${flag}" alt="flag icon">
+             <img id="white" src="${flag}" alt="flag icon">
+              </li>
+              <li><img src="${clover}" alt="clover icon">Reminders</li>
+              <li><img src="${clover}" alt="clover icon">Move to</li>
+              <li><img src="${clover}" alt="clover icon">Duplicate</li>
+              <li><img src="${clover}" alt="clover icon">Copy link to task</li>
+              <li><img src="${clover}" alt="clover icon">Add extension...</li>
+              <li><img src="${clover}" alt="clover icon">Delete</li>
+    `
+}
   //Modal creation function
   function openEditForm(taskId){
     const todo = todoManager.todos.find(t => t.id === Number(taskId));
@@ -393,41 +422,7 @@ function editProject(){
   }
 
 
-hiddenIcons.addEventListener("mouseleave", (e)=>{
-  icons.textContent="";
-    hiddenIcons.removeChild(icons);
-  });
-
-
-
-
-// add html to hidden icons
- image1.addEventListener("click",()=>{
- 
-
- function editChores(){
-  const chores = document.querySelector("#chores");
-  let choreInput = chores.ariaValueMax;
-  choreInput.addEventListener("change",()=>{
-   todoManager.updateTodo();
-  })
- }
- })
-  
-
-
- image2.addEventListener("click",()=>{
-
-
-    const editTodayBox = document.createElement("div");
-    editTodayBox.innerHTML= `${todayBox};
-    `;
-    content.appendChild(editTodayBox);
-    })
-
-
-
-    image3.addEventListener("click",()=>{
+    function openInputForm(){
         const inBox = document.createElement("dialog");
        
         inBox.innerHTML= `
@@ -469,55 +464,15 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
               <li>Reminders<img src="${add}" alt="add task icon"></li><hr>
                <li>Location<img src="${clover}" alt="clover icon"><img src="${unlock}" alt="unlock icon"></li><hr>
          </ul>
-       
-       
-       
-       
-       
+          
        </div>
        </div>
-       
-       
+         
        </div>
         `;
         content.appendChild(inBox);
-        })
+        }
 
-
-
-      image4.addEventListener("click",()=>{
-            const editBox = document.createElement("div");
-           
-            editBox.innerHTML= `
-          <ul>
-              <li>Edit</li>
-              <li>Go to Project</li>
-              <li>Date
-             <img src="${clover}" alt="clover icon">
-             <img src="${clover}" alt="clover icon">
-             <img src="${clover}" alt="clover icon">
-             <img src="${clover}" alt="clover icon">
-             <img src="${noDate}" alt="clover icon">
-             <img src="${hidden}" alt="clover icon">
-              </li>
-              <li>Priority
-             <img id="red" src="${flag}" alt="flag icon">
-             <img id="blue" src="${flag}" alt="flag icon">
-             <img id="yellow" src="${flag}" alt="flag icon">
-             <img id="white" src="${flag}" alt="flag icon">
-              </li>
-              <li><img src="${clover}" alt="clover icon">Reminders</li>
-              <li><img src="${clover}" alt="clover icon">Move to</li>
-              <li><img src="${clover}" alt="clover icon">Duplicate</li>
-              <li><img src="${clover}" alt="clover icon">Copy link to task</li>
-              <li><img src="${clover}" alt="clover icon">Add extension...</li>
-              <li><img src="${clover}" alt="clover icon">Delete</li>
-          </ul>
-           
-            `;
-            content.appendChild(editBox);
-            })
-           
           }
           editProject()
 
@@ -525,18 +480,6 @@ hiddenIcons.addEventListener("mouseleave", (e)=>{
 // changing todo priority
 
 
-
-
-
-  
-
-
-
-   
-
- 
-
-    
 // function to play orange animation.
  function playAnimation(){
   animationPage()
