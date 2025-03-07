@@ -18,9 +18,9 @@ import add from "../images/add.svg";
 import clover from "../images/clover.png";
 import puzzle from "../images/puzzle.png";
 
-
+import { todoManager } from './todo-manager.js';
 import { calendarPage } from "./calendar";
-
+import { homePage} from "./home.js";
 export function addTaskPage(){
 
 const content = document.querySelector("#container");
@@ -63,11 +63,9 @@ cancelBtn.addEventListener("click",()=>{
 const btn = document.querySelector(".add-btn");
  btn.addEventListener("click",(e)=>{
   e.preventDefault();
-
-  function populatePage(){
-    let file = document.querySelector("container");
+ 
+ 
   
-  }
   //Get values
   const title = document.querySelector("#chores").value;
   const description = document.querySelector("#description").value;
@@ -93,13 +91,16 @@ const btn = document.querySelector(".add-btn");
    //Save to localStorage
    const todos = JSON.parse(localStorage.getItem("todos"))||[];
    todos.push(newTodo);
-   localStorage.setItem("todo", JSON.stringify(todos));
+   localStorage.setItem("todos", JSON.stringify(todos));
+
+   
+   todoManager.addTodo(newTodo);
 
    //close task box
    content.removeChild(taskBox);
-
    //Dispatch custom event to refresh homepage
    window.dispatchEvent(new CustomEvent("todosUpdated"));
+   console.log("a new item has been added");
     
  })
 

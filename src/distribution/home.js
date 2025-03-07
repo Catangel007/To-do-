@@ -51,7 +51,7 @@ import playingCards from "../images/playing_cards.svg";
    import { templatePage }  from "./template.js";
    import { calendarPage } from "./calendar.js";
    
-
+ 
  export function homePage(){
    
     const content = document.querySelector("body");
@@ -272,7 +272,6 @@ checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
 const todoManager = new TodoManager();
 todoManager.loadTodos();
 
-
 // Add drag and drop functionality
 function enableDragAndDrop() {
   const tasks = document.querySelectorAll('.task');
@@ -489,7 +488,7 @@ function moreIconFunctionality(){
 
 
 window.addEventListener("todosUpdated", ()=> {
-  todoManager.loadTodos();
+ 
   todoManager.renderTodos();
 });
 
