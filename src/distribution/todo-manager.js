@@ -1,5 +1,33 @@
  
-  export const todoManager = new TodoManager();
+ import clover from "../images/clover.png";
+ import mic from "../images/microphone.png";
+ import paperPin from "../images/paper-pin.png";
+ import puzzle from "../images/puzzle.png";
+ import smile from "../images/smile.png";
+ import unlock from "../images/unlock.png";
+ import grig2 from "../images/grig2.svg";
+ import hidden from "../images/more_horiz.svg";
+ 
+ import thumbnail from "../images/thumbnail.svg";
+ import today from "../images/today.svg";
+ import checkCircle from "../images/check_circle.svg";
+ import envelope from "../images/mail.svg";
+ import bedtime from "../images/dark_mode.svg";
+ import calendar_today from "../images/calendar_today.svg";
+ import chatBubble from "../images/chat.svg";
+ import calendar from "../images/calendar_month.svg";
+ import close from "../images/close.svg";
+ import deleteIcon from "../images/delete.svg";
+ import arrowDown from "../images/arrow-down.svg";
+ import dots from "../images/grip1.svg";
+ import writeIcon from "../images/write.svg";
+ import events from "../images/calendar_add.svg";
+ import inbox from "../images/inbox.svg";
+ import lightMode from "../images/light_mode.svg";
+ 
+ import view from "../images/tune.svg";
+ 
+ import playingCards from "../images/playing_cards.svg";
  
  export class TodoManager {
     constructor() {
@@ -125,7 +153,7 @@
           
  }
  
-   
+ export const todoManager = new TodoManager();
   
   
  

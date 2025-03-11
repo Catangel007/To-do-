@@ -39,6 +39,7 @@ import view from "../images/tune.svg";
 
 import playingCards from "../images/playing_cards.svg";
 
+import { todoManager } from "./todo-manager.js";
 
    import {inboxPage} from "./inbox.js";
    import {searchPage} from "./search.js";
@@ -50,7 +51,7 @@ import playingCards from "../images/playing_cards.svg";
    import { teamPage }  from "./team.js";
    import { templatePage }  from "./template.js";
    import { calendarPage } from "./calendar.js";
-   import { todoManager } from "./todo-manager.js";
+  
  
  export function homePage(){
    

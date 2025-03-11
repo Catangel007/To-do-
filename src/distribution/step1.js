@@ -36,10 +36,8 @@ import {step2Page} from "./step2.js";
         <p id="word-count">0/255</p>
         <div id="question">I want to use OrangeTodo with my Team<img id="toggle" src="${toggleOff}"></div>
         <button id="continue-btn" type= "submit" >Continue</button>
-
-
    </form>
-  </div>
+   </div>
    `
 
    display.innerHTML=`
@@ -69,8 +67,5 @@ import {step2Page} from "./step2.js";
   }else{toggleImg.textContent=toggleOff};
 
   })
-  
-  
-  
   
   }

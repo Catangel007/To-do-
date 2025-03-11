@@ -28,19 +28,19 @@
    <form action="" method="post">
       <div>
       <img src="${person}">
-        <label for="choices">Personal</label>
+        <label for="choices">Personal</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="radio" id="choices" name="choices" value="Personal">
       </div>
 
       <div>
       <img src="${business}">
-        <label for="choices">Work</label>
+        <label for="choices">Work</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="radio" id="choices" name="choices" value="Work">
       </div>
 
       <div>
       <img src="${lightbulb}">
-        <label for="choices">Education</label>
+        <label for="choices">Education</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <input type="radio" id="choices" name="choices" value="Education">
       </div>
 
