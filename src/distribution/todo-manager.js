@@ -1,13 +1,9 @@
-export class TodoManager {
+ 
+  export const todoManager = new TodoManager();
+ 
+ export class TodoManager {
     constructor() {
       if (!TodoManager.instance) {
-        this.todos = [];
-        // Rest of your TodoManager class code
-
-        // manage new todo and old ones
-        class TodoManager {
-        
-          constructor() {
               this.todos = [];
               this.projects = ["Home","Today","Tomorrow","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday","Custom"];
               this.filters = {
@@ -15,7 +11,11 @@ export class TodoManager {
                   dueDate: null,
                   completed: null
               };
+              TodoManager.instance = this;
           }
+         
+       return TodoManager.instance;  
+        }
         
           addTodo(todo) {
               this.todos.push(todo);
@@ -104,12 +104,12 @@ export class TodoManager {
                     </div>
              `;
            
-        // Add event listeners
-        const checkbox = div.querySelector('input[type="checkbox"]');
-        checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
+                    // Add event listeners
+                      const checkbox = div.querySelector('input[type="checkbox"]');
+                      checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
         
-           return div;  
-           }
+                      return div;  
+                    }
             
         
         
@@ -120,14 +120,12 @@ export class TodoManager {
                   <img src="${checkCircle}">
                   ${completed}/${this.todos.length} tasks completed
               `;
-          }
-        }
-        
-        TodoManager.instance = this;
-      }
-      return TodoManager.instance;
-    }
-    // Keep all existing methods
-  }
+             
+          }  
+          
+ }
+ 
+   
   
-  export const todoManager = new TodoManager();
+  
+ 
