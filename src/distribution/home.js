@@ -120,7 +120,8 @@ homeBox.innerHTML=`
 
  const plusBtn = document.querySelector(".add");
  plusBtn.addEventListener("click",addTaskPage);
-
+ 
+ 
 
  // adds eventListeners to page and displays them
  function addNavListener() {
@@ -353,12 +354,10 @@ function moreIconFunctionality(){
         `;
         content.appendChild(inBox);
         }
-
           }
-          editProject()
+         editProject();
 
-// setting todos add complete
-// changing todo priority
+
 
 
 // function to play orange animation.

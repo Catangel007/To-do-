@@ -21,6 +21,9 @@ import puzzle from "../images/puzzle.png";
 import { todoManager } from './todo-manager.js';
 import { calendarPage } from "./calendar";
 import { homePage} from "./home.js";
+
+
+
 export function addTaskPage(){
 
 const content = document.querySelector("#container");
@@ -55,6 +58,12 @@ taskBox.innerHTML =`
 
 content.appendChild(taskBox);
 
+todayBtnFunc()
+ priorityBtnFunc()
+ remindBtnFunc()
+ moreBtnFunc()
+ projectBtnFunc()
+ 
 const cancelBtn = document.querySelector(".cancel-btn");
 cancelBtn.addEventListener("click",()=>{
     content.removeChild(taskBox);
@@ -104,11 +113,7 @@ const btn = document.querySelector(".add-btn");
     
  })
 
- todayBtnFunc()
- priorityBtnFunc()
- remindBtnFunc()
- moreBtnFunc()
- projectBtnFunc()
+
  
  function todayBtnFunc(){
   const todayBtn = document.querySelector("#today-btn");
