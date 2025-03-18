@@ -35,4 +35,19 @@ module.exports = {
       },
     ],
   },
+
+  resolve: {
+    fallback: {
+      "http": require.resolve("stream-http") ,
+      "https": require.resolve("https-browserify"),
+      "stream": require.resolve("stream-browserify"),
+      "zlib": require.resolve("browserify-zlib"),
+      "crypto": require.resolve("crypto-browserify"),
+      "path": require.resolve("path-browserify"),
+      "vm": require.resolve("vm-browserify"),
+      "util": require.resolve("util/"),
+      "buffer": require.resolve("buffer/"),
+      "process": require.resolve("process/browser")
+    }
+  }
 };

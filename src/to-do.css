@@ -838,3 +838,12 @@ position: relative;
   height: 60vh;
   width: 60vw;
 }
+
+.task {
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.task.removing {
+  opacity: 0;
+  transform: translateX(-100%);
+}

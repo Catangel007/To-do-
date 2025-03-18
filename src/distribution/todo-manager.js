@@ -29,6 +29,7 @@
  
  import playingCards from "../images/playing_cards.svg";
  import{homePage} from "./home.js";
+import { container } from "webpack";
 
 
 
@@ -58,7 +59,6 @@
         
           deleteTodo(id) {
               this.todos = this.todos.filter(todo => todo.id !== id);
-              container.removeChild(todoElement);
               this.saveTodos();
               this.renderTodos();
           }
@@ -68,8 +68,8 @@
               if (todo) {
                   todo.completed = !todo.completed;
                   this.saveTodos();
-                  this.renderTodos();
-                  this.deleteTodo();
+              
+                 
               }
           }
         
@@ -131,22 +131,24 @@
              div.innerHTML = `
                      <img src="${grig2}">
                      <input type="checkbox" ${todo.completed ? 'checked' : ''} id="radio-btn" name="radio-btn" >
-                     <span class="todo-title">${todo.title}</span>
+                     <span class="todo-title">${todo.title} <div class="hidden-icons"></div></span>
                     ${todo.description ? `<p class="todo-description">${todo.description}</p>`: ''}
-                    <div class="hidden-icons"></div>
                     <div class="todo-footer">
                     <span class="priority-badge priority-${todo.priority.split(" ")[1]}">${todo.priority}</span>
                     <span class="due-date"${todo.dueDate}></span>
-                      
-                    </div>
+                    <br>
+                    <hr>
              `;
            
                     // Add event listeners
                       const checkbox = div.querySelector('input[type="checkbox"]');
-                      checkbox.addEventListener('change', () => this.toggleTodoComplete(todo.id));
-                     
-                     
-                      return div;  
+                      checkbox.addEventListener('change', () => {
+                        this.toggleTodoComplete(todo.id);
+                        div.classList.add('removing');
+                        setTimeout(() => div.remove(), 300);
+                       this.updateTaskCounter();
+                    })
+                      return div;
                     }
             
         
@@ -159,6 +161,9 @@
                   ${completed}/${this.todos.length} tasks completed
               `;
              
+             // if(this.todos.length===0){
+                //container.createElement("img")
+             // }
           }  
           
  }
